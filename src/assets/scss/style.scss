@@ -1,0 +1,122 @@
+@import './base.scss';
+@import './iconfont.scss';
+
+
+/* ========================common || reset=================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	
+	font: inherit;
+	/* font-size:10px; */
+	vertical-align: baseline;
+	font-weight: normal;
+	font-family: "微软雅黑";
+	font-style: normal;
+	box-sizing: border-box;-webkit-box-sizing: border-box;
+}
+img{
+	display: block;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	position: relative;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+a{text-decoration:none;color:#000;}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* 浮动 */
+.pull-left{float: left;}
+.pull-right{float: right;}
+.clearfix:after,.clearfix:before{content: '';display: block;clear: both;}
+
+/* 居中 */
+.center{position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);}
+
+/* flex定位 */
+.flex{ display: flex;display: -webkit-flex;width:100%;}
+
+/* 重置按钮、输入框的样式 */
+button,input,textarea,select{border: 0;background: none;outline: none;cursor: pointer;resize:none;}
+
+/* 遮罩层 */
+.mask{display: none;position: fixed;top: 0;left: 0;width:100vw;height: 100vh;background: rgba(0,0,0,.8);z-index: 100;}
+
+.box-sizing{box-sizing: border-box;-webkit-box-sizing: border-box;}
+
+/* 按钮背景色 */
+.btn_bg {
+  background-color:$base-color;
+  background-image: linear-gradient(to bottom, #e6b56b, #a76e1b);
+  transition: background 0.3s;
+}
+.btn_bg:hover{
+  background:$base-color;
+}
+
+/* 滚动条 */
+/*定义滚动条高宽及背景
+ 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+	width:5px;
+	height:5px;
+	background-color:transparent;
+}
+/*定义滚动条轨道
+ 内阴影+圆角*/
+::-webkit-scrollbar-track {
+border-radius: 3px;
+background-color: transparent;
+}
+/*定义滑块
+ 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+border-radius: 3px;
+background-color: $base-color;
+}
+
+
+
+//common
+.ivu-breadcrumb-item-link span{
+    color:$base-color;
+    cursor: default;
+}
+
+
+
+
+

@@ -1,0 +1,49 @@
+// ======================sass变量==========================
+$base-color:#03a9f4;
+$min-height:100vh;
+$main-width:1200px;
+$border-color:#ffeb3b;
+
+
+@mixin gradient-bg {
+  background-image: linear-gradient(to right, #e0c396, #c5934a);
+  background-image: -webkit-gradient(linear, left top, right top, from(#e0c396), to(#c5934a));
+}
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+@mixin flex {
+  display: flex;
+  display: -webkit-flex;
+}
+
+@mixin mask {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
