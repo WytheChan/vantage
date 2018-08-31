@@ -116,6 +116,37 @@ background-color: $base-color;
     cursor: default;
 }
 
+.about-title {
+	&.border-top {
+	  border-left: 5px solid $border-color;
+	  padding-left: 20px;
+	}
+
+	&.border-bottom {
+	  .etitle::after {
+		content: "";
+		display: block;
+		width: 100px;
+		height: 5px;
+		margin: 20px 0 0;
+		background: $border-color;
+	  }
+	}
+
+	.etitle {
+	  font-size: 14px;
+	  color: $base-color;
+	  font-weight: bold;
+	}
+
+	.ctitle {
+	  margin-top: 20px;
+	  font-size: 20px;
+	  font-weight: bold;
+	  color: #333;
+	}
+}
+
 
 
 

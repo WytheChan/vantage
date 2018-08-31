@@ -3,7 +3,7 @@
     <my-header></my-header>
     <router-view/>
     <my-footer></my-footer>
-     <BackTop></BackTop>
+     <BackTop title="返回顶部"></BackTop>
   </div>
 </template>
 

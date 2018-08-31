@@ -5,46 +5,47 @@
         </router-link>
         <ul class="list">
             <li>
-                <a href="#">
+                <a  @click="changeLang('cn')">
                    中文
                   <img src="../assets/img/flag-cn.png" alt="">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a  @click="changeLang('en')">
                     英文
                     <img src="../assets/img/flag-en.png" alt="">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a   @click="changeLang('jp')">
                     日本語
                     <img src="../assets/img/flag-jp.png" alt="">
                 </a>
             </li>
             <li>
-                <router-link to="/#">联系我们</router-link>
+                <router-link to="/#">{{$t("about.contact")}}</router-link>
             </li>
             <li>
-                <router-link to="/#">热门职位</router-link>
+                <router-link to="/#">{{$t("nav.hotjob")}}</router-link>
             </li>
         </ul>
         <nav >
-            <router-link to="/shouye">首页</router-link>
-            <router-link to="/about">关于</router-link>
-            <router-link to="/#">服务项目</router-link>
-            <router-link to="/#">精英计划</router-link>
-            <router-link to="/#">行业领域</router-link>
-            <router-link to="/#">最新资讯</router-link>
-            <router-link to="/#">兼职猎头</router-link>
+            <router-link to="/shouye">{{$t("nav.home")}}</router-link>
+            <router-link to="/about">{{$t("nav.about")}}</router-link>
+            <router-link to="/service">{{$t("nav.service")}}</router-link>
+            <router-link to="/#">{{$t("nav.plan")}}</router-link>
+            <router-link to="/#">{{$t("nav.Industry")}}</router-link>
+            <router-link to="/#">{{$t("nav.information")}}</router-link>
+            <router-link to="/#">{{$t("nav.hunter")}}</router-link>
         </nav>
         <div class="search">
-            <input type="text" v-model="search" placeholder="职位搜索" @keydown="searchJobByKey">
+            <input type="text" v-model="search" :placeholder="$t('searchPlaceholder')" @keydown="searchJobByKey">
             <i class="fa fa-search" @click="searchJob"></i>
         </div>
     </header>
 </template>
 <script>
+import Util from "../lib/util.js";
 export default {
   data() {
     return {
@@ -52,6 +53,9 @@ export default {
     };
   },
   methods: {
+    _getLang() {
+      this.$i18n.locale = Util.getLang();
+    },
     searchJob() {
       //职位搜索
       console.log(this.search);
@@ -61,7 +65,20 @@ export default {
       if (e.keyCode === 13) {
         console.log(this.search);
       }
+    },
+    changeLang(lang) {
+      //设置语言，保存起来
+      Util.setLang(lang);
+
+      //切换语言
+      this.$store.commit("changeLang", lang);
+
+      this.$i18n.locale = this.$store.state.lang;
     }
+  },
+  computed: {},
+  created() {
+    this._getLang();
   }
 };
 </script>
@@ -80,14 +97,14 @@ header {
         color: #fff;
       }
     }
-    .search{
-        border: 2px solid #fff;
-        input{
-            color: #fff;
-        }
-        // .fa{
-        //     color: #fff;
-        // }
+    .search {
+      border: 2px solid #fff;
+      input {
+        color: #fff;
+      }
+      // .fa{
+      //     color: #fff;
+      // }
     }
   }
   .router-link-active {

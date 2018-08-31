@@ -101,7 +101,7 @@ footer {
     float: left;
     color: #fff;
     & ~ dl {
-      margin-left: 9%;
+      margin-left: 6%;
     }
     dt {
       font-size: 14px;
@@ -122,7 +122,8 @@ footer {
     }
   }
   .qrcode-main {
-    float: right;
+    float: left;
+    margin-left: 6%;
     img {
       width: 120px;
       height: auto;
