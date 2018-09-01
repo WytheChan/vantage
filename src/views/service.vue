@@ -154,10 +154,11 @@ export default {
           margin: 30px 0 0 30px;
           font-size: 14px;
           line-height: 2;
-          color: #333;
+          color: $font-color;
         }
         .about-img {
           width: 50%;
+           height: auto;
         }
 
         &#fangan {
@@ -192,7 +193,7 @@ export default {
                   left: 3px;
                   font-size: 16px;
                   font-weight: bold;
-                  color: #333;
+                  color: $font-color;
                 }
               }
               p {

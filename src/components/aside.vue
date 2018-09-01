@@ -60,19 +60,21 @@ aside {
       display: block;
       margin: 0 0 20px;
       font-size: 14px;
-      color: #333;
-      white-space: nowrap;
+      color: $font-color;
+      position: relative;
+      line-height: 1.5;
       &:hover {
         color: $base-color;
       }
       &::before {
         content: "";
-        display: inline-block;
+        position:absolute;
+        top: 8px;
+        left: -15px;
         width: 6px;
         height: 6px;
         border-radius: 50%;
         border: 1px solid $base-color;
-        margin: 0 10px 3px 0;
       }
       &.on {
         color: $base-color;

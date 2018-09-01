@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Shouye from '../views/shouye'
 import About from '../views/about.vue'
 import Service from '../views/service.vue'
+import Plan from '../views/plan.vue'
 
 Vue.use(Router)
 
@@ -26,6 +27,10 @@ export default new Router({
     {
       path:'/service',
       component:Service
+    },
+    {
+      path:'/plan',
+      component:Plan
     }
   ]
 })

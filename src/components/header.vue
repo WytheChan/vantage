@@ -33,7 +33,7 @@
             <router-link to="/shouye">{{$t("nav.home")}}</router-link>
             <router-link to="/about">{{$t("nav.about")}}</router-link>
             <router-link to="/service">{{$t("nav.service")}}</router-link>
-            <router-link to="/#">{{$t("nav.plan")}}</router-link>
+            <router-link to="/plan">{{$t("nav.plan")}}</router-link>
             <router-link to="/#">{{$t("nav.Industry")}}</router-link>
             <router-link to="/#">{{$t("nav.information")}}</router-link>
             <router-link to="/#">{{$t("nav.hunter")}}</router-link>
@@ -147,7 +147,7 @@ header {
     a {
       margin: 0 0 0 30px;
       font-size: 16px;
-      color: #333;
+      color: $font-color;
       &:hover {
         color: $base-color;
       }
@@ -164,7 +164,7 @@ header {
       width: 80%;
       height: 100%;
       font-size: 14px;
-      color: #333;
+      color: $font-color;
       text-indent: 0.5em;
       &::placeholder {
         color: #999;

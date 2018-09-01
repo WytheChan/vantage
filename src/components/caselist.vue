@@ -36,7 +36,7 @@ export default {
       padding-left: 20px;
       border-left: 5px solid $border-color;
       font-size: 18px;
-      color: #333;
+      color: $font-color;
     }
 
     p {

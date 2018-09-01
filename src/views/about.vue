@@ -176,7 +176,7 @@ export default {
             left: 50%;
             top: 120px;
             font-size: 14px;
-            color: #333;
+            color: $font-color;
           }
         }
 
@@ -190,7 +190,7 @@ export default {
             right: 100px;
             top: 64px;
             font-size: 16px;
-            color: #333;
+            color: $font-color;
           }
 
           img {
@@ -230,7 +230,7 @@ export default {
             margin-top: 20px;
             font-size: 20px;
             font-weight: bold;
-            color: #333;
+            color: $font-color;
           }
         }
 
@@ -240,7 +240,7 @@ export default {
           margin: 30px 0 0;
           line-height: 20px;
           font-size: 14px;
-          color: #333;
+          color: $font-color;
           cursor: default;
         }
         .contact-info{

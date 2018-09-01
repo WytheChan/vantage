@@ -64,7 +64,7 @@ export default {
         border-left: 5px solid $border-color;
         font-size: 16px;
         font-weight: bold;
-        color: #333;
+        color: $font-color;
       }
       p {
         margin: 20px 0 10px;

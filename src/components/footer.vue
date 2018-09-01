@@ -5,48 +5,48 @@
             <dt>关于</dt>
             <dd>
                 <router-link to="/about">公司概况</router-link>
-                <router-link to="/">我们的承诺</router-link>
+                <router-link to="/about">我们的承诺</router-link>
             </dd>
              <dd>
-                <router-link to="/">企业定位</router-link>
-                <router-link to="/">公司动态</router-link>
+                <router-link to="/about">企业定位</router-link>
+                <router-link to="/about">公司动态</router-link>
             </dd>
              <dd>
-                <router-link to="/">成功案例</router-link>
-                <router-link to="/">联系我们</router-link>
+                <router-link to="/about">成功案例</router-link>
+                <router-link to="/about">联系我们</router-link>
             </dd>
         </dl>
         <dl>
             <dt>服务项目</dt>
             <dd>
-                <router-link to="/">企业定制化人才解决方案</router-link>
+                <router-link to="/service">企业定制化人才解决方案</router-link>
             </dd>
              <dd>
-                <router-link to="/">候选人专家资讯服务</router-link>
+                <router-link to="/service">候选人专家资讯服务</router-link>
             </dd>
              <dd>
-                <router-link to="/">企业附加值服务定位</router-link>
+                <router-link to="/service">企业附加值服务定位</router-link>
             </dd>
             <dd>
-                <router-link to="/">高端人才服务</router-link>
+                <router-link to="/service">高端人才服务</router-link>
             </dd>
         </dl>
         <dl>
             <dt>精英计划</dt>
             <dd>
-                <router-link to="/">精英计划</router-link>
+                <router-link to="/plan">精英计划</router-link>
             </dd>
              <dd>
-                <router-link to="/">企业发展+新人才的需求的理解与探讨</router-link>
+                <router-link to="/plan">企业发展+新人才的需求的理解与探讨</router-link>
             </dd>
             <dd>
-                <router-link to="/">企业委托流程</router-link>
+                <router-link to="/plan">企业委托流程</router-link>
             </dd>
             <dd>
-                <router-link to="/">企业对人才的甄选和面试</router-link>
+                <router-link to="/plan">企业对人才的甄选和面试</router-link>
             </dd>
             <dd>
-                <router-link to="/">人才到位的跟踪</router-link>
+                <router-link to="/plan">人才到位的跟踪</router-link>
             </dd>
         </dl>
         <dl>
