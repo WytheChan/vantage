@@ -5,6 +5,30 @@ $main-width:1200px;
 $border-color:#ffeb3b;
 $font-color:#333;
 
+@mixin page{
+  min-height: $min-height;
+  padding: 100px 0 0;
+  .topimg{
+    width: 100%;
+    height: auto;
+  }
+  .page-main{
+    width: 90%;
+    margin: 0 auto;
+    .page-content{
+      width: 90%;
+      width: 80%;
+      margin: 50px 0 50px 20%;
+      .page-item{
+        padding: 50px;
+        margin: 50px 0;
+        &:nth-of-type(2n){
+          background: #f5f5f5;
+        }
+      }
+    }
+  }
+}
 
 @mixin gradient-bg {
   background-image: linear-gradient(to right, #e0c396, #c5934a);

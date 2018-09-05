@@ -4,6 +4,9 @@ import Shouye from '../views/shouye'
 import About from '../views/about.vue'
 import Service from '../views/service.vue'
 import Plan from '../views/plan.vue'
+import Hangye from '../views/hangye.vue'
+import Information from '../views/information.vue'
+import Hunter from '../views/hunter.vue'
 
 Vue.use(Router)
 
@@ -31,6 +34,18 @@ export default new Router({
     {
       path:'/plan',
       component:Plan
+    },
+    {
+      path:'/hangye',
+      component:Hangye
+    },
+    {
+      path:'/information',
+      component:Information
+    },
+    {
+      path:'/hunter',
+      component:Hunter
     }
   ]
 })

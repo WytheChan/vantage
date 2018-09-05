@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about ">
     <img src="../assets/img/about-1.jpg" alt="" class="topimg">
     <div class="about-main">
       <my-aside :list="titleList"></my-aside>
@@ -48,7 +48,7 @@
             <p class="etitle">Company News</p>
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
-          <news-list :list="newsList"></news-list>
+          <news-list :list="newsList" :pv="true"></news-list>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">

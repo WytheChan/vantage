@@ -157,7 +157,7 @@ export default {
         &#plan {
           padding: 50px;
           .about-title {
-            width: 40%;
+            width: 25%;
           }
           .stitle {
             margin-top: 50px;

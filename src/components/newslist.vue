@@ -8,7 +8,7 @@
           </div>
           <div class="news-time">
             <time>{{item.time}}</time>
-            <span>浏览量：{{item.pv}}</span>
+            <span v-if="pv">浏览量：{{item.pv}}</span>
           </div>
       </li>
       <!-- <li class="news-item clearfix" @click="lookNews">
@@ -26,7 +26,16 @@
 </template>
 <script>
 export default {
-  props: ["list"],
+  props:{
+    list:{
+      type:Array,
+      default:[]
+    },
+    pv:{
+      type:Boolean,
+      default:false
+    }
+  },
   methods:{
     lookNews(e){
       var id=e.currentTarget.dataset.id

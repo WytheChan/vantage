@@ -4,7 +4,7 @@ const message = {
     about: 'アバウト',
     service: 'サービス',
     plan: 'エリート計画',
-    Industry: '業界の分野',
+    hangye: '業界の分野',
     information:'インフォメーション',
     hunter:'パートタイムヘッドハンター',
     contact:'お問い合わせ',
@@ -61,38 +61,51 @@ const message = {
     rencai:'高端人才服务',
     rencai_text:'针对高端人才，拥有一个专业的顾问团队，特别定制服务。',
   },
-  plan:{
-    title:'精英计划',
-    stitle:'委托：',
-    content:'以专业解决企业用人需求是我们的价值所在，凭借专业优势达至人尽其才，令企业发展至更高层的级别。',
-    stitle_2:'专业优势：',
-    youshi_list:`
-    （1）专业、专注、质量<br/>
-    （2）网络广泛、快速精准<br/>
-    （3）愉快合作、发掘最佳<br/>
-    （4）专业培训、与时俱进<br/>
-    （5）最新资讯分享`
+  plan: { //精英计划
+    plan: {
+      title: ' エリート計画',
+      stitle: ' 专业优势：',
+      content: ' 以专业解决企业用人需求是我们的价值所在，凭借专业优势达至人尽其才，令企业发展至更高层的级别。',
+      youshi: `（1）专业、专注、质量<br/>（2）网络广泛、快速精准<br/>（3）愉快合作、发掘最佳<br/>（4）专业培训、与时俱进<br/>（5）最新资讯分享`
+    },
+    plan_list:{
+      tantao: {
+        icon:'/static/plan/plan-icon1.png',
+        title: '企业发展+新人才需求的理解与探讨',
+        stitle: '委托：',
+        content: '根据企业委托，全面沟通发展战略、组织关系、人才缺口，提供职位建议，搜寻最佳人选。'
+      },
+      liucheng: {
+        icon:'/static/plan/plan-icon2.png',
+        title: '企业委托流程',
+        stitle: '跟进：',
+        content: '配合企业对人才的甄选与面试，安排适合的面试时间与地点，如需要并安排差旅费用等事宜，并在面试结束后分别联系企业与人选获取反馈信息。'
+      },
+      mianshi: {
+        icon:'/static/plan/plan-icon3.png',
+        title: '企业对人才的甄选与面试',
+        stitle: '执行：',
+        content: '在全网数据库和目标公司中快速搜寻合适人选，专业分析，突出优势与实力，推荐面见。'
+      },
+      genzong: {
+        icon:'/static/plan/plan-icon4.png',
+        title: '人才到位的跟踪',
+        stitle: '跟踪：',
+        content: '人选确定后协助薪资商议与谈判，提供人选背景资料，入职后时刻跟踪工作情况，给出及时专业指导。'
+      },
+    },
   },
-  tantao:{
-    title: '企业发展+新人才需求的理解与探讨',
-    stitle:'委托：',
-    content:'根据企业委托，全面沟通发展战略、组织关系、人才缺口，提供职位建议，搜寻最佳人选。'
+  hangye:{  //行业
+    more:'もっと'
   },
-  liucheng:{
-    title: '企业委托流程',
-    stitle:'跟进：',
-    content:'配合企业对人才的甄选与面试，安排适合的面试时间与地点，如需要并安排差旅费用等事宜，并在面试结束后分别联系企业与人选获取反馈信息。'
+  information:{   //最新资讯
+    news:'会社ニュース',
+    activity:'会社活動',
+    advise:'プロフェッショナル アドバイス'
   },
-  mianshi:{
-    title: '企业对人才的甄选与面试',
-    stitle:'执行：',
-    content:'在全网数据库和目标公司中快速搜寻合适人选，专业分析，突出优势与实力，推荐面见。'
-  },
-  genzong:{
-    title: '人才到位的跟踪',
-    stitle:'跟踪：',
-    content:'人选确定后协助薪资商议与谈判，提供人选背景资料，入职后时刻跟踪工作情况，给出及时专业指导。'
-  },
+  hunter:{  //兼职猎头
+    part_time:'パートタイムヘッドハンター'
+  }
 }
 
 export default message

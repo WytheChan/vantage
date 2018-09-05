@@ -12,7 +12,7 @@
             </li>
             <li>
                 <a  @click="changeLang('en')">
-                    英文
+                    English
                     <img src="../assets/img/flag-en.png" alt="">
                 </a>
             </li>
@@ -34,9 +34,9 @@
             <router-link to="/about">{{$t("nav.about")}}</router-link>
             <router-link to="/service">{{$t("nav.service")}}</router-link>
             <router-link to="/plan">{{$t("nav.plan")}}</router-link>
-            <router-link to="/#">{{$t("nav.Industry")}}</router-link>
-            <router-link to="/#">{{$t("nav.information")}}</router-link>
-            <router-link to="/#">{{$t("nav.hunter")}}</router-link>
+            <router-link to="/hangye">{{$t("nav.hangye")}}</router-link>
+            <router-link to="/information">{{$t("nav.information")}}</router-link>
+            <router-link to="/hunter">{{$t("nav.hunter")}}</router-link>
         </nav>
         <div class="search">
             <input type="text" v-model="search" :placeholder="$t('searchPlaceholder')" @keydown="searchJobByKey">
@@ -74,6 +74,8 @@ export default {
       this.$store.commit("changeLang", lang);
 
       this.$i18n.locale = this.$store.state.lang;
+
+      location.reload()
     }
   },
   computed: {},

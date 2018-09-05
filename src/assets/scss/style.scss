@@ -115,7 +115,7 @@ background-color: $base-color;
     color:$base-color;
     cursor: default;
 }
-
+//大标题
 .about-title {
 	&.border-top {
 	  border-left: 5px solid $border-color;
@@ -144,6 +144,22 @@ background-color: $base-color;
 	  font-size: 25px;
 	  font-weight: bold;
 	  color: #333;
+	}
+}
+// 列表标题
+.item-title{
+	position: relative;
+	font-size: 25px;
+	padding-left: 30px;
+	color:$font-color;
+	&::before{
+		content:'';
+		position: absolute;
+		left: 0;top: 0;
+		width: 5px;
+		height: 100%;
+		margin-right: 30px;
+		background: $border-color;
 	}
 }
 

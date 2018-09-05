@@ -4,7 +4,7 @@ const message = {
     about: '关于',
     service: '服务项目',
     plan: '精英计划',
-    Industry: '行业领域',
+    hangye: '行业领域',
     information: '最新资讯',
     hunter: '兼职猎头',
     hotjob: '热门职位'
@@ -94,6 +94,17 @@ const message = {
       },
     },
   },
+  hangye:{  //行业
+    more:'了解更多'
+  },
+  information:{    //最新资讯
+    news:'公司新闻',
+    activity:'公司活动',
+    advise:'专业建议'
+  },
+  hunter:{  //兼职猎头
+    part_time:'兼职猎头'
+  }
 }
 
 export default message
