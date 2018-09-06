@@ -2,7 +2,7 @@
   <div class="about ">
     <img src="../assets/img/about-1.jpg" alt="" class="topimg">
     <div class="about-main">
-      <my-aside :list="titleList"></my-aside>
+      <my-aside :list="titleList" :active="active"></my-aside>
       <div class="about-content">
         <Breadcrumb>
           <BreadcrumbItem to="/shouye">{{$t("nav.home")}}</BreadcrumbItem>
@@ -73,6 +73,7 @@
 import CaseList from "components/caselist.vue";
 import NewsList from "components/newslist.vue";
 import MyAside from "components/aside.vue";
+import Anchors from "../common/js/anchors.js"
 
 export default {
   data() {
@@ -102,16 +103,23 @@ export default {
           id: "#contact",
           title: this.$t("about.contact")
         }
-      ]
+      ],
+      active:0,
     };
   },
   methods:{
-    _handleAnchors(){
-      console.log()
+    _handleAnchors(){   //选中左边对应的标题，和滚动到显示标题内容的模块
+      var id = this.$route.params.id
+      var active = this.active
+
+      Anchors(id,active,'gk')
     }
   },
   created(){
-     console.log(this.$route.params.id)
+     
+  },
+  mounted(){
+    this._handleAnchors()
   },
   components: {
     CaseList,

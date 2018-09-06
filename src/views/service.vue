@@ -2,7 +2,7 @@
   <div class="about">
     <img src="../assets/img/service/service-1.jpg" alt="" class="topimg">
     <div class="about-main">
-      <my-aside :list="titleList" class="aside"></my-aside>
+      <my-aside :list="titleList" class="aside" :active="active"></my-aside>
       <div class="about-content">
         <Breadcrumb>
           <BreadcrumbItem to="/shouye">{{$t("nav.home")}}</BreadcrumbItem>
@@ -72,6 +72,7 @@
 </template>
 <script>
 import MyAside from "components/aside.vue";
+import Anchors from "../common/js/anchors.js"
 
 export default {
   data() {
@@ -94,7 +95,8 @@ export default {
           title: this.$t("service.rencai")
         }
       ],
-      zixunList: ""
+      zixunList: "",
+      active:0,
     };
   },
   components: {
@@ -108,12 +110,21 @@ export default {
         arr.push(list[i]);
       }
       this.zixunList = arr;
+    },
+    _handleAnchors(){   //选中左边对应的标题，和滚动到显示标题内容的模块
+      var id = this.$route.params.id
+      var active = this.active
+
+      Anchors(id,active,'fangan')
     }
   },
   computed: {},
   created() {
     this._getZixunList();
-  }
+  },
+  mounted(){
+    this._handleAnchors()
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -13,7 +13,7 @@
             </dd>
              <dd>
                 <router-link to="/about" title="成功案例">{{$t('about.case')}}</router-link>
-                <router-link to="/about" title="联系我们">{{$t('about.contact')}}</router-link>
+                <router-link to="/about/contact" title="联系我们">{{$t('about.contact')}}</router-link>
             </dd>
         </dl>
         <dl>

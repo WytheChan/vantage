@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li>
-                <router-link to="/about:contact">{{$t("about.contact")}}</router-link>
+                <router-link to="/about/contact">{{$t("about.contact")}}</router-link>
             </li>
             <li>
                 <router-link to="/hangye">{{$t("nav.hotjob")}}</router-link>
@@ -31,7 +31,7 @@
         </ul>
         <nav >
             <router-link to="/shouye">{{$t("nav.home")}}</router-link>
-            <router-link to="/about">{{$t("nav.about")}}</router-link>
+            <router-link to="/about/gk">{{$t("nav.about")}}</router-link>
             <router-link to="/service">{{$t("nav.service")}}</router-link>
             <router-link to="/plan">{{$t("nav.plan")}}</router-link>
             <router-link to="/hangye">{{$t("nav.hangye")}}</router-link>
