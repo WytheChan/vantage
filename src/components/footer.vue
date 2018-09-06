@@ -2,81 +2,81 @@
     <footer class="clearfix">
         <div class="clearfix">
             <dl>
-            <dt>关于</dt>
+            <dt>{{$t('nav.about')}}</dt>
             <dd>
-                <router-link to="/about">公司概况</router-link>
-                <router-link to="/about">我们的承诺</router-link>
+                <router-link to="/about" title="公司概况">{{$t('about.gk')}}</router-link>  
+                <router-link to="/about" title="我们的承诺">{{$t('about.promise')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/about">企业定位</router-link>
-                <router-link to="/about">公司动态</router-link>
+                <router-link to="/about" title="企业定位">{{$t('about.dw')}}</router-link>
+                <router-link to="/about" title="公司动态">{{$t('about.dynamic')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/about">成功案例</router-link>
-                <router-link to="/about">联系我们</router-link>
+                <router-link to="/about" title="成功案例">{{$t('about.case')}}</router-link>
+                <router-link to="/about" title="联系我们">{{$t('about.contact')}}</router-link>
             </dd>
         </dl>
         <dl>
-            <dt>服务项目</dt>
+            <dt>{{$t('nav.service')}}</dt>
             <dd>
-                <router-link to="/service">企业定制化人才解决方案</router-link>
+                <router-link to="/service" title="方案">{{$t('service.fangan')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/service">候选人专家资讯服务</router-link>
+                <router-link to="/service" title="咨询服务">{{$t('service.zixun')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/service">企业附加值服务定位</router-link>
+                <router-link to="/service" title="定位">{{$t('service.dingwei')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/service">高端人才服务</router-link>
+                <router-link to="/service" title="人才">{{$t('service.rencai')}}</router-link>
             </dd>
         </dl>
         <dl>
-            <dt>精英计划</dt>
+            <dt>{{$t('nav.plan')}}</dt>
             <dd>
-                <router-link to="/plan">精英计划</router-link>
+                <router-link to="/plan">{{$t('nav.plan')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/plan">企业发展+新人才的需求的理解与探讨</router-link>
+                <router-link to="/plan" title="探讨">{{$t('plan.plan_list.tantao.title')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/plan">企业委托流程</router-link>
+                <router-link to="/plan" title="流程">{{$t('plan.plan_list.liucheng.title')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/plan">企业对人才的甄选和面试</router-link>
+                <router-link to="/plan" title="面试">{{$t('plan.plan_list.mianshi.title')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/plan">人才到位的跟踪</router-link>
+                <router-link to="/plan" title="跟踪">{{$t('plan.plan_list.genzong.title')}}</router-link>
             </dd>
         </dl>
         <dl>
-            <dt>行业领域</dt>
+            <dt>{{$t('nav.hangye')}}</dt>
             <dd>
-                <router-link to="/">高科技</router-link>
-                <router-link to="/">零售业</router-link>
+                <router-link to="/" title="高科技">{{$t('hangye.footer.gkj')}}</router-link>
+                <router-link to="/" title="零售业">{{$t('hangye.footer.ls')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/">IT/互联网</router-link>
-                <router-link to="/">金融财会</router-link>
+                <router-link to="/" title="IT/互联网">{{$t('hangye.footer.it')}}</router-link>
+                <router-link to="/" title="金融财会">{{$t('hangye.footer.jr')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/">市场传媒</router-link>
-                <router-link to="/">其它</router-link>
+                <router-link to="/" title="市场传媒">{{$t('hangye.footer.cm')}}</router-link>
+                <router-link to="/" title="其它">{{$t('hangye.footer.other')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/">制造业</router-link>
+                <router-link to="/" title="制造业">{{$t('hangye.footer.zz')}}</router-link>
             </dd>
         </dl>
          <dl>
-            <dt>最新资讯</dt>
+            <dt>{{$t('nav.information')}}</dt>
             <dd>
-                <router-link to="/">公司新闻</router-link>
+                <router-link to="/" title="公司新闻">{{$t('information.news')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/">公司活动</router-link>
+                <router-link to="/" title="公司活动">{{$t('information.activity')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/">专业建议</router-link>
+                <router-link to="/" title="专业建议">{{$t('information.advise')}}</router-link>
             </dd>
         </dl>
         <div class="qrcode-main">
@@ -85,7 +85,7 @@
         </div>
         </div>
         
-        <p class="copyright">Copyright 2018 vantage-hy.com All Rights Reserved</p>
+        <p class="copyright">Copyright 2018 vantage-hr.com All Rights Reserved</p>
     </footer>
 </template>
 <script>
@@ -112,9 +112,11 @@ footer {
     dd {
       margin: 20px 0;
       a {
+        display: inline-block;
         margin-right: 10px;
         font-size: 12px;
         color: #fff;
+        max-width: 200px;
         &:hover {
           text-decoration: underline;
         }

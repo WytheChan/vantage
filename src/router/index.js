@@ -24,7 +24,7 @@ export default new Router({
       component: Shouye
     },
     {
-      path:'/about',
+      path:'/about:id',
       component:About
     },
     {

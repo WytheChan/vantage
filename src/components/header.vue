@@ -23,10 +23,10 @@
                 </a>
             </li>
             <li>
-                <router-link to="/#">{{$t("about.contact")}}</router-link>
+                <router-link to="/about:contact">{{$t("about.contact")}}</router-link>
             </li>
             <li>
-                <router-link to="/#">{{$t("nav.hotjob")}}</router-link>
+                <router-link to="/hangye">{{$t("nav.hotjob")}}</router-link>
             </li>
         </ul>
         <nav >

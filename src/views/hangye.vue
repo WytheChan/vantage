@@ -41,10 +41,10 @@ export default {
     @include page;
     .job-list{
         margin: 50px 0;
-        padding-left: 50px;
         li{
             position: relative;
             padding: 30px 0;
+            padding-left: 50px;
             border-bottom: 1px solid #999;
             &:nth-of-type(1){
                 border-top: 1px solid #999;

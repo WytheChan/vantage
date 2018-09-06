@@ -30,11 +30,13 @@
             <ul class="plan-list">
                 <li v-for="(item,index) in planList" :key="index">
                    <img :src="item.icon" alt="" class="pull-left">
-                    <div class="about-title border-bottom">
-                        <p class="ctitle">{{item.title}}</p>
+                    <div class="pull-left plan-item-right">
+                        <div class="about-title border-bottom">
+                            <p class="ctitle">{{item.title}}</p>
+                        </div>
+                        <h3>{{item.stitle}} :</h3>
+                        <p class="about-text">{{item.content}}</p>
                     </div>
-                    <h3>{{item.stitle}} :</h3>
-                    <p class="about-text">{{item.content}}</p>
                 </li>
                 <!-- <li>
                     <img src="../../static/plan/plan-icon1.png" alt="" class="pull-left">
@@ -186,9 +188,12 @@ export default {
                   display: block;
                   width: 100px;
                   height: 5px;
-                  margin: 0px 0 20px 170px;
+                  margin: 0px 0 20px 0px;
                   background: $border-color;
                 }
+              }
+              .plan-item-right{
+                width: 80%;
               }
             }
           }

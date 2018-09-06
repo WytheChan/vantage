@@ -62,12 +62,12 @@ export default {
     border-top: 1px solid #d8d8d8;
     cursor: pointer;
     .thumbnail{
-      width: 270px;
+      width:30%;
       height: auto;
     }
     .pull-left:not(img) {
       width: 65%;
-      margin: 20px 0 0 50px;
+      padding: 20px 0 0 50px;
       h3 {
         padding-left: 20px;
         border-left: 5px solid $border-color;

@@ -9,10 +9,17 @@
                     <BreadcrumbItem><span>{{$t("nav.hunter")}}</span></BreadcrumbItem>
                 </Breadcrumb>
                 <!-- 兼职猎头 -->
-                <div class="page-item" id="part-time">
-                     <div class="about-title border-top">
-                        <p class="etitle">Part-time Headhunting</p>
-                        <p class="ctitle">{{$t('hunter.part_time')}}</p>
+                <div class="page-item clearfix" id="part-time">
+                    <img src="../../static/hunter/hunter-2.jpg" alt="">
+                    <div class="page-right pull-left">
+                        <div class="about-title border-top">
+                            <p class="etitle">Part-time Headhunting</p>
+                            <p class="ctitle">{{$t('hunter.part_time')}}</p>
+                        </div>
+                        <p class="page-text">
+                            {{$t('hunter.content')}}
+                        </p>
+                        <router-link to="/#" id="join">{{$t('hunter.join')}}</router-link>
                     </div>            
                 </div>
                  
@@ -29,6 +36,34 @@ export default {
 @import '../assets/scss/base.scss';
 .hunter{
     @include page;
+    #part-time{
+        position: relative;
+        padding: 0;
+        img{
+            float: left;
+            width: 40%;
+            height: auto;
+        }
+        .page-right{
+            width: 60%;
+            padding: 50px 30px 0 50px;
+            .page-text{
+                margin:50px 0 50px 30px;
+                font-size: 14px;
+                line-height: 25px;
+                color: $font-color;
+            }
+            #join{
+                // display: block;
+                margin-left: 30px;
+                padding:10px 40px;
+                border: 2px solid $base-color;
+                font-size: 14px;
+                font-weight: bold;
+                color: $base-color;
+            }
+        }
+    }
 }
 </style>
 
