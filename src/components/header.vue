@@ -32,10 +32,10 @@
         <nav >
             <router-link to="/shouye">{{$t("nav.home")}}</router-link>
             <router-link to="/about/gk">{{$t("nav.about")}}</router-link>
-            <router-link to="/service">{{$t("nav.service")}}</router-link>
-            <router-link to="/plan">{{$t("nav.plan")}}</router-link>
+            <router-link to="/service/fangan">{{$t("nav.service")}}</router-link>
+            <router-link to="/plan/plan">{{$t("nav.plan")}}</router-link>
             <router-link to="/hangye">{{$t("nav.hangye")}}</router-link>
-            <router-link to="/information">{{$t("nav.information")}}</router-link>
+            <router-link to="/information/news">{{$t("nav.information")}}</router-link>
             <router-link to="/hunter">{{$t("nav.hunter")}}</router-link>
         </nav>
         <div class="search">
@@ -46,6 +46,7 @@
 </template>
 <script>
 import Util from "../lib/util.js";
+import axios from "../api/index.js"
 export default {
   data() {
     return {
@@ -54,7 +55,12 @@ export default {
   },
   methods: {
     _getLang() {
-      this.$i18n.locale = Util.getLang();
+      var lang = Util.getLang()
+      this.$i18n.locale = lang;
+      axios.get('index?lang='+lang)       //把语言标识发给后台
+          .then(res =>{
+            // console.log(res)
+          })
     },
     searchJob() {
       //职位搜索
@@ -75,7 +81,11 @@ export default {
 
       this.$i18n.locale = this.$store.state.lang;
 
-      location.reload()
+      axios.get('index?lang='+lang)    //把语言标识发给后台
+          .then(res =>{
+            console.log(res)
+            location.reload()
+          })
     }
   },
   computed: {},

@@ -73,7 +73,8 @@
 import CaseList from "components/caselist.vue";
 import NewsList from "components/newslist.vue";
 import MyAside from "components/aside.vue";
-import Anchors from "../common/js/anchors.js"
+import Anchors from "../common/js/anchors.js";
+import axios from "../api/index.js";
 
 export default {
   data() {
@@ -113,10 +114,16 @@ export default {
       var active = this.active
 
       Anchors(id,active,'gk')
+    },
+    _getPageData(){   //获取当前页面数据
+      axios.post('synopsis')
+          .then(res => {
+            console.log(res)
+          })
     }
   },
   created(){
-     
+     this._getPageData()
   },
   mounted(){
     this._handleAnchors()

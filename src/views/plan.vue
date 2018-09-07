@@ -2,7 +2,7 @@
   <div class="about">
     <img src="../../static/plan/plan-1.jpg" alt="" class="topimg">
     <div class="about-main">
-      <my-aside :list="titleList" class="aside"></my-aside>
+      <my-aside :list="titleList" class="aside" :active="active"></my-aside>
       <div class="about-content">
         <Breadcrumb>
           <BreadcrumbItem to="/shouye">{{$t("nav.home")}}</BreadcrumbItem>
@@ -28,7 +28,7 @@
         <div class="about-item clearfix plan-box">
           
             <ul class="plan-list">
-                <li v-for="(item,index) in planList" :key="index">
+                <li v-for="(item,index) in planList" :key="index" :id="titleList[index+1].id.slice(1)">
                    <img :src="item.icon" alt="" class="pull-left">
                     <div class="pull-left plan-item-right">
                         <div class="about-title border-bottom">
@@ -55,6 +55,7 @@
 </template>
 <script>
 import MyAside from "components/aside.vue";
+import Anchors from "../common/js/anchors.js";
 
 export default {
   data() {
@@ -81,7 +82,8 @@ export default {
           title: this.$t("plan.plan_list.genzong.title")
         }
       ],
-      planList: []
+      planList: [],
+      active:0,
     };
   },
   components: {
@@ -95,13 +97,22 @@ export default {
         arr.push(list[i]);
       }
       this.planList = arr;
+    },
+    _handleAnchors(){   //选中左边对应的标题，和滚动到显示标题内容的模块
+      var id = this.$route.params.id
+      var active = this.active
+
+      Anchors(id,active,'plan')
     }
   },
   computed: {},
   created() {
     this._getPlanList();
     console.log(this.planList)
-  }
+  },
+  mounted(){
+    this._handleAnchors()
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -28,11 +28,11 @@ export default new Router({
       component:About
     },
     {
-      path:'/service',
+      path:'/service/:id',
       component:Service
     },
     {
-      path:'/plan',
+      path:'/plan/:id',
       component:Plan
     },
     {
@@ -40,7 +40,7 @@ export default new Router({
       component:Hangye
     },
     {
-      path:'/information',
+      path:'/information/:id',
       component:Information
     },
     {

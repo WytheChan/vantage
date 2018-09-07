@@ -6,6 +6,9 @@ import router from './router'
 import store from './store'
 import iView from './iview'
 
+// import Api from './api/index.js';
+// Vue.prototype.$api = Api;
+
 //引入i18n插件和语言文件
 import VueI18n from 'vue-i18n'
 import cn from './common/lang/cn'

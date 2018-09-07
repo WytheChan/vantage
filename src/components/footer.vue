@@ -4,49 +4,49 @@
             <dl>
             <dt>{{$t('nav.about')}}</dt>
             <dd>
-                <router-link to="/about" title="公司概况">{{$t('about.gk')}}</router-link>  
-                <router-link to="/about" title="我们的承诺">{{$t('about.promise')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/gk" title="公司概况">{{$t('about.gk')}}</router-link>  
+                <router-link @click.native="_anchors" to="/about/promise" title="我们的承诺">{{$t('about.promise')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/about" title="企业定位">{{$t('about.dw')}}</router-link>
-                <router-link to="/about" title="公司动态">{{$t('about.dynamic')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/dw" title="企业定位">{{$t('about.dw')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/dynamic" title="公司动态">{{$t('about.dynamic')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/about" title="成功案例">{{$t('about.case')}}</router-link>
-                <router-link to="/about/contact" title="联系我们">{{$t('about.contact')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/case" title="成功案例">{{$t('about.case')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/contact" title="联系我们">{{$t('about.contact')}}</router-link>
             </dd>
         </dl>
         <dl>
             <dt>{{$t('nav.service')}}</dt>
             <dd>
-                <router-link to="/service" title="方案">{{$t('service.fangan')}}</router-link>
+                <router-link @click.native="_anchors" to="/service/fangan" title="方案">{{$t('service.fangan')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/service" title="咨询服务">{{$t('service.zixun')}}</router-link>
+                <router-link @click.native="_anchors" to="/service/zixun" title="咨询服务">{{$t('service.zixun')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/service" title="定位">{{$t('service.dingwei')}}</router-link>
+                <router-link @click.native="_anchors" to="/service/dingwei" title="定位">{{$t('service.dingwei')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/service" title="人才">{{$t('service.rencai')}}</router-link>
+                <router-link @click.native="_anchors" to="/service/rencai" title="人才">{{$t('service.rencai')}}</router-link>
             </dd>
         </dl>
         <dl>
             <dt>{{$t('nav.plan')}}</dt>
             <dd>
-                <router-link to="/plan">{{$t('nav.plan')}}</router-link>
+                <router-link @click.native="_anchors" to="/plan/plan">{{$t('nav.plan')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/plan" title="探讨">{{$t('plan.plan_list.tantao.title')}}</router-link>
+                <router-link @click.native="_anchors" to="/plan/tantao" title="探讨">{{$t('plan.plan_list.tantao.title')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/plan" title="流程">{{$t('plan.plan_list.liucheng.title')}}</router-link>
+                <router-link @click.native="_anchors" to="/plan/liucheng" title="流程">{{$t('plan.plan_list.liucheng.title')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/plan" title="面试">{{$t('plan.plan_list.mianshi.title')}}</router-link>
+                <router-link @click.native="_anchors" to="/plan/mianshi" title="面试">{{$t('plan.plan_list.mianshi.title')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/plan" title="跟踪">{{$t('plan.plan_list.genzong.title')}}</router-link>
+                <router-link @click.native="_anchors" to="/plan/genzong" title="跟踪">{{$t('plan.plan_list.genzong.title')}}</router-link>
             </dd>
         </dl>
         <dl>
@@ -70,13 +70,13 @@
          <dl>
             <dt>{{$t('nav.information')}}</dt>
             <dd>
-                <router-link to="/" title="公司新闻">{{$t('information.news')}}</router-link>
+                <router-link @click.native="_anchors" to="/information/news" title="公司新闻">{{$t('information.news')}}</router-link>
             </dd>
              <dd>
-                <router-link to="/" title="公司活动">{{$t('information.activity')}}</router-link>
+                <router-link @click.native="_anchors" to="/information/activity" title="公司活动">{{$t('information.activity')}}</router-link>
             </dd>
             <dd>
-                <router-link to="/" title="专业建议">{{$t('information.advise')}}</router-link>
+                <router-link @click.native="_anchors" to="/information/advise" title="专业建议">{{$t('information.advise')}}</router-link>
             </dd>
         </dl>
         <div class="qrcode-main">
@@ -89,7 +89,21 @@
     </footer>
 </template>
 <script>
-export default {};
+export default {
+    methods:{
+        _anchors(e){
+            var self = e.currentTarget
+            var id = this.$route.params.id
+            var dom = document.querySelector('#'+id)
+            if(dom){
+                 dom.scrollIntoView()
+            }
+        }
+    },
+    mounted(){
+        // this._anchors()
+    }
+};
 </script>
 <style lang="scss" scoped>
 @import "../assets/scss/base.scss";
