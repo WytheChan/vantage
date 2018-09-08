@@ -1,11 +1,18 @@
 <template>
-  <!-- <div class="case"> -->
+  <div class="case">
     <ul class="case-list">
         <li class="case-item" v-for="(item,index) in list" :key="index">
             <h3 class="case-title">{{item.title}}</h3>
-            <p>{{item.content}}</p>
-            <router-link to="/#">了解更多 ></router-link>
-            <time>{{item.time}}</time>
+            <p>
+               入职职位：{{item.title}} &nbsp;
+               企业信息：{{item.company}}  &nbsp;
+               岗位年薪：{{item.annual_salary}}  &nbsp;
+               寻猎周期：{{item.cycle}}  &nbsp;
+               上班地点：{{item.job_address}}  &nbsp;
+               入职人数：{{item.people_num}}人 &nbsp;
+            </p>
+            <router-link :to="`/#/${item.sc_id}`">了解更多 ></router-link>
+            <time>{{item.sc_time}}</time>
         </li>
       <!-- <li class="case-item">
         <h3 class="case-title">成功案例 创意总监 入职成功</h3>
@@ -14,7 +21,8 @@
         <time>2018-09-09</time>
       </li> -->
     </ul>
-  <!-- </div> -->
+    
+  </div>
 </template>
 <script>
 export default {

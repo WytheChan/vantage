@@ -32,6 +32,10 @@
             <p class="ctitle">{{$t('about.case')}}</p>
           </div>
           <case-list :list="caseList"></case-list>
+          <div class="page">
+            <span @click="jump" v-for="index in 3" :key="index"> {{ index }} </span>
+            
+          </div>
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
@@ -48,7 +52,7 @@
             <p class="etitle">Company News</p>
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
-          <news-list :list="newsList" :pv="true"></news-list>
+          <news-list :list="dynamicList" :pv="true"></news-list>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
@@ -112,21 +116,20 @@ export default {
     _handleAnchors(){   //选中左边对应的标题，和滚动到显示标题内容的模块
       var id = this.$route.params.id
       var active = this.active
-
       Anchors(id,active,'gk')
     },
-    _getPageData(){   //获取当前页面数据
-      axios.post('synopsis')
-          .then(res => {
-            console.log(res)
-          })
+    jump(e){
+      let pnum = e.currentTarget.innerText
+      this.$store.dispatch('getAboutData','synopsis?page='+pnum)
+      console.log(pnum)
     }
   },
   created(){
-     this._getPageData()
+
   },
   mounted(){
     this._handleAnchors()
+    this.$store.dispatch('getAboutData','synopsis')
   },
   components: {
     CaseList,
@@ -138,10 +141,20 @@ export default {
       //案例列表
       return this.$store.state.caseList;
     },
-    newsList() {
+    dynamicList() {
       //动态列表
-      return this.$store.state.newsList;
-    }
+      let oList = this.$store.state.dynamicList;
+      let nItem = {};
+      let arr = []
+      oList.forEach((item,index) => {        //把传过来的动态变量名解构成newslist组件里对应的变量
+        let  {head_img:thumbnail,article_time:time,title,aid:id,pv=0} = item
+        nItem = {thumbnail,time,title,id,pv}
+        // console.log(nItem)
+        arr.push(nItem)
+      })
+      return arr
+    },
+   
   }
 };
 </script>
@@ -266,6 +279,15 @@ export default {
           line-height: 2;
           font-size: 14px;
           color: #808080;
+        }
+        .page{
+          span{
+            font-size: 14px;
+            cursor: default;
+            &:hover{
+              color: $base-color;
+            }
+          }
         }
       }
     }

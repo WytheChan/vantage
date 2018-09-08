@@ -68,7 +68,7 @@ export default {
   computed: {
     newsList2() {
       //公司新闻列表
-      return this.$store.state.newsList2;
+      return this.$store.state.newsList;
     },
     activityList() {
       //公司活动列表

@@ -39,7 +39,7 @@ export default {
   methods:{
     lookNews(e){
       var id=e.currentTarget.dataset.id
-      console.log(id)
+      // console.log(id)
       this.$router.push('/shouye')
     }
   },
