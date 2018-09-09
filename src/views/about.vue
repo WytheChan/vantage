@@ -32,10 +32,7 @@
             <p class="ctitle">{{$t('about.case')}}</p>
           </div>
           <case-list :list="caseList"></case-list>
-          <div class="page">
-            <span @click="jump" v-for="index in 3" :key="index"> {{ index }} </span>
-            
-          </div>
+          <Page :total="aboutPage.page_case * 10"  show-elevator @on-change="fanye" class="page"/>
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
@@ -53,6 +50,7 @@
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
           <news-list :list="dynamicList" :pv="true"></news-list>
+          <Page :total="aboutPage.dynamic * 10"  show-elevator @on-change="fanye" class="page"/>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
@@ -61,11 +59,11 @@
             <p class="ctitle">{{$t('about.contact')}}</p>
 
             <p class="contact-info">
-              公司名称：广州寰逸企业管理咨询有限公司 <br />
-              电话：020-38921083<br />
-              地址：广州市天河区体育西路103号维多利广场B2307<br />
-              邮编：510620<br />
-              电子邮箱：info@vantage-hy.com<br />
+              {{$t('about.info.name')}}：广州寰逸企业管理咨询有限公司 <br />
+              {{$t('about.info.phone')}}：020-38921083<br />
+              {{$t('about.info.address')}}：广州市天河区体育西路103号维多利广场B2307<br />
+              {{$t('about.info.post')}}：510620<br />
+              {{$t('about.info.mail')}}：info@vantage-hy.com<br />
             </p>
           </div>
         </div>
@@ -118,18 +116,16 @@ export default {
       var active = this.active
       Anchors(id,active,'gk')
     },
-    jump(e){
-      let pnum = e.currentTarget.innerText
-      this.$store.dispatch('getAboutData','synopsis?page='+pnum)
-      console.log(pnum)
+    fanye(current){
+      //current 是分页组件返回的当前页码
+      this.$store.dispatch('getAboutData','synopsis?page='+current)
     }
   },
   created(){
-
+    this.$store.dispatch('getAboutData','synopsis')
   },
   mounted(){
     this._handleAnchors()
-    this.$store.dispatch('getAboutData','synopsis')
   },
   components: {
     CaseList,
@@ -149,12 +145,15 @@ export default {
       oList.forEach((item,index) => {        //把传过来的动态变量名解构成newslist组件里对应的变量
         let  {head_img:thumbnail,article_time:time,title,aid:id,pv=0} = item
         nItem = {thumbnail,time,title,id,pv}
-        // console.log(nItem)
         arr.push(nItem)
       })
+
       return arr
     },
-   
+    aboutPage(){
+      //案例列表和动态列表的总页数
+      return this.$store.state.aboutPage
+    },
   }
 };
 </script>
@@ -281,13 +280,9 @@ export default {
           color: #808080;
         }
         .page{
-          span{
-            font-size: 14px;
-            cursor: default;
-            &:hover{
-              color: $base-color;
-            }
-          }
+          text-align: center;
+          font-size: 12px;
+          transform: scale(0.9);
         }
       }
     }

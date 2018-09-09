@@ -32,10 +32,26 @@ const message = {
     dw: '企业定位',
     dw_text:'寰逸HR，是HR的专业合作伙伴及候选人的职业生涯规划师。',
     case: '成功案例',
+    case_list:{  //案例的类目
+      position:'入职职位',
+      company:'企业信息',
+      yealy:'岗位年薪',
+      cycle:'寻猎周期',
+      address:'上班地点',
+      number:'入职人数',
+      more:'了解更多'
+    },
     promise: '我们的承诺',
     promise_text:'快速的解决方案 | 品质保证的服务 | 时刻与您共成长',
     dynamic: '公司动态',
     contact: '联系我们',
+    info:{
+      name:'公司名称',
+      phone:'电话',
+      address:'地址',
+      post:'邮编',
+      mail:'电子邮箱'
+    }
   },
   service: { //服务项目
     fangan: '企业定制化人才解决方案',

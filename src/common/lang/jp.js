@@ -31,10 +31,26 @@ const message = {
     dw: '企業立地',
     dw_text:'寰逸HRは、HRのプロとしてのパートナーと候補者のキャリアルールです。',
     case: '成功事例',
+    case_list:{  //案例的类目
+      position:'入社職位',
+      company:'企業情報',
+      yealy:'職場の年俸',
+      cycle:'探して周期',
+      address:'出勤場所',
+      number:'入職者数',
+      more:'詳しい'
+    },
     promise: ' コミットメント',
     promise_text:'迅速な解決策 | 品質保証のサービス | 常にあなたと成長すること',
     dynamic: ' 会社ニュース',
     contact: 'お問い合わせ',
+    info:{
+      name:'会社の名前',
+      phone:'連絡先',
+      address:'アドレス',
+      post:'郵便編集',
+      mail:'メール'
+    }
   },
   service:{  //服务项目
     fangan:'企業定制化人材解決案',

@@ -4,14 +4,14 @@
         <li class="case-item" v-for="(item,index) in list" :key="index">
             <h3 class="case-title">{{item.title}}</h3>
             <p>
-               入职职位：{{item.title}} &nbsp;
-               企业信息：{{item.company}}  &nbsp;
-               岗位年薪：{{item.annual_salary}}  &nbsp;
-               寻猎周期：{{item.cycle}}  &nbsp;
-               上班地点：{{item.job_address}}  &nbsp;
-               入职人数：{{item.people_num}}人 &nbsp;
+               {{$t('about.case_list.position')}}：{{item.title}} &nbsp;
+               {{$t('about.case_list.company')}}：{{item.company}}  &nbsp;
+               {{$t('about.case_list.yealy')}}：{{item.annual_salary}}  &nbsp;
+               {{$t('about.case_list.cycle')}}：{{item.cycle}}  &nbsp;
+               {{$t('about.case_list.address')}}：{{item.job_address}}  &nbsp;
+               {{$t('about.case_list.number')}}：{{item.people_num}}人 &nbsp;
             </p>
-            <router-link :to="`/#/${item.sc_id}`">了解更多 ></router-link>
+            <router-link :to="`/#/${item.sc_id}`">{{$t('about.case_list.more')}} ></router-link>
             <time>{{item.sc_time}}</time>
         </li>
       <!-- <li class="case-item">

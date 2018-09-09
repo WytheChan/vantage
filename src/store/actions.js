@@ -8,12 +8,21 @@ const actions = {
       .then(res => {
         // console.log(res)
         let caseList = res.case.data,
-            dynamicList = res.dynamic.data,
-            page = res.page_case;
+            dynamicList = res.dynamic.data;
 
 
-        context.commit('setCaseList', caseList)  //获取案例列表
-        context.commit('setDynamicList',dynamicList) //获取动态列表
+        // context.commit('setCaseList', caseList)  //获取案例列表
+        // context.commit('setDynamicList',dynamicList) //获取动态列表
+        let data = {};
+        let page = {
+          page_case : res.case.total,
+          page_dynamic : res.dynamic.total
+        }
+        data['caselist'] = caseList
+        data['dynamic'] = dynamicList
+        data['page'] = page
+
+        context.commit('setAboutData',data)
 
 
       })

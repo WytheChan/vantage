@@ -9,13 +9,18 @@ const mutations = {
         state.lang = lang
 
     },
-    setCaseList(state,data){   //设置案例列表
-        state.caseList = data
-    },
-    setDynamicList(state,data){   //设置动态列表
-        state.dynamicList = data
-    },
-    setAboutPage(state,page){    //设置 关于页面 的页码
+    // setCaseList(state,data){   //设置案例列表
+    //     state.caseList = data
+    // },
+    // setDynamicList(state,data){   //设置动态列表
+    //     state.dynamicList = data
+    // },
+    // setAboutPage(state,page){    //设置 关于页面 的页码
+    //     state.aboutPage = page
+    // }
+    setAboutData(state,{caselist,dynamic,page}){
+        state.caseList = caselist
+        state.dynamicList = dynamic
         state.aboutPage = page
     }
 }

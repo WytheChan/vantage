@@ -31,10 +31,26 @@ const message = {
     dw: 'Corporate Positioning',
     dw_text:'Vantage-HR is a career planner for HR\'s professional partner and candidate.',
     case: 'Success Case',
+    case_list:{  //案例的类目
+      position:'Entry position',
+      company:'Enterprise information',
+      yealy:'Annual salary',
+      cycle:'Hunting cycle',
+      address:'Work place',
+      number:'Entry number',
+      more:'know more'
+    },
     promise: 'Our Commitment',
     promise_text:'Quick solution | Quality assurance services | Growing up with you at all times',
     dynamic: 'Company News',
     contact: 'Contact Us',
+    info:{
+      name:'Company name',
+      phone:'Telephone',
+      address:'Address',
+      post:'Post Code',
+      mail:'E-mail'
+    }
   },
   service:{  //服务项目
     fangan:'Enterprise Customized Talent Solution',
