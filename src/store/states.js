@@ -34,6 +34,13 @@ const states = {
     // }
   ],
   aboutPage:{},  //关于页面的案例列表和动态列表的页码
+  classifyList:[   //行业大类
+
+  ],
+  jobList:[  //获取对应小类标签的招聘列表
+
+  ],
+  jobPage:0,//招聘列表分页
   newsList: [ //最新资讯 - 公司新闻列表
     {
       id: 1,

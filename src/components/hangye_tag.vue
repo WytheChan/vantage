@@ -1,30 +1,26 @@
 <template>
     <div class="collapse" :class="{on : isOn}">
-        <div class="collapse-item" v-for="(item,index) in tagList" :key="index">
-          <p class="collapse-title" @click="_tagSlide(index)" :class="{on : isSlide === index}">{{item.title}} <i class="fa fa-chevron-right"></i></p>
-          <div class="tag-list" :class="{on : isSlide === index}">
-            <span class="tag-item" v-for="(tag,index2) in item.tags" :key="index2">{{tag}}</span>
+        <div class="collapse-item" v-for="(item,index) in classifyList" :key="index">
+          <p class="collapse-title" :data-cid="item.cid" @click="_tagSlide(item.cid)" :class="{on : isSlide === item.cid}">{{item.classify}} <i class="fa fa-chevron-right"></i></p>
+          <div class="tag-list" :class="{on : isSlide === item.cid}">
+            <span class="tag-item"  :class="{on : isActive === ''}" @click="_getAll(item.cid)">全部</span>
+            <span class="tag-item"  v-for="(tag,index2) in item.tag" :key="index2" :data-tid="tag.tid" @click="_getJobInfo(item.cid,tag.tid)" :class="{on : isActive === tag.tid}">{{tag.tag}}</span>
           </div>
         </div>
     </div>
 </template>
 <script>
+import axios from "../api/index.js";
+
 export default {
   data() {
     return {
-      isOn: false,
+      isOn: false,  //定位状态
+      isSlide: 13,   //折叠状态
+      isActive:'',  //标签选中状态,
+      isAll:'all',     //选中全部
       collapse: 0,
-      isSlide:'',
-      tagList: [
-        {
-          title: "高科技",
-          tags: ["人工智能", "VR", "机器人", "VR", "机器人", "VR", "机器人", "VR", "机器人"]
-        },
-        {
-          title: "高科技2",
-          tags: ["人工智能", "VR", "机器人"]
-        }
-      ]
+      tagList: []
     };
   },
   methods: {
@@ -46,16 +42,50 @@ export default {
         false
       );
     },
-    _tagSlide(index){
-      if(this.isSlide !== index){
-        this.isSlide = index
+    _tagSlide(cid){   //大类的折叠
+      if(this.isSlide !== cid){
+        this.isSlide = cid
       }else{
         this.isSlide = ''
       }
+      this._getAll(cid)
+    },
+    _getClassifyList(){  //获取行业大类
+      this.$store.dispatch('getClassifyList')
+    },
+    _getJobInfo(cid,tid){  //获取对应小类标签的招聘列表
+
+      if(this.isActive !== tid ){
+        this.isActive = tid
+      }else {
+        this.isActive = ''
+      }
+      
+      this.$store.dispatch('getJobList',{url:"recruit",cid,tid})
+
+      this.$emit('getTid',cid,tid) //把cid和tid传给父组件
+    },
+    _getAll(cid,tid){  //点击全部
+      this.isActive = ''
+      this.$store.dispatch('getJobList',{url:"recruit",cid,tid})
+
+      // this.$emit('getCid',cid,tid)  //把cid和tid传给父组件
     }
+    
   },
   created() {
     this._scroll();
+    this._getClassifyList()
+  
+    //点击头部导航进来的默认展开显示制造业（cid = 13）,点击底部导航进来的就获取传过来的参数，展开对应的分类
+    let cid = this.$route.params.cid || 13 ;
+    this.isSlide = cid
+    this._getAll(cid)
+  },
+  computed:{
+    classifyList(){
+     return this.$store.state.classifyList
+    }
   }
 };
 </script>

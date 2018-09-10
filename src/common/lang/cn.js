@@ -131,6 +131,23 @@ const message = {
   },
   hangye:{  //行业
     more:'了解更多',
+    all:'全部',
+    detail:'职位详情',
+    resume:'简历投递',
+    job_list:{
+      yealy:'职务年薪',
+      hangye:'所属行业',
+      department:'所属部门',
+      nature:'企业性质',
+      scale:'企业规模',
+      name:'公司名',
+      address:'地址',
+      position:'职位',
+      duty:'职责',
+      request:'要求',
+      jiafen:'特别说明/加分项',
+      time:'发布时间'
+    },
     footer:{
       gkj:'高科技',
       ls:'零售业',

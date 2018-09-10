@@ -7,6 +7,7 @@ import Plan from '../views/plan.vue'
 import Hangye from '../views/hangye.vue'
 import Information from '../views/information.vue'
 import Hunter from '../views/hunter.vue'
+import JobDetail from '../views/job_detail.vue'
 
 Vue.use(Router)
 
@@ -37,6 +38,7 @@ export default new Router({
     },
     {
       path:'/hangye',
+      name:'Hangye',
       component:Hangye
     },
     {
@@ -46,6 +48,10 @@ export default new Router({
     {
       path:'/hunter',
       component:Hunter
+    },
+    {
+      path:'/jobdetail/:id',
+      component:JobDetail
     }
   ]
 })

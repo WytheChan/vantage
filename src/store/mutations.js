@@ -9,19 +9,19 @@ const mutations = {
         state.lang = lang
 
     },
-    // setCaseList(state,data){   //设置案例列表
-    //     state.caseList = data
-    // },
-    // setDynamicList(state,data){   //设置动态列表
-    //     state.dynamicList = data
-    // },
-    // setAboutPage(state,page){    //设置 关于页面 的页码
-    //     state.aboutPage = page
-    // }
-    setAboutData(state,{caselist,dynamic,page}){
+    setAboutData(state,{caselist,dynamic,page}){   //设置关于页的数据
         state.caseList = caselist
         state.dynamicList = dynamic
         state.aboutPage = page
+    },
+    setClassifyList(state,data){     //设置行业大类
+        state.classifyList = data 
+    },
+    setJobList(state,data){  //设置招聘列表
+        state.jobList = data
+    },
+    setJobPage(state,data){  //设置招聘列表分页
+        state.jobPage = data
     }
 }
 

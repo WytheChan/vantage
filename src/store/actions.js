@@ -10,14 +10,11 @@ const actions = {
         let caseList = res.case.data,
             dynamicList = res.dynamic.data;
 
-
-        // context.commit('setCaseList', caseList)  //获取案例列表
-        // context.commit('setDynamicList',dynamicList) //获取动态列表
         let data = {};
         let page = {
           page_case : res.case.total,
           page_dynamic : res.dynamic.total
-        }
+        };
         data['caselist'] = caseList
         data['dynamic'] = dynamicList
         data['page'] = page
@@ -26,6 +23,29 @@ const actions = {
 
 
       })
+  },
+  //获取行业数据
+  //获取行业大类
+  getClassifyList(context){
+    axios.post("classification").then(res => {
+      // console.log(res);
+      if(res.success == 1){
+        context.commit('setClassifyList',res.classification)
+      }
+    });
+  },
+  //获取招聘列表
+  getJobList(context,{url,cid,tid}){
+    axios.post(url,{
+      cid:cid,
+      tid:tid
+    }).then(res => {
+      // console.log(res);
+      if(res.success == 1){
+        context.commit('setJobList',res.recruit.data)
+        context.commit('setJobPage',res.recruit.total)
+      }
+    });
   },
 }
 

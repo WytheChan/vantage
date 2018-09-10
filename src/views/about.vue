@@ -32,7 +32,7 @@
             <p class="ctitle">{{$t('about.case')}}</p>
           </div>
           <case-list :list="caseList"></case-list>
-          <Page :total="aboutPage.page_case * 10"  show-elevator @on-change="fanye" class="page"/>
+          <Page :total="aboutPage.page_case * 3"  show-elevator @on-change="fanye" class="fanye"/>
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
@@ -50,7 +50,7 @@
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
           <news-list :list="dynamicList" :pv="true"></news-list>
-          <Page :total="aboutPage.dynamic * 10"  show-elevator @on-change="fanye" class="page"/>
+          <Page :total="aboutPage.dynamic * 3"  show-elevator @on-change="fanye" class="fanye"/>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
@@ -279,7 +279,7 @@ export default {
           font-size: 14px;
           color: #808080;
         }
-        .page{
+        .fanye{
           text-align: center;
           font-size: 12px;
           transform: scale(0.9);

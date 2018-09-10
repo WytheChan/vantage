@@ -51,7 +51,11 @@
         </dl>
         <dl>
             <dt>{{$t('nav.hangye')}}</dt>
-            <dd>
+            <dd v-for="(item,index) in classifyList" :key="index">
+                <!-- <router-link to="/" title="制造业">{{$t('hangye.footer.zz')}}</router-link> -->
+                <span @click="toHangye(item.cid)">{{item.classify}}</span>
+            </dd>
+            <!-- <dd>
                 <router-link to="/" title="高科技">{{$t('hangye.footer.gkj')}}</router-link>
                 <router-link to="/" title="零售业">{{$t('hangye.footer.ls')}}</router-link>
             </dd>
@@ -65,7 +69,7 @@
             </dd>
              <dd>
                 <router-link to="/" title="制造业">{{$t('hangye.footer.zz')}}</router-link>
-            </dd>
+            </dd> -->
         </dl>
          <dl>
             <dt>{{$t('nav.information')}}</dt>
@@ -90,19 +94,35 @@
 </template>
 <script>
 export default {
-    methods:{
-        _anchors(e){
-            var self = e.currentTarget
-            var id = this.$route.params.id
-            var dom = document.querySelector('#'+id)
-            if(dom){
-                 dom.scrollIntoView()
-            }
-        }
+  methods: {
+    _anchors(e) {
+      var self = e.currentTarget;
+      var id = this.$route.params.id;
+      var dom = document.querySelector("#" + id);
+      if (dom) {
+        dom.scrollIntoView();
+      }
     },
-    mounted(){
-        // this._anchors()
-    }
+    toHangye(cid){   //带参数跳到行业领域模块
+      this.$router.push({
+          name:'Hangye',
+          params:{
+              cid:cid
+          }
+      })
+    },
+    _getClassifyList(){  //获取行业大类
+      this.$store.dispatch('getClassifyList')
+    },
+  },
+  created() {
+    this._getClassifyList()
+  },
+  computed:{
+      classifyList(){
+          return this.$store.state.classifyList
+      }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -125,12 +145,14 @@ footer {
     }
     dd {
       margin: 20px 0;
-      a {
+      a ,
+      span{
         display: inline-block;
         margin-right: 10px;
         font-size: 12px;
         color: #fff;
         max-width: 200px;
+        cursor: pointer;
         &:hover {
           text-decoration: underline;
         }
@@ -138,7 +160,7 @@ footer {
     }
   }
   .qrcode-main {
-    float: left;
+    float: right;
     margin-left: 6%;
     img {
       width: 120px;
