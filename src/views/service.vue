@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <img src="../assets/img/service/service-1.jpg" alt="" class="topimg">
+    <img src="../../static/service/service-1.jpg" alt="" class="topimg">
     <div class="about-main">
       <my-aside :list="titleList" class="aside" :active="active"></my-aside>
       <div class="about-content">
@@ -10,7 +10,7 @@
         </Breadcrumb>
         <!-- 方案 -->
         <div class="about-item clearfix" id="fangan">
-          <img src="../assets/img/service/service-2.jpg" alt="" class="pull-left about-img">
+          <img src="../../static/service/service-2.png" alt="" class="pull-left about-img">
           <div class="about-right pull-left">
                 <div class="about-title border-top">
                     <p class="etitle">Enterprise Customized Talent Solution</p>
@@ -36,7 +36,7 @@
                 </li>
                 <!-- <li>
                     <div class="zixun-title">
-                        <img src="../assets/img/service/service-icon1.png" alt="">
+                        <img src="../../static/service/service-icon1.png" alt="">
                         <span>{{$t('service.zixun_list.title')}}</span>
                     </div>
                     <p>{{$t('service.zixun_list.content')}}</p>
@@ -45,7 +45,7 @@
         </div>
         <!-- 定位 -->
         <div class="about-item clearfix" id="dingwei">
-          <img src="../assets/img/service/service-3.jpg" alt="" class="pull-left about-img">
+          <img src="../../static/service/service-3.png" alt="" class="pull-left about-img">
           <div class="about-right pull-left">
                 <div class="about-title border-top">
                     <p class="etitle">Enterprise Value-added Service Positioning</p>
@@ -56,7 +56,7 @@
         </div>
         <!-- 人才 -->
         <div class="about-item clearfix" id="rencai">
-          <img src="../assets/img/service/service-4.jpg" alt="" class="pull-right about-img">
+          <img src="../../static/service/service-4.png" alt="" class="pull-right about-img">
           <div class="about-right pull-left">
                 <div class="about-title border-top">
                     <p class="etitle">High-end Talent Service</p>
@@ -72,7 +72,7 @@
 </template>
 <script>
 import MyAside from "components/aside.vue";
-import Anchors from "../common/js/anchors.js"
+import Anchors from "../common/js/anchors.js";
 
 export default {
   data() {
@@ -96,7 +96,7 @@ export default {
         }
       ],
       zixunList: "",
-      active:0,
+      active: 0
     };
   },
   components: {
@@ -111,20 +111,21 @@ export default {
       }
       this.zixunList = arr;
     },
-    _handleAnchors(){   //选中左边对应的标题，和滚动到显示标题内容的模块
-      var id = this.$route.params.id
-      var active = this.active
+    _handleAnchors() {
+      //选中左边对应的标题，和滚动到显示标题内容的模块
+      var id = this.$route.params.id;
+      var active = this.active;
 
-      Anchors(id,active,'fangan')
+      Anchors(id, active, "fangan");
     }
   },
   computed: {},
   created() {
     this._getZixunList();
   },
-  mounted(){
-    this._handleAnchors()
-  },
+  mounted() {
+    this._handleAnchors();
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -169,7 +170,7 @@ export default {
         }
         .about-img {
           width: 50%;
-           height: auto;
+          height: auto;
         }
 
         &#fangan {
@@ -192,8 +193,32 @@ export default {
             width: 100%;
             margin-top: 50px;
             li {
+              position: relative;
               width: 30%;
-              margin: 0 0 50px;
+              margin: 0 0 0px;
+              &:nth-of-type(n+4){
+                margin-top: 100px;
+              }
+              &:not(:nth-of-type(6))::after{
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 35px;
+                width: 35px;
+                height: 35px;
+                background: url(../../static/service/arrow.png) no-repeat center /
+                  contain;
+              }
+              &:nth-of-type(3)::after{
+                top:122%;
+                left: 25%;
+                transform: rotate(90deg);
+              }
+              &:nth-of-type(4)::after,
+              &:nth-of-type(5)::after{
+                 transform: rotate(-180deg);
+              }
+              
               .zixun-title {
                 img {
                   display: inline-block;
@@ -208,7 +233,7 @@ export default {
                 }
               }
               p {
-                  width: 180px;
+                width: 180px;
                 margin: 20px 0 0;
                 line-height: 1.5;
                 text-indent: 2em;

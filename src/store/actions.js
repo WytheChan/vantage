@@ -47,6 +47,17 @@ const actions = {
       }
     });
   },
+  //获取最新资讯页的数据
+  getInformationData(context,url){
+    axios.post(url).then(res => {
+      // console.log(res)
+      let news= res.news,
+          activity= res.activity,
+          advise= res.proposal;
+      
+      context.commit('setInformationData',{news,activity,advise})
+    })
+  }
 }
 
 export default actions;

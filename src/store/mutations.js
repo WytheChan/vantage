@@ -22,6 +22,11 @@ const mutations = {
     },
     setJobPage(state,data){  //设置招聘列表分页
         state.jobPage = data
+    },
+    setInformationData(state,{news,activity,advise}){  //设置资讯页数据
+        state.newsList = news
+        state.activityList = activity
+        state.adviseList = advise
     }
 }
 

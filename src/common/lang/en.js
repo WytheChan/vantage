@@ -4,7 +4,7 @@ const message = {
     about: 'About',
     service: 'Services',
     plan: 'Elite Program',
-    hangye: 'Industry',
+    hangye: 'Job demand',
     information: 'Information',
     hunter: 'Part-time Headhunting',
     contact: 'Contact us',
@@ -18,7 +18,7 @@ const message = {
     service_text: 'By providing one-stop service, it will grow with enterprises and candidates. Customized talent solutions for enterprises, expert consultation services for candidates, value-added and high-end talent services.',
     plan: 'Elite Program',
     plan_text: 'Based on the understanding and discussion of the development of enterprises and the needs of new talents, and according to the professional entrustment process, the talents are selected and interviewed, and the talents are tracked until they are in place to provide elites for enterprises.',
-    hangye: 'Industry',
+    hangye: 'Job demand',
     hangye_text: 'Headquartered in Guangzhou, our business covers the Mainland of China, Hong Kong, Macao and Taiwan as well as overseas opportunities. Our services include high-tech, IT/Internet, market media, manufacturing, retail, financial and accounting, etc.',
     hunter: 'Part-time Headhunting',
     hunter_text: 'For those who are interested in headhunting, here is a platform to give full play to their strengths, to work together on a shared platform to win-win situation. Based on the precise recommendation of the circle of friends, there are surprises and thanks for success.'
@@ -58,26 +58,27 @@ const message = {
     zixun: 'Candidate Expert Advisory Service',
     zixun_text: 'For each candidate as a special individual, analyze their own characteristics and advantages, provide a specific stage of career planning, and find the right growth of enterprises. Include：',
     zixun_list: {
-      item1: {
-        icon: '/static/service/service-icon1.png',
-        title: 'Job introduction',
-        content: 'After a thorough understanding of the job summary, the candidates are clarified with a standard working procedure and the suitability of the candidates is indicated.'
-      },
       item2: {
         icon: '/static/service/service-icon2.png',
         title: 'Career design',
         content: 'Professional and effective career design helps candidates to correctly set their career development goals and find suitable positions.'
       },
-      item3: {
-        icon: '/static/service/service-icon3.png',
-        title: 'Opportunity recommendation',
-        content: 'Recommend suitable candidates to the right position and arrange for the company to meet.'
+      item1: {
+        icon: '/static/service/service-icon1.png',
+        title: 'Job introduction',
+        content: 'After a thorough understanding of the job summary, the candidates are clarified with a standard working procedure and the suitability of the candidates is indicated.'
       },
       item4: {
         icon: '/static/service/service-icon4.png',
-        title: 'Resume manufacturing',
+        title: 'Resume perfection',
         content: ' Introducing candidates to enterprises in a standardized and logical way, refining flash points, highlighting advantages and strength'
       },
+      item3: {
+        icon: '/static/service/service-icon3.png',
+        title: 'Candidates recommendation',
+        content: 'Recommend suitable candidates to the right position and arrange for the company to meet.'
+      },
+    
       item5: {
         icon: '/static/service/service-icon5.png',
         title: 'Interview guidance',

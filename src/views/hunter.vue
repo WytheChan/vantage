@@ -10,7 +10,7 @@
                 </Breadcrumb>
                 <!-- 兼职猎头 -->
                 <div class="page-item clearfix" id="part-time">
-                    <img src="../../static/hunter/hunter-2.jpg" alt="">
+                    <img src="../../static/hunter/hunter-2.png" alt="">
                     <div class="page-right pull-left">
                         <div class="about-title border-top">
                             <p class="etitle">Part-time Headhunting</p>

@@ -14,11 +14,11 @@ Vue.use(Router)
 
 export default new Router({
   //使用HTML5的history模式
-  mode:'history',
+  // mode:'history',
   routes: [
     {
       path:'/',
-      redirect: 'shouye'
+      redirect: '/shouye'
     },
     {
       path: '/shouye',

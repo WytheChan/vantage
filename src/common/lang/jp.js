@@ -4,7 +4,7 @@ const message = {
     about: 'アバウト',
     service: 'サービス',
     plan: 'エリート計画',
-    hangye: '業界の分野',
+    hangye: '職位需要',
     information: 'インフォメーション',
     hunter: 'パートタイムヘッドハンター',
     contact: 'お問い合わせ',
@@ -18,7 +18,7 @@ const message = {
     service_text: 'サービスを提供することで、企業や候補者と共に成長していく。企業が人材をカスタマイズしてソリューションを解決して、候補者のために専門家のコンサルティングサービスを提供して、および付加価値とハイエンドの人材サービスを提供します。',
     plan: 'エリート計画',
     plan_text: '企業の発展と新しい人材の需要の理解と検討に応じて、専門の委託の流れに基づいて、人材のオーディションと面接を行い、人材の着位に至るまでの追跡を行い、企業のためにエリートを提供する。',
-    hangye: '業界の分野',
+    hangye: '職位需要',
     hangye_text: '本社は広州にあり、業務は中国本土と香港マカオの地域および海外の機会に関連しており、サービス分野はハイテク、IT /インターネット、市場メディア、製造業、小売業、金融財会などを含む。',
     hunter: 'パートタイムヘッドハンター',
     hunter_text: 'オリエンタル事業に興味を持っている友達は、ここには所長を発揮するプラットフォームがあり、共有プラットフォームで手を携えて協力し、友人の輪に基づいて推薦し、サプライズに成功した謝礼を紹介します。'
@@ -58,26 +58,27 @@ const message = {
     zixun: '候補者の相談サービス',
     zixun_text: '個々の候補者に対して特別な個体として、自身の特性と優位を分析し、特定の段階のキャリア計画を提供し、適切な成長の企業を見つける。含む：',
     zixun_list: {
+      item2: {
+        icon: '/static/service/service-icon2.png',
+        title: '職業設計',
+        content: 'プロの効率的なキャリアデザインに候補者が自分の職業の目標を正確に設定し、適切な職位を見つける。'
+      },
       item1: {
         icon: '/static/service/service-icon1.png',
         title: '職位紹介',
         content: '職位の概要を十分に理解した後に、標準的な作業プログラムで、候補者に職務説明を説明し、候補者の適切な点を表明する。'
       },
-      item2: {
-        icon: '/static/service/service-icon2.png',
-        title: 'キャリアデザイン',
-        content: 'プロの効率的なキャリアデザインに候補者が自分の職業の目標を正確に設定し、適切な職位を見つける。'
+      item4: {
+        icon: '/static/service/service-icon4.png',
+        title: '履歴書改善する',
+        content: ' 適切な候補者を適切な職位に推薦し、企業の面見を手配する。'
       },
       item3: {
         icon: '/static/service/service-icon3.png',
-        title: 'お勧めのチャンス',
+        title: '人選のお勧め',
         content: '適切な候補者を適切な職位に推薦し、企業の面見を手配する。'
       },
-      item4: {
-        icon: '/static/service/service-icon4.png',
-        title: '履歴書製造',
-        content: ' 適切な候補者を適切な職位に推薦し、企業の面見を手配する。'
-      },
+      
       item5: {
         icon: '/static/service/service-icon5.png',
         title: '面接の指導',

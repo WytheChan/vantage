@@ -1,14 +1,14 @@
 <template>
     <ul class="news-list">
-        <li class="news-item clearfix" @click="lookNews" v-for="(item,index) in list" :key="index" :data-id="item.id">
-          <img :src="item.thumbnail" alt="" class="pull-left thumbnail">
+        <li class="news-item clearfix" @click="lookNews" v-for="(item,index) in list" :key="index" :data-id="item.aid">
+          <img :src="item.head_img" alt="" class="pull-left thumbnail">
           <div class="pull-left">
             <h3 class="news-title">{{item.title}}</h3>
             <p>{{item.content}}</p>
           </div>
           <div class="news-time">
-            <time>{{item.time}}</time>
-            <span v-if="pv">浏览量：{{item.pv}}</span>
+            <time>{{item.article_time}}</time>
+            <span v-if="pv">浏览量：{{item.pv ? item.pv : 0}}</span>
           </div>
       </li>
       <!-- <li class="news-item clearfix" @click="lookNews">

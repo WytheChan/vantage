@@ -61,7 +61,8 @@ export default {
     fanye(current) {
       let cid = this.cid,
           tid = this.tid;
-      this.$store.dispatch('getJobList',{url:"recruit?page="+current,cid,tid})
+      this.$store.dispatch('getJobList',{url:
+      "recruit?page="+current,cid,tid})
     },
     getId(cid,tid) {
       console.log(cid,tid)

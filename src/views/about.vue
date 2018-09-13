@@ -1,6 +1,6 @@
 <template>
   <div class="about ">
-    <img src="../assets/img/about-1.jpg" alt="" class="topimg">
+    <img src="../../static/about/about-1.jpg" alt="" class="topimg">
     <div class="about-main">
       <my-aside :list="titleList" :active="active"></my-aside>
       <div class="about-content">
@@ -18,7 +18,7 @@
         </div>
         <!-- 企业定位 -->
         <div class="about-item clearfix" id="dw">
-          <img src="../assets/img/about-2.jpg" alt="" class="dwimg">
+          <img src="../../static/about/about-2.png" alt="" class="dwimg">
           <div class="about-title border-bottom">
             <p class="etitle">Corporate Positioning</p>
             <p class="ctitle">{{$t('about.dw')}}</p>
@@ -41,7 +41,7 @@
             <p class="ctitle">{{$t('about.promise')}}</p>
           </div>
           <p class="about-item-content">{{$t('about.promise_text')}}</p>
-          <img src="../assets/img/about-3.jpg" alt="">
+          <img src="../../static/about/about-3.jpg" alt="">
         </div>
         <!-- 公司动态 -->
         <div class="about-item" id="dynamic">
@@ -139,16 +139,17 @@ export default {
     },
     dynamicList() {
       //动态列表
-      let oList = this.$store.state.dynamicList;
-      let nItem = {};
-      let arr = []
-      oList.forEach((item,index) => {        //把传过来的动态变量名解构成newslist组件里对应的变量
-        let  {head_img:thumbnail,article_time:time,title,aid:id,pv=0} = item
-        nItem = {thumbnail,time,title,id,pv}
-        arr.push(nItem)
-      })
+      // let oList = this.$store.state.dynamicList;
+      // let nItem = {};
+      // let arr = []
+      // oList.forEach((item,index) => {        //把传过来的动态变量名解构成newslist组件里对应的变量
+      //   let  {head_img:thumbnail,article_time:time,title,aid:id,pv=0} = item
+      //   nItem = {thumbnail,time,title,id,pv}
+      //   arr.push(nItem)
+      // })
 
-      return arr
+      // return arr
+      return this.$store.state.dynamicList;
     },
     aboutPage(){
       //案例列表和动态列表的总页数

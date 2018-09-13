@@ -1,25 +1,25 @@
 <template>
     <header :class="{on : $store.state.isShouye}">
-        <router-link to="/shouye">
-            <img src="../assets/img/logo.png" alt="" class="logo">
+        <router-link to="/">
+            <img src="../../static/logo.png" alt="" class="logo">
         </router-link>
         <ul class="list">
             <li>
                 <a  @click="changeLang('cn')">
                    中文
-                  <img src="../assets/img/flag-cn.png" alt="">
+                  <img src="../../static/flag-cn.png" alt="">
                 </a>
             </li>
             <li>
                 <a  @click="changeLang('en')">
                     English
-                    <img src="../assets/img/flag-en.png" alt="">
+                    <img src="../../static/flag-en.png" alt="">
                 </a>
             </li>
             <li>
                 <a   @click="changeLang('jp')">
                     日本語
-                    <img src="../assets/img/flag-jp.png" alt="">
+                    <img src="../../static/flag-jp.png" alt="">
                 </a>
             </li>
             <li>
@@ -134,6 +134,7 @@ header {
     li {
       float: left;
       padding: 0 10px;
+      cursor: pointer;
       & + li {
         border-left: 1px solid #999;
       }

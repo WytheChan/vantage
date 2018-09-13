@@ -1,6 +1,6 @@
 <template>
     <aside :class="{'on' : isOn}">
-        <nav>
+        <!-- <nav>
             <a 
             v-for="(item,index) in titleList" 
             :data-index="index"
@@ -9,6 +9,17 @@
             :class="{on : active2 === index}"
             > 
             {{item.title}} </a>
+        </nav> -->
+        <nav>
+            <span 
+            v-for="(item,index) in titleList" 
+            :data-index="index"
+            :key="index" 
+            :data-id="item.id" 
+            @click="handler" 
+            :class="{on : active2 === index}"
+            > 
+            {{item.title}} </span>
         </nav>
     </aside>
 </template>
@@ -35,7 +46,8 @@ export default {
   methods: {
     handler(e) {
       this.active2 = parseInt(e.currentTarget.dataset.index)
-      // this.$emit('changeActive',this.active2)
+      let id = e.currentTarget.dataset.id
+      document.querySelector(id).scrollIntoView()
     },
     _scroll() {
       let self = this
@@ -92,13 +104,14 @@ aside {
     bottom: 40vh;
   }
   nav {
-    a {
+    span {
       display: block;
       margin: 0 0 20px;
       font-size: 14px;
       color: $font-color;
       position: relative;
       line-height: 1.5;
+      cursor: pointer;
       &:hover {
         color: $base-color;
       }

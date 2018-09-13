@@ -2,15 +2,15 @@
     <div class="shouye">
         <section>
             <strong>{{$t('shouye.about_text')}}</strong>
-            <router-link tag="p" to="/about:gk"> {{$t('shouye.about')}}<i class="fa fa-angle-right"></i> </router-link>
+            <router-link tag="p" to="/about/gk"> {{$t('shouye.about')}}<i class="fa fa-angle-right"></i> </router-link>
         </section>
         <section>
             <strong>{{$t('shouye.service_text')}}</strong>
-            <router-link tag="p" to="/service"> {{$t('shouye.service')}}<i class="fa fa-angle-right"></i></router-link>
+            <router-link tag="p" to="/service/fangan"> {{$t('shouye.service')}}<i class="fa fa-angle-right"></i></router-link>
         </section>
         <section>
                 <strong>{{$t('shouye.plan_text')}}</strong>
-            <router-link tag="p" to="/plan">{{$t('shouye.plan')}} <i class="fa fa-angle-right"></i></router-link>
+            <router-link tag="p" to="/plan/plan">{{$t('shouye.plan')}} <i class="fa fa-angle-right"></i></router-link>
         </section>
         <section>
                 <strong>{{$t('shouye.hangye_text')}}</strong>
@@ -43,7 +43,7 @@ export default {
     _getShouye(){  //获取首页数据
       axios.post('home')
           .then(res => {
-              console.log(res.index_info)
+              // console.log(res.index_info)
               if(res.status == 1){
                 var info = res.index_info
                 var section = document.querySelectorAll('section')    //设置首页模块的背景图片
@@ -57,7 +57,7 @@ export default {
   },
   created() {
     this._inShouye();
-    this._getShouye()
+    // this._getShouye()
   },
   destroyed() {
     this._outShouye();
@@ -76,19 +76,19 @@ export default {
     max-height: $min-height;
     overflow: hidden;
     &:nth-of-type(1) {
-      background: url(../assets/img/index-1.jpg) no-repeat 0 0 / cover;
+      background: url(../../static/shouye/shouye-1.jpg) no-repeat 0 0 / cover;
     }
     &:nth-of-type(2) {
-      background: url(../assets/img/index-2.jpg) no-repeat 0 0 / cover;
+      background: url(../../static/shouye/shouye-2.jpg) no-repeat 0 0 / cover;
     }
     &:nth-of-type(3) {
-      background: url(../assets/img/index-3.jpg) no-repeat 0 0 / cover;
+      background: url(../../static/shouye/shouye-3.jpg) no-repeat 0 0 / cover;
     }
     &:nth-of-type(4) {
-      background: url(../assets/img/index-4.jpg) no-repeat 0 0 / cover;
+      background: url(../../static/shouye/shouye-4.jpg) no-repeat 0 0 / cover;
     }
     &:nth-of-type(5) {
-      background: url(../assets/img/index-5.jpg) no-repeat 0 0 / cover;
+      background: url(../../static/shouye/shouye-5.jpg) no-repeat 0 0 / cover;
     }
     &::after {
       @include mask;
@@ -99,7 +99,7 @@ export default {
     }
     strong {
       position: absolute;
-      top: 35%;
+      top: 40%;
       left: 20%;
       width: 60%;
       font-size: 25px;
@@ -116,7 +116,7 @@ export default {
       z-index: 10;
       cursor: pointer;
       @include center;
-      top:60%;
+      top:62%;
       .fa {
         margin-left: 10px;
       }

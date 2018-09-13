@@ -84,12 +84,12 @@
             </dd>
         </dl>
         <div class="qrcode-main">
-            <img src="../assets/img/qrcode.png" alt="二维码" class="qrcode">
+            <img src="../../static/qrcode.png" alt="二维码" class="qrcode">
             <p>扫描二维码关注寰逸公众号</p>
         </div>
         </div>
         
-        <p class="copyright">Copyright 2018 vantage-hr.com All Rights Reserved</p>
+        <p class="copyright">Copyright 2018 vantage-hy.com All Rights Reserved</p>
     </footer>
 </template>
 <script>
@@ -103,25 +103,27 @@ export default {
         dom.scrollIntoView();
       }
     },
-    toHangye(cid){   //带参数跳到行业领域模块
+    toHangye(cid) {
+      //带参数跳到行业领域模块
       this.$router.push({
-          name:'Hangye',
-          params:{
-              cid:cid
-          }
-      })
+        name: "Hangye",
+        params: {
+          cid: cid
+        }
+      });
     },
-    _getClassifyList(){  //获取行业大类
-      this.$store.dispatch('getClassifyList')
-    },
+    _getClassifyList() {
+      //获取行业大类
+      this.$store.dispatch("getClassifyList");
+    }
   },
   created() {
-    this._getClassifyList()
+    this._getClassifyList();
   },
-  computed:{
-      classifyList(){
-          return this.$store.state.classifyList
-      }
+  computed: {
+    classifyList() {
+      return this.$store.state.classifyList;
+    }
   }
 };
 </script>
@@ -131,9 +133,11 @@ footer {
   width: 100%;
   padding: 50px 5% 10px 5%;
   background: $base-color;
+  white-space: nowrap;
   dl {
     float: left;
     color: #fff;
+    white-space: nowrap;
     & ~ dl {
       margin-left: 6%;
     }
@@ -145,8 +149,8 @@ footer {
     }
     dd {
       margin: 20px 0;
-      a ,
-      span{
+      a,
+      span {
         display: inline-block;
         margin-right: 10px;
         font-size: 12px;
@@ -161,7 +165,7 @@ footer {
   }
   .qrcode-main {
     float: right;
-    margin-left: 6%;
+    // margin-left: 6%;
     img {
       width: 120px;
       height: auto;

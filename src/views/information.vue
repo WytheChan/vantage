@@ -14,7 +14,8 @@
                         <p class="etitle">Company News</p>
                         <p class="ctitle">{{$t('information.news')}}</p>
                     </div>
-                    <news-list :list="newsList2"></news-list>                    
+                    <news-list :list="newsList2.data"></news-list>    
+                    <Page :total="newsList2.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                
                 </div>
                  <!-- 公司活动 -->
                 <div class="page-item about-item" id="activity">
@@ -22,7 +23,8 @@
                         <p class="etitle">Company Activities</p>
                         <p class="ctitle">{{$t('information.activity')}}</p>
                     </div>
-                    <news-list :list="activityList"></news-list>                    
+                    <activity-list :list="activityList.data" ></activity-list>
+                    <Page :total="activityList.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                
                 </div>
                  <!-- 专业建议 -->
                 <div class="page-item about-item" id="advise">
@@ -30,7 +32,8 @@
                         <p class="etitle">Professional Advice</p>
                         <p class="ctitle">{{$t('information.advise')}}</p>
                     </div>
-                    <news-list :list="adviseList"></news-list>                    
+                    <news-list :list="adviseList.data"></news-list>    
+                    <Page :total="adviseList.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                   
                 </div>
             </div>
         </div>
@@ -39,6 +42,7 @@
 <script>
 import MyAside from "components/aside.vue";
 import NewsList from "components/newslist.vue";
+import ActivityList from "components/activitylist.vue";
 import Anchors from "../common/js/anchors.js";
 
 export default {
@@ -63,7 +67,8 @@ export default {
   },
   components: {
     MyAside,
-    NewsList
+    NewsList,
+    ActivityList
   },
   computed: {
     newsList2() {
@@ -73,6 +78,7 @@ export default {
     activityList() {
       //公司活动列表
       return this.$store.state.activityList;
+      return [];
     },
     adviseList() {
       //专业建议列表
@@ -86,10 +92,20 @@ export default {
       var active = this.active;
 
       Anchors(id, active, "news");
+    },
+    _getInformation() {
+      //请求资讯页数据
+      this.$store.dispatch("getInformationData", "information");
+    },
+    fanye(current) {
+      this.$store.dispatch("getInformationData", "information?page=" + current);
     }
   },
   mounted() {
     this._handleAnchors();
+  },
+  created() {
+    this._getInformation();
   }
 };
 </script>
@@ -97,6 +113,12 @@ export default {
 @import "../assets/scss/base.scss";
 .information {
   @include page;
+  .fanye {
+    text-align: center;
+    font-size: 12px;
+    transform: scale(0.9);
+  }
+ 
 }
 </style>
 
