@@ -66,6 +66,7 @@
               {{$t('about.info.mail')}}：info@vantage-hy.com<br />
             </p>
           </div>
+          <baidu-map></baidu-map>
         </div>
       </div>
     </div>
@@ -77,6 +78,7 @@ import NewsList from "components/newslist.vue";
 import MyAside from "components/aside.vue";
 import Anchors from "../common/js/anchors.js";
 import axios from "../api/index.js";
+import BaiduMap from 'components/map.vue';
 
 export default {
   data() {
@@ -108,6 +110,7 @@ export default {
         }
       ],
       active:0,
+      
     };
   },
   methods:{
@@ -119,7 +122,8 @@ export default {
     fanye(current){
       //current 是分页组件返回的当前页码
       this.$store.dispatch('getAboutData','synopsis?page='+current)
-    }
+    },
+    
   },
   created(){
     this.$store.dispatch('getAboutData','synopsis')
@@ -130,7 +134,8 @@ export default {
   components: {
     CaseList,
     MyAside,
-    NewsList
+    NewsList,
+    BaiduMap
   },
   computed: {
     caseList() {
@@ -138,17 +143,6 @@ export default {
       return this.$store.state.caseList;
     },
     dynamicList() {
-      //动态列表
-      // let oList = this.$store.state.dynamicList;
-      // let nItem = {};
-      // let arr = []
-      // oList.forEach((item,index) => {        //把传过来的动态变量名解构成newslist组件里对应的变量
-      //   let  {head_img:thumbnail,article_time:time,title,aid:id,pv=0} = item
-      //   nItem = {thumbnail,time,title,id,pv}
-      //   arr.push(nItem)
-      // })
-
-      // return arr
       return this.$store.state.dynamicList;
     },
     aboutPage(){
@@ -232,6 +226,13 @@ export default {
 
         &#contact{
           padding-left:50px;
+          .about-title{
+            width: 40%;
+          }
+          .map{
+            width: 60%;
+            height: 450px;
+          }
         }
 
         .about-title {
@@ -269,7 +270,7 @@ export default {
           width: 100%;
           height: 200px;
           margin: 30px 0 0;
-          line-height: 20px;
+          line-height: 24px;
           font-size: 14px;
           color: $font-color;
           cursor: default;
@@ -285,6 +286,7 @@ export default {
           font-size: 12px;
           transform: scale(0.9);
         }
+        
       }
     }
   }

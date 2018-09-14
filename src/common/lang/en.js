@@ -38,7 +38,8 @@ const message = {
       cycle: 'Hunting cycle',
       address: 'Work place',
       number: 'Entry number',
-      more: 'know more'
+      more: 'know more',
+      detail:'Case details'
     },
     promise: 'Our Commitment',
     promise_text: 'Quick solution | Quality assurance services | Growing up with you at all times',

@@ -8,7 +8,7 @@
           </div>
           <div class="news-time">
             <time>{{item.article_time}}</time>
-            <span v-if="pv">浏览量：{{item.pv ? item.pv : 0}}</span>
+            <span v-if="pv">浏览量：{{item.count }}</span>
           </div>
       </li>
       <!-- <li class="news-item clearfix" @click="lookNews">
@@ -39,7 +39,7 @@ export default {
   methods:{
     lookNews(e){
       var id=e.currentTarget.dataset.id
-      this.$router.push('/shouye')
+      this.$router.push('/dynamicdetail/'+id)
     }
   },
   data(){

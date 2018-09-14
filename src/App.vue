@@ -13,6 +13,14 @@ import MyFooter from "components/footer.vue";
 export default {
   components:{
     MyHeader,MyFooter
+  },
+  created(){
+    var w = document.body.clientWidth 
+    console.log(w)
+    window.addEventListener('resize',function(){
+      let app = document.querySelector('#app');
+      
+    })
   }
 };
 </script>

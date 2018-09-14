@@ -1,7 +1,7 @@
 <template>
   <div class="case">
     <ul class="case-list">
-        <li class="case-item" v-for="(item,index) in list" :key="index">
+        <li class="case-item" v-for="(item,index) in list" :key="index" >
             <h3 class="case-title">{{item.title}}</h3>
             <p>
                {{$t('about.case_list.position')}}：{{item.title}} &nbsp;
@@ -11,7 +11,7 @@
                {{$t('about.case_list.address')}}：{{item.job_address}}  &nbsp;
                {{$t('about.case_list.number')}}：{{item.people_num}}人 &nbsp;
             </p>
-            <router-link :to="`/#/${item.sc_id}`">{{$t('about.case_list.more')}} ></router-link>
+            <router-link :to="`/casedetail/${item.sc_id}`">{{$t('about.case_list.more')}} ></router-link>
             <time>{{item.sc_time}}</time>
         </li>
       <!-- <li class="case-item">
@@ -26,7 +26,10 @@
 </template>
 <script>
 export default {
-    props:['list']
+    props:['list'],
+    methods:{
+     
+    }
 };
 </script>
 <style lang="scss" scoped>
@@ -39,7 +42,7 @@ export default {
   .case-item {
     padding: 50px;
     border-top: 1px solid #d8d8d8;
-
+    cursor: default;
     h3 {
       padding-left: 20px;
       border-left: 5px solid $border-color;

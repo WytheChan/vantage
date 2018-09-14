@@ -8,6 +8,8 @@ import Hangye from '../views/hangye.vue'
 import Information from '../views/information.vue'
 import Hunter from '../views/hunter.vue'
 import JobDetail from '../views/job_detail.vue'
+import CaseDetail from '../views/case_detail.vue'
+import DynamicDetail from '../views/dynamic_detail.vue'
 
 Vue.use(Router)
 
@@ -52,6 +54,14 @@ export default new Router({
     {
       path:'/jobdetail/:id',
       component:JobDetail
+    },
+    {
+      path:'/casedetail/:id',
+      component:CaseDetail
+    },
+    {
+      path:'/dynamicdetail/:id',
+      component:DynamicDetail
     }
   ]
 })

@@ -39,7 +39,8 @@ const message = {
       cycle:'寻猎周期',
       address:'上班地点',
       number:'入职人数',
-      more:'了解更多'
+      more:'了解更多',
+      detail:'案例详情',
     },
     promise: '我们的承诺',
     promise_text:'快速的解决方案 | 品质保证的服务 | 时刻与您共成长',

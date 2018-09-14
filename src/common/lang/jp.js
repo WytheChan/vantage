@@ -38,7 +38,8 @@ const message = {
       cycle: '探して周期',
       address: '出勤場所',
       number: '入職者数',
-      more: '詳しい'
+      more: '詳しい',
+      detail:'ケースの詳細'
     },
     promise: ' コミットメント',
     promise_text: '迅速な解決策 | 品質保証のサービス | 常にあなたと成長すること',
