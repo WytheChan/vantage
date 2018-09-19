@@ -1,14 +1,14 @@
 <template>
     <div class="activity-list clearfix">
-        <div class="activity-item" @click="lookNews" v-for="(item,index) in list" :key="index" :data-id="item.aid">
+        <div class="activity-item" @click="goDetail" v-for="(item,index) in list" :key="index" :data-id="item.aid">
             <img :src="item.head_img" alt="缩略图">
             <h3 class="acivity-title">{{item.title}}</h3>
             <p class="activity-content">
-               {{item.content}}
+              {{item.content_small ? item.content_small : '这是简介内容'}}
             </p>
             <div class="time">
                 <time>{{item.article_time}}</time>
-                <span>浏览量：{{item.pv ? item.pv : 0}}</span>
+                <span>浏览量：{{item.count ? item.count : 0}}</span>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@ export default {
   methods:{
     goDetail(e){
       var id=e.currentTarget.dataset.id
-      this.$router.push('/shouye')
+      this.$router.push('/detail/'+id)
     }
   },
 };

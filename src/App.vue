@@ -11,20 +11,22 @@
 import MyHeader from "components/header.vue";
 import MyFooter from "components/footer.vue";
 export default {
-  components:{
-    MyHeader,MyFooter
+  components: {
+    MyHeader,
+    MyFooter
   },
-  created(){
-    var w = document.body.clientWidth 
-    console.log(w)
-    window.addEventListener('resize',function(){
-      let app = document.querySelector('#app');
-      
-    })
+  created() {
+    
+    // window.addEventListener("resize", resize);
+    function resize() {
+      let app = document.querySelector("#app");
+      let w = document.body.clientWidth;
+      let scale = w / 1920;
+      app.style.widh = "scaleX(" + scale + ")";
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-
 </style>

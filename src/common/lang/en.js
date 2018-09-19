@@ -1,9 +1,10 @@
 const message = {
+  title:'Vantage-HR',
   nav: { //导航
     home: 'Home',
     about: 'About',
     service: 'Services',
-    plan: 'Elite Program',
+    plan: 'Training campus',
     hangye: 'Job demand',
     information: 'Information',
     hunter: 'Part-time Headhunting',
@@ -16,7 +17,7 @@ const message = {
     about_text: 'An organization that provides a comprehensive talent service for businesses and candidates is a HR professional partner and career planner for candidates.',
     service: 'Services',
     service_text: 'By providing one-stop service, it will grow with enterprises and candidates. Customized talent solutions for enterprises, expert consultation services for candidates, value-added and high-end talent services.',
-    plan: 'Elite Program',
+    plan: 'Training campus',
     plan_text: 'Based on the understanding and discussion of the development of enterprises and the needs of new talents, and according to the professional entrustment process, the talents are selected and interviewed, and the talents are tracked until they are in place to provide elites for enterprises.',
     hangye: 'Job demand',
     hangye_text: 'Headquartered in Guangzhou, our business covers the Mainland of China, Hong Kong, Macao and Taiwan as well as overseas opportunities. Our services include high-tech, IT/Internet, market media, manufacturing, retail, financial and accounting, etc.',
@@ -98,7 +99,7 @@ const message = {
   },
   plan: { //精英计划
     plan: {
-      title: ' Elite Program',
+      title: ' Training campus',
       stitle: ' Professional advantage：',
       content: ' It is our value to solve the employment needs of enterprises by professionalism. By virtue of professional advantages, we can make the best use of our talents and make the enterprises develop to a higher level.',
       youshi: `（1）Professionalism, focus, quality<br/>（2）The network is extensive, fast and precise.<br/>（3）Pleasant cooperation and best exploration<br/>（4）Professional training and keeping pace with the times<br/>（5）Latest information sharing`
@@ -162,7 +163,8 @@ const message = {
   information: { //最新资讯
     news: 'Company News',
     activity: 'Company Activities',
-    advise: 'Professional Advice'
+    advise: 'Professional Advice',
+    detail:'Details of the article'
   },
   hunter: { //兼职猎头
     part_time: 'Part-time Headhunting',

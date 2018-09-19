@@ -46,7 +46,7 @@
 </template>
 <script>
 import Util from "../lib/util.js";
-import axios from "../api/index.js"
+import axios from "../api/index.js";
 export default {
   data() {
     return {
@@ -55,21 +55,34 @@ export default {
   },
   methods: {
     _getLang() {
-      var lang = Util.getLang()
+      var lang = Util.getLang();
       this.$i18n.locale = lang;
-      axios.get('index?lang='+lang)       //把语言标识发给后台
-          .then(res =>{
-            // console.log(res)
-          })
+      axios
+        .get("index?lang=" + lang) //把语言标识发给后台
+        .then(res => {
+          // console.log(res)
+        });
     },
     searchJob() {
       //职位搜索
-      console.log(this.search);
+      axios.post("recruit", { search: this.search }).then(res => {
+        console.log(res);
+        if (res.success === 1) {
+          this.$store.commit('setJobList',res.recruit.data)
+          this.$store.commit('setJobPage',res.recruit.total)
+          this.$router.push({
+            name: "Hangye",
+            params: {
+              search:1
+            }
+          });
+        }
+      });
     },
     searchJobByKey(e) {
       //职位搜索-回车键
       if (e.keyCode === 13) {
-        console.log(this.search);
+        this.searchJob()
       }
     },
     changeLang(lang) {
@@ -81,12 +94,13 @@ export default {
 
       this.$i18n.locale = this.$store.state.lang;
 
-      axios.get('index?lang='+lang)    //把语言标识发给后台
-          .then(res =>{
-            console.log(res)
-            location.reload()
-          })
-    },
+      axios
+        .get("index?lang=" + lang) //把语言标识发给后台
+        .then(res => {
+          console.log(res);
+          location.reload();
+        });
+    }
   },
   computed: {},
   created() {

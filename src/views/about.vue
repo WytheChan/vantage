@@ -18,12 +18,32 @@
         </div>
         <!-- 企业定位 -->
         <div class="about-item clearfix" id="dw">
-          <img src="../../static/about/about-2.png" alt="" class="dwimg">
+         <img src="../../static/about/about-2.png" alt="" class="dwimg">
           <div class="about-title border-bottom">
             <p class="etitle">Corporate Positioning</p>
             <p class="ctitle">{{$t('about.dw')}}</p>
           </div>
           <p class="about-item-content">{{$t('about.dw_text')}}</p>
+           
+        </div>
+         <!-- 专业优势 -->
+        <div class="about-item clearfix" id="youshi">
+          <img src="../../static/about/about-5.jpg" alt="" class="youshiimg">
+          <div class="about-title border-bottom">
+            <p class="etitle">Professional Advantage</p>
+            <p class="ctitle">专业优势</p>
+          </div>
+          <p class="about-item-content">
+            （1）专业、专注、质量  <br/>
+
+            （2）网络广泛、快速精准  <br/>
+
+            （3）愉快合作、发掘最佳  <br/>
+
+            （4）专业培训、与时俱进  <br/>
+            
+            （5）最新资讯分享  <br/>
+          </p>
         </div>
         <!-- 成功案例 -->
         <div class="about-item" id="case">
@@ -186,17 +206,38 @@ export default {
         &#dw {
           .about-title {
             position: absolute;
-            left: 50%;
+            left: 0;
             top: 0;
           }
 
           .dwimg {
+            // position: absolute;
+            // top: 0;
+            // left: 50%;
             width: auto;
             height: 330px;
+            margin-left:50%;
             max-width: 50%;
           }
 
           .about-item-content {
+            position: absolute;
+            left: 0%;
+            top: 120px;
+            font-size: 14px;
+            color: $font-color;
+          }
+        }
+        
+        &#youshi{
+          padding: 0;
+          background: none;
+          .about-title {
+            position: absolute;
+            left: 50%;
+            top: 0;
+          }
+           .about-item-content {
             position: absolute;
             left: 50%;
             top: 120px;

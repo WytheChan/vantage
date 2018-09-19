@@ -14,7 +14,7 @@
                         <p class="etitle">Company News</p>
                         <p class="ctitle">{{$t('information.news')}}</p>
                     </div>
-                    <news-list :list="newsList2.data"></news-list>    
+                    <news-list :list="newsList2.data" :pv="true"></news-list>    
                     <Page :total="newsList2.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                
                 </div>
                  <!-- 公司活动 -->
@@ -32,7 +32,7 @@
                         <p class="etitle">Professional Advice</p>
                         <p class="ctitle">{{$t('information.advise')}}</p>
                     </div>
-                    <news-list :list="adviseList.data"></news-list>    
+                    <news-list :list="adviseList.data" :pv="true"></news-list>    
                     <Page :total="adviseList.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                   
                 </div>
             </div>

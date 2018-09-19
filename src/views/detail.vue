@@ -6,18 +6,19 @@
                 <img src="../../static/arrow.png" alt="" class="arrow" @click="back">
                 <Breadcrumb>
                     <BreadcrumbItem to="/shouye">{{$t("nav.home")}}</BreadcrumbItem>
-                    <BreadcrumbItem to="/hangye">{{$t("nav.about")}}</BreadcrumbItem>
-                    <BreadcrumbItem><span>{{$t("about.case_list.detail")}}</span></BreadcrumbItem>
+                    <BreadcrumbItem v-if="fromabout" to="/about/gk">{{$t("nav.about")}}</BreadcrumbItem>
+                    <BreadcrumbItem v-else to="/information/news">{{$t("nav.information")}}</BreadcrumbItem>
+                    <BreadcrumbItem><span>{{$t("information.detail")}}</span></BreadcrumbItem>
                 </Breadcrumb>
                 <div class="page-item">
                     <h3>{{item.title}}</h3>
                     
                     <ul class="detail-list">
-                        <li>
-                            <span> {{$t('about.case_list.position')}} : </span> 
+                        <!-- <li>
+                            <span> 标题 : </span> 
                             <p>{{item.title}}</p>
-                        </li>
-                         <li>
+                        </li> -->
+                         <!-- <li>
                             <span>{{$t('about.case_list.company')}} : </span> 
                             <p>{{item.company}}</p>
                         </li>
@@ -36,10 +37,10 @@
                          <li>
                             <span>{{$t('about.case_list.number')}}：</span>  
                             <p>{{item.people_num}}</p>
-                        </li>
+                        </li> -->
                         <li>
-                            <span>{{$t('about.case_list.detail')}}：</span>  
-                            <p>{{item.content}}</p>
+                            <span>内容：</span>  
+                            <div class="content" v-html="item.content"></div>
                         </li>
                     </ul>
                 </div>
@@ -50,6 +51,7 @@
 <script>
 import axios from "../api/index.js";
 export default {
+  props: ["fromabout"],
   data() {
     return {
       item: ""
@@ -62,10 +64,10 @@ export default {
     getCaseDetail() {
       //获取案例详情
       let aid = this.$route.params.id;
-      axios.post("news_details?aid="+aid).then(res => {
+      axios.get("news_details?aid=" + aid).then(res => {
         console.log(res);
         if (res.success === 1) {
-          this.item = res.case_details;
+          this.item = res.news_details;
         }
       });
     }
@@ -102,9 +104,13 @@ export default {
           }
           p {
             display: inline-block;
-            margin-left: 20px;
+            // margin-left: 20px;
             font-size: 14px;
             color: $font-color;
+          }
+          .content {
+            line-height: 25px;
+            padding: 20px;
           }
         }
       }

@@ -35,7 +35,7 @@
                           <router-link class="more" to="/#">{{$t('hangye.more')}}</router-link>
                       </li> -->
                   </ul>
-                   <Page :total="jobPage * 6"  show-elevator @on-change="fanye" class="fanye"/>
+                   <Page :total="jobPage" :page-size="6" show-elevator @on-change="fanye" class="fanye"/>
                 </div>
                 
                 <p v-else class="nodata">该类别暂无招聘信息</p>
@@ -51,7 +51,7 @@ export default {
   data(){
     return {
       cid:this.$route.params.cid || 13,
-      tid:0
+      tid:this.$route.params.tid || 0
     }
   },
   components: {
@@ -65,7 +65,7 @@ export default {
       "recruit?page="+current,cid,tid})
     },
     getId(cid,tid) {
-      console.log(cid,tid)
+      // console.log(cid,tid)
       this.cid = cid,
       this.tid = tid
     }
@@ -75,6 +75,7 @@ export default {
       return this.$store.state.jobList;
     },
     jobPage() {
+      console.log(this.$store.state.jobPage)
       return this.$store.state.jobPage;
     }
   },

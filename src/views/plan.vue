@@ -11,18 +11,18 @@
         <!-- 计划 -->
         <div class="about-item clearfix" id="plan">
             <div class="about-title border-top pull-left">
-                <p class="etitle">Elite Program</p>
+                <p class="etitle">Training campus</p>
                 <p class="ctitle">{{$t('plan.plan.title')}}</p>
             </div>
             <div class="about-right pull-left">
-                <h3>{{$t('plan.plan.title')}} :</h3>
+                <h3>{{$t('plan.plan.stitle')}} </h3>
                 <p class="about-text">{{$t('plan.plan.content')}}</p>
-                 <h3 class="stitle">{{$t('plan.plan.stitle')}}</h3>
-                <p class="about-text" v-html="$t('plan.plan.youshi')"></p>
+                 <h3 class="stitle">{{$t('plan.plan.stitle2')}}</h3>
+                <p class="about-text" v-html="$t('plan.plan.content2')"></p>
             </div>
         </div>
        
-       <img src="../../static/plan/plan-2.jpg" alt="" class="topimg2">
+       <img src="../../static/plan/plan-3.jpg" alt="" class="topimg2">
 
          <!-- 精英计划列表 -->
         <div class="about-item clearfix plan-box">

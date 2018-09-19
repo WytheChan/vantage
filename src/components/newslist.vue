@@ -4,11 +4,11 @@
           <img :src="item.head_img" alt="" class="pull-left thumbnail">
           <div class="pull-left">
             <h3 class="news-title">{{item.title}}</h3>
-            <p>{{item.content}}</p>
+            <p>{{item.content_small ? item.content_small : '这是简介内容'}}</p>
           </div>
           <div class="news-time">
             <time>{{item.article_time}}</time>
-            <span v-if="pv">浏览量：{{item.count }}</span>
+            <span v-if="pv">浏览量：{{item.count ? item.count : 0 }}</span>
           </div>
       </li>
       <!-- <li class="news-item clearfix" @click="lookNews">
@@ -34,12 +34,12 @@ export default {
     pv:{
       type:Boolean,
       default:false
-    }
+    },
   },
   methods:{
     lookNews(e){
       var id=e.currentTarget.dataset.id
-      this.$router.push('/dynamicdetail/'+id)
+      this.$router.push('/detail/'+id)
     }
   },
   data(){

@@ -9,59 +9,94 @@ import Information from '../views/information.vue'
 import Hunter from '../views/hunter.vue'
 import JobDetail from '../views/job_detail.vue'
 import CaseDetail from '../views/case_detail.vue'
-import DynamicDetail from '../views/dynamic_detail.vue'
+import Detail from '../views/detail.vue'
 
 Vue.use(Router)
 
-
-export default new Router({
+const router = new Router({
   //使用HTML5的history模式
   // mode:'history',
-  routes: [
-    {
-      path:'/',
+  routes: [{
+      path: '/',
       redirect: '/shouye'
     },
     {
       path: '/shouye',
-      component: Shouye
+      meta:{
+        title:'寰逸官网-首页'
+      },
+      component: Shouye,
     },
     {
-      path:'/about/:id',
-      component:About
+      path: '/about/:id',
+      meta:{
+        title:'寰逸官网-关于'
+      },
+      component: About
     },
     {
-      path:'/service/:id',
-      component:Service
+      path: '/service/:id',
+      meta:{
+        title:'寰逸官网-服务项目'
+      },
+      component: Service
     },
     {
-      path:'/plan/:id',
-      component:Plan
+      path: '/plan/:id',
+      meta:{
+        title:'寰逸官网-培训校园'
+      },
+      component: Plan
     },
     {
-      path:'/hangye',
-      name:'Hangye',
-      component:Hangye
+      path: '/hangye',
+      name: 'Hangye',
+      meta:{
+        title:'寰逸官网-职位需求'
+      },
+      component: Hangye
     },
     {
-      path:'/information/:id',
-      component:Information
+      path: '/information/:id',
+      meta:{
+        title:'寰逸官网-最新资讯'
+      },
+      component: Information
     },
     {
-      path:'/hunter',
-      component:Hunter
+      path: '/hunter',
+      meta:{
+        title:'寰逸官网-兼职猎头'
+      },
+      component: Hunter
     },
     {
-      path:'/jobdetail/:id',
-      component:JobDetail
+      path: '/jobdetail/:id',
+       meta:{
+        title:'寰逸官网-职位详情'
+      },
+      component: JobDetail
     },
     {
-      path:'/casedetail/:id',
-      component:CaseDetail
+      path: '/casedetail/:id',
+      meta:{
+        title:'寰逸官网-案例详情'
+      },
+      component: CaseDetail
     },
     {
-      path:'/dynamicdetail/:id',
-      component:DynamicDetail
+      path: '/detail/:id',
+      meta:{
+        title:'寰逸官网-文章详情'
+      },
+      component: Detail
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title
+  next()
+})
+
+export default router

@@ -78,9 +78,13 @@ export default {
     this._getClassifyList()
   
     //点击头部导航进来的默认展开显示制造业（cid = 13）,点击底部导航进来的就获取传过来的参数，展开对应的分类
-    let cid = this.$route.params.cid || 13 ;
-    this.isSlide = cid
-    this._getAll(cid)
+    if(this.$route.params.search == 1){
+      this.isSlide = ''
+    }else{
+      let cid = this.$route.params.cid || 13 ;
+      this.isSlide = cid
+      this._getAll(cid)
+    }
   },
   computed:{
     classifyList(){
