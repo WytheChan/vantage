@@ -15,7 +15,7 @@
                         <p class="ctitle">{{$t('information.news')}}</p>
                     </div>
                     <news-list :list="newsList2.data" :pv="true"></news-list>    
-                    <Page :total="newsList2.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                
+                    <Page :total="newsList2.total" :page-size="3"  show-elevator @on-change="fanye" class="fanye"/>                
                 </div>
                  <!-- 公司活动 -->
                 <div class="page-item about-item" id="activity">
@@ -24,7 +24,7 @@
                         <p class="ctitle">{{$t('information.activity')}}</p>
                     </div>
                     <activity-list :list="activityList.data" ></activity-list>
-                    <Page :total="activityList.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                
+                    <Page :total="activityList.total" :page-size="3"  show-elevator @on-change="fanye" class="fanye"/>                
                 </div>
                  <!-- 专业建议 -->
                 <div class="page-item about-item" id="advise">
@@ -33,7 +33,7 @@
                         <p class="ctitle">{{$t('information.advise')}}</p>
                     </div>
                     <news-list :list="adviseList.data" :pv="true"></news-list>    
-                    <Page :total="adviseList.total * 3"  show-elevator @on-change="fanye" class="fanye"/>                   
+                    <Page :total="adviseList.total"  :page-size="3"  show-elevator @on-change="fanye" class="fanye"/>                   
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <img src="../../static/plan/plan-1.jpg" alt="" class="topimg">
+    <img src="../../static/plan/plan-4.png" alt="" class="topimg">
     <div class="about-main">
       <my-aside :list="titleList" class="aside" :active="active"></my-aside>
       <div class="about-content">
@@ -15,9 +15,9 @@
                 <p class="ctitle">{{$t('plan.plan.title')}}</p>
             </div>
             <div class="about-right pull-left">
-                <h3>{{$t('plan.plan.stitle')}} </h3>
+                <h3>{{$t('plan.plan.stitle')}} ：</h3>
                 <p class="about-text">{{$t('plan.plan.content')}}</p>
-                 <h3 class="stitle">{{$t('plan.plan.stitle2')}}</h3>
+                 <h3 class="stitle">{{$t('plan.plan.stitle2')}} ：</h3>
                 <p class="about-text" v-html="$t('plan.plan.content2')"></p>
             </div>
         </div>

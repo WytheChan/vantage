@@ -33,18 +33,10 @@
             <p class="etitle">Professional Advantage</p>
             <p class="ctitle">专业优势</p>
           </div>
-          <p class="about-item-content">
-            （1）专业、专注、质量  <br/>
-
-            （2）网络广泛、快速精准  <br/>
-
-            （3）愉快合作、发掘最佳  <br/>
-
-            （4）专业培训、与时俱进  <br/>
-            
-            （5）最新资讯分享  <br/>
-          </p>
+          <p class="about-item-content" v-html="$t('plan.plan.youshi')"></p>
         </div>
+        <!-- 占位 -->
+        <div style="opacity:0;"></div>
         <!-- 成功案例 -->
         <div class="about-item" id="case">
           <div class="about-title border-top">
@@ -52,7 +44,7 @@
             <p class="ctitle">{{$t('about.case')}}</p>
           </div>
           <case-list :list="caseList"></case-list>
-          <Page :total="aboutPage.page_case * 3"  show-elevator @on-change="fanye" class="fanye"/>
+          <Page :total="aboutPage.page_case " :page-size="3"  show-elevator @on-change="fanye" class="fanye"/>
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
@@ -70,7 +62,7 @@
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
           <news-list :list="dynamicList" :pv="true"></news-list>
-          <Page :total="aboutPage.dynamic * 3"  show-elevator @on-change="fanye" class="fanye"/>
+          <Page :total="aboutPage.dynamic" :page-size="3"  show-elevator @on-change="fanye" class="fanye"/>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
@@ -111,6 +103,10 @@ export default {
         {
           id: "#dw",
           title: this.$t("about.dw")
+        },
+        {
+          id: "#youshi",
+          title: this.$t("plan.plan.youshi_title")
         },
         {
           id: "#case",
@@ -204,6 +200,7 @@ export default {
         }
 
         &#dw {
+          margin-bottom:20px;
           .about-title {
             position: absolute;
             left: 0;
@@ -211,13 +208,11 @@ export default {
           }
 
           .dwimg {
-            // position: absolute;
-            // top: 0;
-            // left: 50%;
             width: auto;
-            height: 330px;
+            // height: 330px;
             margin-left:50%;
-            max-width: 50%;
+            width: 50%;
+            height: auto;
           }
 
           .about-item-content {
@@ -231,18 +226,24 @@ export default {
         
         &#youshi{
           padding: 0;
-          background: none;
+          // background: none;
+          margin-top:0;
           .about-title {
             position: absolute;
-            left: 50%;
-            top: 0;
+            left: 55%;
+            top: 30px;
           }
            .about-item-content {
             position: absolute;
-            left: 50%;
-            top: 120px;
+            left: 55%;
+            top: 150px;
             font-size: 14px;
+            line-height: 20px;
             color: $font-color;
+          }
+          .youshiimg{
+            width: 50%;
+            height: auto;
           }
         }
 

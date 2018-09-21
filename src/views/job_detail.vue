@@ -74,12 +74,21 @@ import axios from "../api/index.js";
 export default {
   data() {
     return {
-      item: ""
+      item: "",
+      cid:'',
+      tid:''
     };
   },
   methods: {
     back() {
-      history.back(1);
+    //   history.back(1);
+        this.$router.push({
+            name: "Hangye",
+            params: {
+              cid:this.cid,
+              tid:this.tid
+            }
+          });
     },
     getJobDetail() {   //获取招聘详情
       let jid = this.$route.params.id;
@@ -87,6 +96,8 @@ export default {
         // console.log(res);
         if (res.success === 1) {
           this.item = res.recruit_details;
+          this.cid = this.item.cid
+          this.tid = this.item.tid
         }
       });
     }

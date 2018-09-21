@@ -1,5 +1,6 @@
 const message = {
   title:'Vantage-HR',
+  content:'content',
   nav: { //导航
     home: 'Home',
     about: 'About',
@@ -57,13 +58,24 @@ const message = {
   service: { //服务项目
     fangan: 'Enterprise Customized Talent Solution',
     fangan_text: 'In view of the characteristics and needs of each enterprise as a market segmentation, this paper analyzes the situation of talent demand, and customizes the talent solution suitable for enterprise development.',
+    liucheng:{
+      title:'Cooperation process',
+      xuqiu:'Understand enterprise talent demand',
+      yixiang:'Define cooperation intention and establish cooperative relationship',
+      diaoyan:'Search plan and Market Research',
+      fankui:'Candidate search recommendation, enterprise communication and feedback',
+      genjin:' Follow up',
+      fuzhu:'Entry assistance',
+      xiezhu:'Employment assistance',
+      goutong:'Communication between enterprises and candidates'
+    },
     zixun: 'Candidate Expert Advisory Service',
     zixun_text: 'For each candidate as a special individual, analyze their own characteristics and advantages, provide a specific stage of career planning, and find the right growth of enterprises. Include：',
     zixun_list: {
       item2: {
         icon: '/static/service/service-icon2.png',
         title: 'Career design',
-        content: 'Professional and effective career design helps candidates to correctly set their career development goals and find suitable positions.'
+        content: 'Professional and effective career design helps candidates to correctly set their own career development direction, positioning.'
       },
       item1: {
         icon: '/static/service/service-icon1.png',
@@ -92,16 +104,19 @@ const message = {
         content: 'Successful induction consultants will conduct follow-up surveys to understand the two-way situation between enterprises and candidates, and timely adjust the situation in the work of candidates, so that candidates can adapt to the working atmosphere of enterprises faster and grow better in enterprises.'
       },
     },
-    dingwei: 'Enterprise Value-added Service Positioning',
-    dingwei_text: 'It can provide valuable consulting services for enterprises at regular intervals.',
-    rencai: 'High-end Talent Service',
-    rencai_text: 'For high-end talents, we have a professional consultant team, specially customized service.',
+    dingwei: 'Enterprise value added service',
+    dingwei_text: 'It can provide enterprises with regular value consulting services regularly, helping enterprises develop healthier and more far-reaching.',
+    rencai: 'Elites plan',
+    rencai_text: 'For high-end talent, with a professional advisory team, fully communicate and master the actual situation of the elite to carry out special customized services, in order to achieve the right place, people do their best.',
   },
   plan: { //精英计划
     plan: {
       title: ' Training campus',
-      stitle: ' Professional advantage：',
-      content: ' It is our value to solve the employment needs of enterprises by professionalism. By virtue of professional advantages, we can make the best use of our talents and make the enterprises develop to a higher level.',
+      stitle: ' Student training',
+      stitle2: ' Social training',
+      content: ' Enter the campus, for high school students to choose a major, college students to choose a career direction and related skills training, in life at a critical point to help students better understand themselves, understand society, become a clear goal, a clear path.',
+      content2: ' Help the confused and confused future of the community to improve their self-awareness and learn from each other, so that they can play light, appropriate.',
+      youshi_title:'Professional advantage',
       youshi: `（1）Professionalism, focus, quality<br/>（2）The network is extensive, fast and precise.<br/>（3）Pleasant cooperation and best exploration<br/>（4）Professional training and keeping pace with the times<br/>（5）Latest information sharing`
     },
     plan_list: {

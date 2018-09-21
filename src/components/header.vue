@@ -66,7 +66,7 @@ export default {
     searchJob() {
       //职位搜索
       axios.post("recruit", { search: this.search }).then(res => {
-        console.log(res);
+        // console.log(res);
         if (res.success === 1) {
           this.$store.commit('setJobList',res.recruit.data)
           this.$store.commit('setJobPage',res.recruit.total)

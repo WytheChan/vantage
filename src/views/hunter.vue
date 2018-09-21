@@ -1,6 +1,6 @@
 <template>
     <div class="hunter">
-        <img src="../../static/hunter/hunter-1.jpg" alt="" class="topimg">
+        <img src="../../static/hunter/hunter-3.png" alt="" class="topimg">
         <div class="page-main">
              <my-aside :list="hunterList" class="aside"></my-aside>
             <div class="page-content">

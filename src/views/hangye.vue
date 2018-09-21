@@ -75,7 +75,7 @@ export default {
       return this.$store.state.jobList;
     },
     jobPage() {
-      console.log(this.$store.state.jobPage)
+      // console.log(this.$store.state.jobPage)
       return this.$store.state.jobPage;
     }
   },

@@ -17,6 +17,38 @@
                     <p class="ctitle">{{$t('service.fangan')}}</p>
                 </div>
                 <p class="about-text">{{$t('service.fangan_text')}}</p>
+                <p class="about-text-2">{{$t('service.liucheng.title')}} :</p>
+                <!-- <ul class="liucheng-list">
+                  <li>
+                    <span>{{$t('service.liucheng.xuqiu')}}</span>
+                    <span>{{$t('service.liucheng.yixiang')}}</span>
+                  </li>
+                  <li>
+                    <span>{{$t('service.liucheng.fankui')}}</span>
+                    <span>{{$t('service.liucheng.diaoyan')}}</span>
+                  </li>
+                  <li>
+                    <span>{{$t('service.liucheng.goutong')}}</span>
+                    <span>{{$t('service.liucheng.xiezhu')}}</span>
+                    <span>{{$t('service.liucheng.fuzhu')}}</span>
+                    <span>{{$t('service.liucheng.genjin')}}</span>
+                    <i class="fa fa-angle-right"></i>
+                  </li>
+                </ul> -->
+                <ul class="lc-list clearfix">
+                  <li class="pull-left">
+                    <p><span>1. </span>{{$t('service.liucheng.xuqiu')}}</p>
+                    <p><span>2. </span>{{$t('service.liucheng.yixiang')}}</p>
+                    <p><span>3. </span>{{$t('service.liucheng.diaoyan')}}</p>
+                    <p><span>4. </span>{{$t('service.liucheng.fankui')}}</p>
+                  </li>
+                   <li class="pull-right">
+                    <p><span>5. </span>{{$t('service.liucheng.goutong')}}</p>
+                    <p><span>6. </span>{{$t('service.liucheng.xiezhu')}}</p>
+                    <p><span>7. </span>{{$t('service.liucheng.fuzhu')}}</p>
+                    <p><span>8. </span>{{$t('service.liucheng.genjin')}}</p>
+                  </li>
+                </ul>
           </div>
         </div>
         <!-- 咨询服务 -->
@@ -48,7 +80,7 @@
           <img src="../../static/service/service-3.png" alt="" class="pull-left about-img">
           <div class="about-right pull-left">
                 <div class="about-title border-top">
-                    <p class="etitle">Enterprise Value-added Service Positioning</p>
+                    <p class="etitle">Enterprise Value-added Service </p>
                     <p class="ctitle">{{$t('service.dingwei')}}</p>
                 </div>
                 <p class="about-text">{{$t('service.dingwei_text')}}</p>
@@ -56,7 +88,7 @@
         </div>
         <!-- 人才 -->
         <div class="about-item clearfix" id="rencai">
-          <img src="../../static/service/service-4.png" alt="" class="pull-right about-img">
+          <img src="../../static/service/service-5.png" alt="" class="pull-right about-img">
           <div class="about-right pull-left">
                 <div class="about-title border-top">
                     <p class="etitle">High-end Talent Service</p>
@@ -176,7 +208,117 @@ export default {
         &#fangan {
           .about-text {
             width: 80%;
-            margin-top: 50px;
+            margin-top: 30px;
+          }
+          .about-text-2 {
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            color: $font-color;
+          }
+          .liucheng-list {
+            width: 60%;
+            min-width: 300px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 30px;
+            cursor: default;
+            li {
+              position: relative;
+              height: 40px;
+              border-bottom: 1px solid $border-color;
+              &:nth-of-type(1) {
+                span {
+                  max-width: 45%;
+                  position: absolute;
+                  bottom: 10px;
+                  &:nth-of-type(1) {
+                    left: 10px;
+                  }
+                  &:nth-of-type(2) {
+                    right: 10px;
+                  }
+                }
+              }
+              &:nth-of-type(2) {
+                border-right: 1px solid $border-color;
+                span {
+                  max-width: 45%;
+                  position: absolute;
+                  bottom: 10px;
+                  &:nth-of-type(1) {
+                    left: 10px;
+                  }
+                  &:nth-of-type(2) {
+                    right: 10px;
+                  }
+                }
+              }
+              &:nth-of-type(3) {
+                border-left: 1px solid $border-color;
+                .fa {
+                  position: absolute;
+                  right: -3px;
+                  bottom: -8px;
+                  color: $border-color;
+                }
+                span {
+                  position: absolute;
+                  bottom: 10px;
+                  max-width: 23%;
+                  &:nth-of-type(1) {
+                    left: 10px;
+                  }
+                  &:nth-of-type(2) {
+                    left: 130px;
+                  }
+                  &:nth-of-type(3) {
+                    left: 200px;
+                  }
+                  &:nth-of-type(4) {
+                    left: 270px;
+                  }
+                }
+              }
+              span {
+                font-size: 12px;
+                color: $font-color;
+                white-space: nowrap;
+                &::after {
+                  content: "";
+                  position: absolute;
+                  bottom: -15px;
+                  left: 50%;
+                  width: 10px;
+                  height: 10px;
+                  margin-left: -5px;
+                  border-radius: 50%;
+                  background: $border-color;
+                }
+              }
+            }
+          }
+          .lc-list{
+            width: 70%;
+            min-width: 320px;
+            padding-left: 30px;
+            margin: 20px 0 0;
+            li{
+              &.pull-left{
+                width: 60%;
+              }
+              p{
+                font-size: 12px;
+                margin: 10px 0 15px;
+                color: $font-color;
+                white-space: nowrap;
+                span{
+                  font-weight: bold;
+                  color: $border-color;
+                }
+              }
+            }
           }
         }
 
@@ -196,10 +338,10 @@ export default {
               position: relative;
               width: 30%;
               margin: 0 0 0px;
-              &:nth-of-type(n+4){
+              &:nth-of-type(n + 4) {
                 margin-top: 100px;
               }
-              &:not(:nth-of-type(6))::after{
+              &:not(:nth-of-type(6))::after {
                 content: "";
                 position: absolute;
                 top: 50%;
@@ -209,16 +351,16 @@ export default {
                 background: url(../../static/service/arrow.png) no-repeat center /
                   contain;
               }
-              &:nth-of-type(3)::after{
-                top:122%;
+              &:nth-of-type(3)::after {
+                top: 122%;
                 left: 25%;
                 transform: rotate(90deg);
               }
               &:nth-of-type(4)::after,
-              &:nth-of-type(5)::after{
-                 transform: rotate(-180deg);
+              &:nth-of-type(5)::after {
+                transform: rotate(-180deg);
               }
-              
+
               .zixun-title {
                 img {
                   display: inline-block;

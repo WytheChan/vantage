@@ -39,7 +39,7 @@
                             <p>{{item.people_num}}</p>
                         </li> -->
                         <li>
-                            <span>内容：</span>  
+                            <span>{{$t('content')}}：</span>  
                             <div class="content" v-html="item.content"></div>
                         </li>
                     </ul>
