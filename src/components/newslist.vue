@@ -8,7 +8,7 @@
           </div>
           <div class="news-time">
             <time>{{item.article_time}}</time>
-            <span v-if="pv">浏览量：{{item.count ? item.count : 0 }}</span>
+            <span v-if="pv">浏览量：{{item.land ? item.land : 0 }}</span>
           </div>
       </li>
       <!-- <li class="news-item clearfix" @click="lookNews">

@@ -8,7 +8,7 @@
             </p>
             <div class="time">
                 <time>{{item.article_time}}</time>
-                <span>浏览量：{{item.count ? item.count : 0}}</span>
+                <span>浏览量：{{item.land ? item.land : 0}}</span>
             </div>
         </div>
     </div>
