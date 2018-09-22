@@ -53,7 +53,8 @@ const message = {
       address: 'アドレス',
       post: '郵便編集',
       mail: 'メール'
-    }
+    },
+    youshi:'専門の優勢'
   },
   service: { //服务项目
     fangan: '企業定制化人材解決案',

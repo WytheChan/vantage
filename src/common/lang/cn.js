@@ -54,7 +54,8 @@ const message = {
       address:'地址',
       post:'邮编',
       mail:'电子邮箱'
-    }
+    },
+    youshi:'专业优势'
   },
   service: { //服务项目
     fangan: '企业定制化人才解决方案',

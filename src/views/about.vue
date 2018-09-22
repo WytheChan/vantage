@@ -31,7 +31,7 @@
           <img src="../../static/about/about-5.jpg" alt="" class="youshiimg">
           <div class="about-title border-bottom">
             <p class="etitle">Professional Advantage</p>
-            <p class="ctitle">专业优势</p>
+            <p class="ctitle">{{$t('about.youshi')}}</p>
           </div>
           <p class="about-item-content" v-html="$t('plan.plan.youshi')"></p>
         </div>
@@ -44,7 +44,7 @@
             <p class="ctitle">{{$t('about.case')}}</p>
           </div>
           <case-list :list="caseList"></case-list>
-          <Page :total="aboutPage.page_case " :page-size="3"  show-elevator @on-change="fanye" class="fanye"/>
+          <Page :total="aboutPage.page_case " :page-size="1"  show-elevator @on-change="fanye1" class="fanye"/>
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
@@ -62,7 +62,7 @@
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
           <news-list :list="dynamicList" :pv="true"></news-list>
-          <Page :total="aboutPage.dynamic" :page-size="3"  show-elevator @on-change="fanye" class="fanye"/>
+          <Page :total="aboutPage.page_dynamic" :page-size="1"  show-elevator @on-change="fanye2" class="fanye"/>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
@@ -90,7 +90,7 @@ import NewsList from "components/newslist.vue";
 import MyAside from "components/aside.vue";
 import Anchors from "../common/js/anchors.js";
 import axios from "../api/index.js";
-import BaiduMap from 'components/map.vue';
+import BaiduMap from "components/map.vue";
 
 export default {
   data() {
@@ -125,27 +125,78 @@ export default {
           title: this.$t("about.contact")
         }
       ],
-      active:0,
-      
+      active: 0,
+      pagenum: {
+        page1: 1,
+        page2: 1
+      }
     };
   },
-  methods:{
-    _handleAnchors(){   //选中左边对应的标题，和滚动到显示标题内容的模块
-      var id = this.$route.params.id
-      var active = this.active
-      Anchors(id,active,'gk')
+  methods: {
+    _handleAnchors() {
+      //选中左边对应的标题，和滚动到显示标题内容的模块
+      var id = this.$route.params.id;
+      var active = this.active;
+      Anchors(id, active, "gk");
     },
-    fanye(current){
-      //current 是分页组件返回的当前页码
-      this.$store.dispatch('getAboutData','synopsis?page='+current)
+    // fanye(current) {
+    //   //current 是分页组件返回的当前页码
+    //   this.$store.dispatch("getAboutData", "synopsis?page=" + current);
+    // },
+    //翻页
+    fanye1(current) {
+     
+      //设置当前页码
+      this.savePage(1, current);
+      //获取保存页码
+      if (sessionStorage.getItem("pagenum")) {
+        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum_about"));
+      }
+
+      this.$store.dispatch(
+        "getAboutData",
+        "synopsis?page2=" + this.pagenum.page2 + "&page1=" + current
+      );
     },
-    
+    fanye2(current) {
+  
+      this.savePage(2, current);
+      // 获取保存页码
+      if (sessionStorage.getItem("pagenum")) {
+        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum_about"));
+      }
+      this.$store.dispatch(
+        "getAboutData",
+        "synopsis?page1=" + this.pagenum.page1 + "&page2=" + current
+      );
+    },
+
+    //保存页码
+    savePage(num, current) {
+      if (sessionStorage.getItem("pagenum_about")) {
+        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum_about"));
+      }
+      switch (num) {
+        case 1:
+          this.pagenum["page1"] = current;
+          this.pagenum["page2"] = this.pagenum.page2;
+          break;
+        case 2:
+          this.pagenum["page1"] = this.pagenum.page1;
+          this.pagenum["page2"] = current;
+          break;
+      }
+
+      this.pagenum = JSON.stringify(this.pagenum);
+
+      sessionStorage.setItem("pagenum_about", this.pagenum);
+    }
   },
-  created(){
-    this.$store.dispatch('getAboutData','synopsis')
+  created() {
+    this.$store.dispatch("getAboutData", "synopsis");
   },
-  mounted(){
-    this._handleAnchors()
+  mounted() {
+    this._handleAnchors();
   },
   components: {
     CaseList,
@@ -161,10 +212,10 @@ export default {
     dynamicList() {
       return this.$store.state.dynamicList;
     },
-    aboutPage(){
+    aboutPage() {
       //案例列表和动态列表的总页数
-      return this.$store.state.aboutPage
-    },
+      return this.$store.state.aboutPage;
+    }
   }
 };
 </script>
@@ -200,7 +251,7 @@ export default {
         }
 
         &#dw {
-          margin-bottom:20px;
+          margin-bottom: 20px;
           .about-title {
             position: absolute;
             left: 0;
@@ -210,7 +261,7 @@ export default {
           .dwimg {
             width: auto;
             // height: 330px;
-            margin-left:50%;
+            margin-left: 50%;
             width: 50%;
             height: auto;
           }
@@ -223,17 +274,17 @@ export default {
             color: $font-color;
           }
         }
-        
-        &#youshi{
+
+        &#youshi {
           padding: 0;
           // background: none;
-          margin-top:0;
+          margin-top: 0;
           .about-title {
             position: absolute;
             left: 55%;
             top: 30px;
           }
-           .about-item-content {
+          .about-item-content {
             position: absolute;
             left: 55%;
             top: 150px;
@@ -241,7 +292,7 @@ export default {
             line-height: 20px;
             color: $font-color;
           }
-          .youshiimg{
+          .youshiimg {
             width: 50%;
             height: auto;
           }
@@ -266,12 +317,12 @@ export default {
           }
         }
 
-        &#contact{
-          padding-left:50px;
-          .about-title{
+        &#contact {
+          padding-left: 50px;
+          .about-title {
             width: 40%;
           }
-          .map{
+          .map {
             width: 60%;
             height: 450px;
           }
@@ -317,18 +368,17 @@ export default {
           color: $font-color;
           cursor: default;
         }
-        .contact-info{
+        .contact-info {
           margin-top: 50px;
           line-height: 2;
           font-size: 14px;
           color: #808080;
         }
-        .fanye{
+        .fanye {
           text-align: center;
           font-size: 12px;
           transform: scale(0.9);
         }
-        
       }
     }
   }

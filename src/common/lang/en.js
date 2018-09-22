@@ -53,7 +53,8 @@ const message = {
       address: 'Address',
       post: 'Post Code',
       mail: 'E-mail'
-    }
+    },
+    youshi:'Professional Advantage'
   },
   service: { //服务项目
     fangan: 'Enterprise Customized Talent Solution',
