@@ -44,7 +44,7 @@
             <p class="ctitle">{{$t('about.case')}}</p>
           </div>
           <case-list :list="caseList"></case-list>
-          <Page :total="aboutPage.page_case " :page-size="1"  show-elevator @on-change="fanye1" class="fanye"/>
+          <Page :total="aboutPage.page_case " :page-size="1"  show-elevator @on-change="fanye($event,'page1')" class="fanye"/>
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
@@ -62,7 +62,7 @@
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
           <news-list :list="dynamicList" :pv="true"></news-list>
-          <Page :total="aboutPage.page_dynamic" :page-size="1"  show-elevator @on-change="fanye2" class="fanye"/>
+          <Page :total="aboutPage.page_dynamic" :page-size="1"  show-elevator @on-change="fanye($event,'page2')" class="fanye"/>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
@@ -139,58 +139,20 @@ export default {
       var active = this.active;
       Anchors(id, active, "gk");
     },
-    // fanye(current) {
-    //   //current 是分页组件返回的当前页码
-    //   this.$store.dispatch("getAboutData", "synopsis?page=" + current);
-    // },
     //翻页
-    fanye1(current) {
-     
-      //设置当前页码
-      this.savePage(1, current);
-      //获取保存页码
-      if (sessionStorage.getItem("pagenum")) {
-        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum_about"));
-      }
-
-      this.$store.dispatch(
-        "getAboutData",
-        "synopsis?page2=" + this.pagenum.page2 + "&page1=" + current
-      );
+    fanye(current,page) {
+      switch (page){
+            case 'page1':
+            this.pagenum.page1 = current
+            this.$store.dispatch("getAboutData", "synopsis?"+page+"=" + current+"&page2="+this.pagenum.page2);
+            break;
+            case 'page2':
+            this.pagenum.page2 = current
+            this.$store.dispatch("getAboutData", "synopsis?"+page+"=" + current+"&page1="+this.pagenum.page1);
+            break;
+        }
     },
-    fanye2(current) {
-  
-      this.savePage(2, current);
-      // 获取保存页码
-      if (sessionStorage.getItem("pagenum")) {
-        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum_about"));
-      }
-      this.$store.dispatch(
-        "getAboutData",
-        "synopsis?page1=" + this.pagenum.page1 + "&page2=" + current
-      );
-    },
-
-    //保存页码
-    savePage(num, current) {
-      if (sessionStorage.getItem("pagenum_about")) {
-        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum_about"));
-      }
-      switch (num) {
-        case 1:
-          this.pagenum["page1"] = current;
-          this.pagenum["page2"] = this.pagenum.page2;
-          break;
-        case 2:
-          this.pagenum["page1"] = this.pagenum.page1;
-          this.pagenum["page2"] = current;
-          break;
-      }
-
-      this.pagenum = JSON.stringify(this.pagenum);
-
-      sessionStorage.setItem("pagenum_about", this.pagenum);
-    }
+    
   },
   created() {
     this.$store.dispatch("getAboutData", "synopsis");

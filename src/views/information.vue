@@ -15,7 +15,7 @@
                         <p class="ctitle">{{$t('information.news')}}</p>
                     </div>
                     <news-list :list="newsList2.data" :pv="true"></news-list>    
-                    <Page :total="newsList2.total" :page-size="1"  show-elevator @on-change="fanye1" class="fanye" />                
+                    <Page :total="newsList2.total" :page-size="1"  show-elevator @on-change="fanye($event,'page1')" class="fanye" />                
                 </div>
                  <!-- 公司活动 -->
                 <div class="page-item about-item" id="activity">
@@ -24,7 +24,7 @@
                         <p class="ctitle">{{$t('information.activity')}}</p>
                     </div>
                     <activity-list :list="activityList.data" ></activity-list>
-                    <Page :total="activityList.total" :page-size="1"  show-elevator @on-change="fanye2" class="fanye" />                
+                    <Page :total="activityList.total" :page-size="1"  show-elevator @on-change="fanye($event,'page2')" class="fanye" />                
                 </div>
                  <!-- 专业建议 -->
                 <div class="page-item about-item" id="advise">
@@ -33,7 +33,7 @@
                         <p class="ctitle">{{$t('information.advise')}}</p>
                     </div>
                     <news-list :list="adviseList.data" :pv="true"></news-list>    
-                    <Page :total="adviseList.total"  :page-size="1"  show-elevator @on-change="fanye3" class="fanye" />                   
+                    <Page :total="adviseList.total"  :page-size="1"  show-elevator @on-change="fanye($event,'page3')" class="fanye" />                   
                 </div>
             </div>
         </div>
@@ -103,84 +103,45 @@ export default {
       this.$store.dispatch("getInformationData", "information");
     },
     //翻页
-    fanye1(current) {
-      //设置当前页码
-      this.savePage(1,current);
-      //获取保存页码
-      if (sessionStorage.getItem("pagenum")) {
-        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum"));
-      }
-
-      this.$store.dispatch(
-        "getInformationData",
-        "information?page2=" +
-          this.pagenum.page2 +
-          "&page3=" +
-          this.pagenum.page3 +
-          "&page1=" +
-          current
-      );
-    },
-    fanye2(current) {
-      this.savePage(2,current);
-      // 获取保存页码
-      if (sessionStorage.getItem("pagenum")) {
-        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum"));
-      }
-      console.log(this.pagenum)
-      this.$store.dispatch(
-        "getInformationData",
-        "information?page1=" +
-          this.pagenum.page1 +
-          "&page3=" +
-          this.pagenum.page3 +
-          "&page2=" +
-          current
-      );
-    },
-    fanye3(current) {
-      this.savePage(3,current);
-      // 获取保存页码
-      if (sessionStorage.getItem("pagenum")) {
-        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum"));
-      }
-      console.log(this.pagenum)
-      this.$store.dispatch(
-        "getInformationData",
-        "information?page1=" +
-          this.pagenum.page1 +
-          "&page2=" +
-          this.pagenum.page2 +
-          "&page3=" +
-          current
-      );
-    },
-    //保存页码
-    savePage(num,current) {
-      if (sessionStorage.getItem("pagenum")) {
-        this.pagenum = JSON.parse(sessionStorage.getItem("pagenum"));
-      }
-      switch (num) {
-        case 1:
-          this.pagenum["page1"] = current;
-          this.pagenum["page2"] = this.pagenum.page2;
-          this.pagenum["page3"] = this.pagenum.page3;
+    fanye(current, page) {
+      switch (page) {
+        case "page1":
+          this.pagenum.page1 = current;
+          this.$store.dispatch(
+            "getInformationData",
+            "information?page2=" +
+              this.pagenum.page2 +
+              "&page3=" +
+              this.pagenum.page3 +
+              "&page1=" +
+              current
+          );
           break;
-        case 2:
-          this.pagenum["page1"] = this.pagenum.page1;
-          this.pagenum["page2"] = current;
-          this.pagenum["page3"] = this.pagenum.page3;
+        case "page2":
+          this.pagenum.page2 = current;
+          this.$store.dispatch(
+            "getInformationData",
+            "information?page1=" +
+              this.pagenum.page1 +
+              "&page3=" +
+              this.pagenum.page3 +
+              "&page2=" +
+              current
+          );
           break;
-        case 3:
-          this.pagenum["page1"] = this.pagenum.page1;
-          this.pagenum["page2"] = this.pagenum.page2;
-          this.pagenum["page3"] = current;
+        case "page3":
+          this.pagenum.page3 = current;
+          this.$store.dispatch(
+            "getInformationData",
+            "information?page1=" +
+              this.pagenum.page1 +
+              "&page2=" +
+              this.pagenum.page2 +
+              "&page3=" +
+              current
+          );
           break;
       }
-
-      this.pagenum = JSON.stringify(this.pagenum);
-
-      sessionStorage.setItem("pagenum", this.pagenum);
     }
   },
   mounted() {
