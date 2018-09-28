@@ -125,7 +125,7 @@ const message = {
     plan_list:{
       tantao: {
         icon:'/static/plan/plan-icon1.png',
-        title: '企业发展+新人才需求的理解与探讨',
+        title: '高端人才服务',
         stitle: '委托',
         content: '根据企业委托，全面沟通发展战略、组织关系、人才缺口，提供职位建议，搜寻最佳人选。'
       },

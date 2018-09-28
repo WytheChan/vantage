@@ -123,7 +123,7 @@ const message = {
     plan_list: {
       tantao: {
         icon: '/static/plan/plan-icon1.png',
-        title: '企業の発展＋新しい人材需要の理解と検討',
+        title: 'ハイエンド人材サービス',
         stitle: '依頼',
         content: '企業の委託によって、戦略、組織関係、人材不足を全面的に交流し、職位の提案を提供し、最も佳人選を探す。'
       },

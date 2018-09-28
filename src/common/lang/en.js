@@ -123,7 +123,7 @@ const message = {
     plan_list: {
       tantao: {
         icon: '/static/plan/plan-icon1.png',
-        title: 'Understanding and exploration of enterprise development + new talent demand',
+        title: 'High-end talent service',
         stitle: 'Entrust',
         content: 'According to the entrustment of the enterprise, communicate the development strategy, organizational relationship, talent gap, provide job suggestions, search for the best candidate.'
       },
