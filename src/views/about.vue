@@ -44,7 +44,7 @@
             <p class="ctitle">{{$t('about.case')}}</p>
           </div>
           <case-list :list="caseList"></case-list>
-          <Page :total="aboutPage.page_case " :page-size="1"  show-elevator @on-change="fanye($event,'page1')" class="fanye"/>
+          <Page :total="aboutPage.page_case " :page-size="3"  show-elevator @on-change="fanye($event,'page1')" class="fanye"/>
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
@@ -62,7 +62,7 @@
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
           <news-list :list="dynamicList" :pv="true"></news-list>
-          <Page :total="aboutPage.page_dynamic" :page-size="1"  show-elevator @on-change="fanye($event,'page2')" class="fanye"/>
+          <Page :total="aboutPage.page_dynamic" :page-size="3"  show-elevator @on-change="fanye($event,'page2')" class="fanye"/>
         </div>
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
