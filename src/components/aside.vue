@@ -84,7 +84,7 @@ export default {
     
   },
   mounted(){
-    this._scroll();
+    // this._scroll();
   },
   created() {
     
@@ -94,9 +94,9 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/base.scss";
 aside {
-  position: fixed;
+  position: absolute;
   left: 0;
-  bottom: 100px;
+  top: 62vh;
   padding-left: 100px;
   width: 20%;
   transition: all 0.5s;

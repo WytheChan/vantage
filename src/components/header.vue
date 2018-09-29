@@ -1,7 +1,7 @@
 <template>
     <header :class="{on : $store.state.isShouye}">
         <router-link to="/">
-            <img src="../../static/logo.png" alt="" class="logo">
+            <img src="../../static/new-logo.png" alt="" class="logo">
         </router-link>
         <ul class="list">
             <li>
@@ -138,7 +138,8 @@ header {
   }
   .logo {
     display: inline-block;
-    width: 220px;
+    // width: 220px;
+    width: 70px;
     height: auto;
   }
   .list {

@@ -74,7 +74,7 @@ export default {
     
   },
   created() {
-    this._scroll();
+    // this._scroll();
     this._getClassifyList()
   
     //点击头部导航进来的默认展开显示制造业（cid = 13）,点击底部导航进来的就获取传过来的参数，展开对应的分类
@@ -96,9 +96,10 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/base.scss";
 .collapse {
-  position: fixed;
+  position: absolute;
   left: 0;
-  bottom: 100px;
+  // bottom: 100px;
+  top:62vh;
   padding-left: 50px;
   width: 20%;
   transition: all 0.5s;

@@ -16,13 +16,17 @@ export default {
     MyFooter
   },
   created() {
+    let w = document.body.clientWidth;
+    window.addEventListener("resize", resize);
     
-    // window.addEventListener("resize", resize);
+    resize()
+    //视窗大小改变
     function resize() {
-      let app = document.querySelector("#app");
-      let w = document.body.clientWidth;
-      let scale = w / 1920;
-      app.style.widh = "scaleX(" + scale + ")";
+      if(w<800){
+        location.href = 'http://b.hj288.cn/wap/index.html'
+      }else{
+          // location.href = 'http://b.hj288.cn/index.php'
+      }
     }
   }
 };
