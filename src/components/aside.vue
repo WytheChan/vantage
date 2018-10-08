@@ -96,8 +96,9 @@ export default {
 aside {
   position: absolute;
   left: 0;
-  top: 580px;
-  padding-left: 100px;
+  top: 0px;
+  padding-left: 50px;
+  padding-right: 50px;
   width: 20%;
   transition: all 0.5s;
   &.on {

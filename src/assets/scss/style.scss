@@ -116,6 +116,9 @@ background-color: $base-color;
     cursor: default;
 }
 //大标题
+.about-main{
+	position: relative;
+}
 .about-title {
 	&.border-top {
 	  border-left: 5px solid $border-color;
