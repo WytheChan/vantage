@@ -173,7 +173,7 @@ header {
     bottom: 20px;
     a {
       margin: 0 0 0 30px;
-      font-size: 16px;
+      font-size: 14px;
       color: $font-color;
       &:hover {
         color: $base-color;
@@ -186,11 +186,11 @@ header {
     top: 15px;
     width: 160px;
     height: 30px;
-    border: 2px solid #999;
+    border: 1px solid #999;
     input {
       width: 80%;
       height: 100%;
-      font-size: 14px;
+      font-size: 12px;
       color: $font-color;
       text-indent: 0.5em;
       &::placeholder {

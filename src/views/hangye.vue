@@ -13,10 +13,10 @@
                       <li v-for="(item,index) in jobList" :key="index" >
                           <h3 class="job-title item-title">{{item.position}}</h3>
                           <p class="job-introduce">
-                              <span>{{$t('hangye.job_list.yealy')}}：{{item.post_money}} | </span>
-                              <span>{{$t('hangye.job_list.hangye')}}：{{item.industry}}  |</span> 
-                              <span>{{$t('hangye.job_list.department')}}：{{item.department}} | </span>   
-                              <span>{{$t('hangye.job_list.nature')}}：{{item.enterprise_nature}} | </span>
+                              <span>{{$t('hangye.job_list.yealy')}}：{{item.post_money}} </span>
+                              <span>{{$t('hangye.job_list.hangye')}}：{{item.industry}} </span> 
+                              <span>{{$t('hangye.job_list.department')}}：{{item.department}} </span>   
+                              <span>{{$t('hangye.job_list.nature')}}：{{item.enterprise_nature}} </span>
                               <span>{{$t('hangye.job_list.scale')}}：{{item.enterprise_scale}} </span>
                           </p>
                           <time>{{item.release_time}}</time>
@@ -92,17 +92,22 @@ export default {
       position: relative;
       padding: 30px 0;
       padding-left: 50px;
-      border-bottom: 1px solid #999;
+      border-bottom: 1px solid #e5e5e5;
       &:nth-of-type(1) {
-        border-top: 1px solid #999;
+        border-top: 1px solid #e5e5e5;
       }
 
       .job-introduce {
-        width: 70%;
+        width: 80%;
         margin: 20px 0;
         line-height: 24px;
         font-size: 14px;
         color: #999;
+        span{
+          display:inline-block;
+          margin:0 10px;
+          cursor:default;
+        }
       }
       time {
         font-size: 12px;

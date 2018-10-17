@@ -137,14 +137,14 @@ background-color: $base-color;
 	}
 
 	.etitle {
-	  font-size: 16px;
+	  font-size: 20px;
 	  color: $base-color;
 	  font-weight: bold;
 	}
 
 	.ctitle {
 	  margin-top: 20px;
-	  font-size: 25px;
+	  font-size: 30px;
 	  font-weight: bold;
 	  color: #333;
 	}
@@ -152,8 +152,8 @@ background-color: $base-color;
 // 列表标题
 .item-title{
 	position: relative;
-	font-size: 25px;
-	padding-left: 30px;
+	font-size: 24px;
+	padding-left: 25px;
 	color:$font-color;
 	&::before{
 		content:'';

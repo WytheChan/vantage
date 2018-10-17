@@ -108,15 +108,15 @@ export default {
   }
   .collapse-item {
     position: relative;
-    padding-left:30px;
-    border-bottom: 1px solid #999;
+    padding:20px 0 20px 30px;
+    border-bottom: 1px solid #e5e5e5;
     overflow: hidden;
     &:nth-of-type(1) {
-      border-top: 1px solid #999;
+      border-top: 1px solid #e5e5e5;
     }
     .collapse-title {
       line-height: 40px;
-      font-size: 16px;
+      font-size: 14px;
       color: #676866;
       padding-right:10px;
       cursor: pointer;
@@ -133,10 +133,13 @@ export default {
       }
     }
     .tag-list {
+      position:relative;
+      top:50px;
       transition: 0.3s top;
       height: 0;
       &.on{
          height: auto;
+         top:0;
       }
       .tag-item {
         display: inline-block;

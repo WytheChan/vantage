@@ -150,7 +150,7 @@ const message = {
     },
   },
   hangye:{  //行业
-    more:'了解更多',
+    more:`了 解 更 多`,
     all:'全部',
     detail:'职位详情',
     resume:'简历投递',
