@@ -19,24 +19,25 @@
         <!-- 企业定位 -->
         <div class="about-item clearfix" id="dw">
          <img src="../../static/about/about-2.png" alt="" class="dwimg">
-          <div class="about-title border-bottom">
+          <div class="about-title border-top">
             <p class="etitle">Corporate Positioning</p>
             <p class="ctitle">{{$t('about.dw')}}</p>
           </div>
           <p class="about-item-content">{{$t('about.dw_text')}}</p>
            
         </div>
+         <!-- 占位 -->
+        <div style="opacity:0;"></div>  
          <!-- 专业优势 -->
         <div class="about-item clearfix" id="youshi">
           <img src="../../static/about/about-5.jpg" alt="" class="youshiimg">
-          <div class="about-title border-bottom">
+          <div class="about-title border-top">
             <p class="etitle">Professional Advantage</p>
             <p class="ctitle">{{$t('about.youshi')}}</p>
           </div>
           <p class="about-item-content" v-html="$t('plan.plan.youshi')"></p>
         </div>
-        <!-- 占位 -->
-        <div style="opacity:0;"></div>
+       
         <!-- 成功案例 -->
         <div class="about-item" id="case">
           <div class="about-title border-top">
@@ -48,7 +49,7 @@
         </div>
         <!-- 我们的承诺 -->
         <div class="about-item clearfix" id="promise">
-          <div class="about-title border-bottom">
+          <div class="about-title border-top">
             <p class="etitle">Our Commitment</p>
             <p class="ctitle">{{$t('about.promise')}}</p>
           </div>
@@ -56,17 +57,19 @@
           <img src="../../static/about/about-3.jpg" alt="">
         </div>
         <!-- 公司动态 -->
-        <div class="about-item" id="dynamic">
+        <!-- <div class="about-item" id="dynamic">
           <div class="about-title border-top">
             <p class="etitle">Company News</p>
             <p class="ctitle">{{$t('about.dynamic')}}</p>
           </div>
           <news-list :list="dynamicList" :pv="true"></news-list>
           <Page :total="aboutPage.page_dynamic" :page-size="3"  show-elevator @on-change="fanye($event,'page2')" class="fanye"/>
-        </div>
+        </div> -->
+        <!-- 占位 -->
+        <div style="opacity:0;"></div>  
         <!-- 联系我们 -->
         <div class="about-item clearfix" id="contact">
-          <div class="about-title border-bottom pull-left">
+          <div class="about-title border-top ">
             <p class="etitle">Contact Us</p>
             <p class="ctitle">{{$t('about.contact')}}</p>
 
@@ -116,10 +119,10 @@ export default {
           id: "#promise",
           title: this.$t("about.promise")
         },
-        {
-          id: "#dynamic",
-          title: this.$t("about.dynamic")
-        },
+        // {
+        //   id: "#dynamic",
+        //   title: this.$t("about.dynamic")
+        // },
         {
           id: "#contact",
           title: this.$t("about.contact")
@@ -204,8 +207,8 @@ export default {
       .about-item {
         position: relative;
         width: 100%;
-        margin: 30px 0 60px;
-
+        margin: 30px 0 50px;
+        
         &#gk,
         &:nth-of-type(2n) {
           padding: 50px;
@@ -213,11 +216,13 @@ export default {
         }
 
         &#dw {
-          margin-bottom: 20px;
           .about-title {
             position: absolute;
-            left: 0;
+            left: 50px;
             top: 0;
+          }
+          .about-item-content{
+            left:50px!important;
           }
 
           .dwimg {
@@ -251,7 +256,7 @@ export default {
             left: 55%;
             top: 150px;
             font-size: 14px;
-            line-height: 20px;
+            line-height: 25px;
             color: $font-color;
           }
           .youshiimg {
@@ -269,7 +274,7 @@ export default {
             position: absolute;
             right: 100px;
             top: 64px;
-            font-size: 16px;
+            font-size: 14px;
             color: $font-color;
           }
 
@@ -280,12 +285,21 @@ export default {
         }
 
         &#contact {
-          padding-left: 50px;
+          position: relative;
           .about-title {
-            width: 40%;
+            // position: absolute;
+            // left: 70%;
+            // top: 0;
+            float: right;
+            width: 30%;
+            height: 70px;
           }
           .map {
-            width: 60%;
+            float: left;
+            // position: absolute;
+            // left: 0;
+            // top: 0;
+            width: 65%;
             height: 450px;
           }
         }
@@ -308,14 +322,14 @@ export default {
           }
 
           .etitle {
-            font-size: 14px;
+            font-size: 20px;
             color: $base-color;
             font-weight: bold;
           }
 
           .ctitle {
             margin-top: 20px;
-            font-size: 20px;
+            font-size: 30px;
             font-weight: bold;
             color: $font-color;
           }
@@ -334,7 +348,8 @@ export default {
           margin-top: 50px;
           line-height: 2;
           font-size: 14px;
-          color: #808080;
+          color: #333;
+          margin-left: -20px;
         }
         .fanye {
           text-align: center;

@@ -4,12 +4,12 @@
         <li class="case-item" v-for="(item,index) in list" :key="index" >
             <h3 class="case-title">{{item.title}}</h3>
             <p>
-               {{$t('about.case_list.position')}}：{{item.title}} &nbsp;
-               {{$t('about.case_list.company')}}：{{item.company}}  &nbsp;
-               {{$t('about.case_list.yealy')}}：{{item.annual_salary}}  &nbsp;
-               {{$t('about.case_list.cycle')}}：{{item.cycle}}  &nbsp;
-               {{$t('about.case_list.address')}}：{{item.job_address}}  &nbsp;
-               {{$t('about.case_list.number')}}：{{item.people_num}}人 &nbsp;
+               {{$t('about.case_list.position')}}：{{item.title}} &nbsp;&nbsp;
+               {{$t('about.case_list.company')}}：{{item.company}}  &nbsp;&nbsp;
+               {{$t('about.case_list.yealy')}}：{{item.annual_salary}}  &nbsp;&nbsp;
+               {{$t('about.case_list.cycle')}}：{{item.cycle}}  &nbsp;&nbsp;
+               {{$t('about.case_list.address')}}：{{item.job_address}}  &nbsp;&nbsp;
+               {{$t('about.case_list.number')}}：{{item.people_num}}人 &nbsp;&nbsp;
             </p>
             <router-link :to="`/casedetail/${item.sc_id}`">{{$t('about.case_list.more')}} ></router-link>
             <time>{{item.sc_time}}</time>
@@ -41,12 +41,12 @@ export default {
 
   .case-item {
     padding: 50px;
-    border-top: 1px solid #d8d8d8;
+    border-top: 1px solid #e5e5e5;
     cursor: default;
     h3 {
       padding-left: 20px;
       border-left: 5px solid $border-color;
-      font-size: 18px;
+      font-size: 24px;
       color: $font-color;
     }
 

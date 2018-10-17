@@ -1,7 +1,7 @@
 <template>
     <div class="collapse" :class="{on : isOn}">
         <div class="collapse-item" v-for="(item,index) in classifyList" :key="index">
-          <p class="collapse-title" :data-cid="item.cid" @click="_tagSlide(item.cid)" :class="{on : isSlide === item.cid}">{{item.classify}} <i class="fa fa-chevron-right"></i></p>
+          <p class="collapse-title" :data-cid="item.cid" @click="_tagSlide(item.cid)" :class="{on : isSlide === item.cid}">{{item.classify}} <i class="fa fa-angle-right"></i></p>
           <div class="tag-list" :class="{on : isSlide === item.cid}">
             <span class="tag-item"  :class="{on : isActive === ''}" @click="_getAll(item.cid)">全部</span>
             <span class="tag-item"  v-for="(tag,index2) in item.tag" :key="index2" :data-tid="tag.tid" @click="_getJobInfo(item.cid,tag.tid)" :class="{on : isActive === tag.tid}">{{tag.tag}}</span>
@@ -108,7 +108,7 @@ export default {
   }
   .collapse-item {
     position: relative;
-    padding:20px 0 20px 30px;
+    padding:12px 0 12px 30px;
     border-bottom: 1px solid #e5e5e5;
     overflow: hidden;
     &:nth-of-type(1) {
@@ -121,7 +121,8 @@ export default {
       padding-right:10px;
       cursor: pointer;
       .fa {
-        margin-top: 12px;
+        font-size: 25px;
+        margin-top: 8px;
         float: right;
         transition: 0.3s transform;
       }

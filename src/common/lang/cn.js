@@ -14,15 +14,15 @@ const message = {
   searchPlaceholder: '职位搜索',
   shouye:{ //首页
     about:'关于寰逸',
-    about_text:'一家为企业与候选人提供综合性人才服务的机构，是HR专业的合作伙伴与候选人的职业生涯规划师。',
+    about_text:`一家以专业的态度为企业与候选人<br/>提供综合性人才服务的HR机构`,
     service:'服务项目',
-    service_text:'通过提供一站式服务，与企业及候选人共成长。 为企业定制人才解决方案，为候选人提供专家咨询服务，以及附加值和高端人才服务。',
+    service_text:`我们拥有经验丰富的服务团队<br/>为企业与候选人提供一站式的优质服务`,
     plan:'培训校园',
-    plan_text:'应企业发展及新人才需求的理解与探讨，依据专业委托流程，对人才进行甄选与面试，直至人才到位的入职跟踪，为企业提供精英。',
+    plan_text:`应企业对于新人才的需求<br/>我们深入校园进行挑选更多更好的优秀人才`,
     hangye:'职位需求',
-    hangye_text:'总部设在广州，业务涉及中国内地、港澳台地区及海外机会，服务领域包括高科技、IT/互联网、市场传媒、制造业、零售业、金融财会等。',
+    hangye_text:`我们提供的综合性人才服务目前已覆盖<br/>中国内地、港澳以及海外的各领域各行业`,
     hunter:'兼职猎头',
-    hunter_text:'对猎头事业感兴趣的朋友，这里有一个发挥所长的平台，在共享平台携手合作共赢，基于朋友圈精准推荐，介绍成功有惊喜谢礼。'
+    hunter_text:`加入我们，你不仅能在这个平台上大展身手<br/>还能够收获丰富的经验与奖励`
   },
   about: { //关于
     gk: '公司概况',
@@ -59,7 +59,7 @@ const message = {
   },
   service: { //服务项目
     fangan: '企业定制化人才解决方案',
-    fangan_text: '针对每个企业作为细分市场的特点及需求，分析人才需求状况，贴心定制适合企业发展的人才解决方案。',
+    fangan_text: '根据企业委托，跟客户确认需求，进行信息沟通，分析相应的人才状况并提供相关建议，贴心定制适合企业发展的人才解决方案。',
     liucheng:{
       title:'合作流程',
       xuqiu:'了解企业人才需求',
@@ -78,34 +78,36 @@ const message = {
       item2: {
         icon: '/static/service/service-icon2.png',
         title: '职业设计',
-        content: '以专业有效的职业生涯设计帮助候选人正确设定自己的职业发展方向，作好定位。'
+        content: '以专业的角度，为候选人的职业发展方向进行有效的定位和设计。'
       },
       item1: {
         icon: '/static/service/service-icon1.png',
         title: '职位介绍',
-        content: '在充分了解职位概要后，以标准的工作程序，向候选人阐明职位描述，并表明候选人合适之处。'
+        content: '为候选人匹配合适的职位之后，以标准的程序阐明职位内容与要求。'
       },
       item4: {
         icon: '/static/service/service-icon4.png',
         title: '简历完善',
-        content: ' 具有针对性地把候选人规范化、逻辑化地介绍给企业，提炼闪光点，突出优势与实力'
-      },
-      item3: {
-        icon: '/static/service/service-icon3.png',
-        title: '人选推荐',
-        content: '把合适的候选人推荐到合适的职位，并安排企业面见。'
-      },
-      
-      item5: {
-        icon: '/static/service/service-icon5.png',
-        title: '面试指导',
-        content: '面试前，顾问将会针对职位及企业特性，对候选人进行有针对性的面试技巧指导，帮助候选人能在面试中呈现最佳状态'
+        content: '帮助候选人把优势与实力在简历上准确化、规范化、逻辑化向企业展现。'
       },
       item6: {
         icon: '/static/service/service-icon6.png',
         title: '入职跟进',
-        content: '成功入职后顾问将会进行跟踪调查，了解企业与候选人双向情况，及时调整候选人工作中出现的情况，让候选人能更快地适应企业的工作氛围，在企业更好地成长'
+        content: '入职后继续跟进企业与候选人的双向情况，帮助候选人进行适应与调整。'
       },
+      item5: {
+        icon: '/static/service/service-icon5.png',
+        title: '面试指导',
+        content: '针对职位与企业特性，为候选人指导专业的面试技巧，让HR眼前一亮。'
+      },
+      item3: {
+        icon: '/static/service/service-icon3.png',
+        title: '人选推荐',
+        content: '将合适的候选人推荐到合适的职位，并安排企业面见。'
+      },
+      
+   
+    
     },
     dingwei: '企业附加值服务',
     dingwei_text: '可定期为企业提供具有附加值的咨询服务，助力企业发展得更矫健、深远。',
@@ -150,6 +152,7 @@ const message = {
     },
   },
   hangye:{  //行业
+    notjob:'该类别暂无招聘信息',
     more:`了 解 更 多`,
     all:'全部',
     detail:'职位详情',

@@ -124,7 +124,7 @@ header {
       }
     }
     .search {
-      border: 2px solid #fff;
+      border: 1px solid #fff;
       input {
         color: #fff;
       }

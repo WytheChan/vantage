@@ -22,10 +22,10 @@
             </div>
         </div>
        
-       <img src="../../static/plan/plan-3.jpg" alt="" class="topimg2">
+       <img src="../../static/plan/plan-5.png" alt="" class="topimg2">
 
          <!-- 精英计划列表 -->
-        <div class="about-item clearfix plan-box">
+        <!-- <div class="about-item clearfix plan-box">
           
             <ul class="plan-list">
                 <li v-for="(item,index) in planList" :key="index" :id="titleList[index+1].id.slice(1)">
@@ -38,16 +38,8 @@
                         <p class="about-text">{{item.content}}</p>
                     </div>
                 </li>
-                <!-- <li>
-                    <img src="../../static/plan/plan-icon1.png" alt="" class="pull-left">
-                    <div class="about-title border-bottom">
-                        <p class="ctitle">{{$t('plan.plan.title')}}</p>
-                    </div>
-                    <h3>{{$t('plan.plan.title')}} :</h3>
-                    <p class="about-text">{{$t('plan.plan.content')}}</p>
-                </li> -->
             </ul>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -65,22 +57,22 @@ export default {
           id: "#plan",
           title: this.$t("plan.plan.title")
         },
-        {
-          id: "#tantao",
-          title: this.$t("plan.plan_list.tantao.title")
-        },
-        {
-          id: "#liucheng",
-          title: this.$t("plan.plan_list.liucheng.title")
-        },
-        {
-          id: "#mianshi",
-          title: this.$t("plan.plan_list.mianshi.title")
-        },
-        {
-          id: "#genzong",
-          title: this.$t("plan.plan_list.genzong.title")
-        }
+        // {
+        //   id: "#tantao",
+        //   title: this.$t("plan.plan_list.tantao.title")
+        // },
+        // {
+        //   id: "#liucheng",
+        //   title: this.$t("plan.plan_list.liucheng.title")
+        // },
+        // {
+        //   id: "#mianshi",
+        //   title: this.$t("plan.plan_list.mianshi.title")
+        // },
+        // {
+        //   id: "#genzong",
+        //   title: this.$t("plan.plan_list.genzong.title")
+        // }
       ],
       planList: [],
       active:0,
@@ -174,6 +166,10 @@ export default {
           }
           .stitle {
             margin-top: 50px;
+          }
+          .about-right{
+            top: 5px;
+            left: 10px;
           }
         }
         &.plan-box {

@@ -58,7 +58,7 @@ const message = {
   },
   service: { //服务项目
     fangan: 'Enterprise Customized Talent Solution',
-    fangan_text: 'In view of the characteristics and needs of each enterprise as a market segmentation, this paper analyzes the situation of talent demand, and customizes the talent solution suitable for enterprise development.',
+    fangan_text: 'According to the entrustment of enterprises, confirm the needs of customers, carry out information communication, analysis of the corresponding talent situation and provide relevant recommendations, tailor-made suitable for the development of enterprise talent solutions.',
     liucheng:{
       title:'Cooperation process',
       xuqiu:'Understand enterprise talent demand',
@@ -88,21 +88,20 @@ const message = {
         title: 'Resume perfection',
         content: ' Introducing candidates to enterprises in a standardized and logical way, refining flash points, highlighting advantages and strength'
       },
-      item3: {
-        icon: '/static/service/service-icon3.png',
-        title: 'Candidates recommendation',
-        content: 'Recommend suitable candidates to the right position and arrange for the company to meet.'
+      item6: {
+        icon: '/static/service/service-icon6.png',
+        title: 'Follow up',
+        content: 'Successful induction consultants will conduct follow-up surveys to understand the two-way situation between enterprises and candidates, and timely adjust the situation in the work of candidates, so that candidates can adapt to the working atmosphere of enterprises faster and grow better in enterprises.'
       },
-    
       item5: {
         icon: '/static/service/service-icon5.png',
         title: 'Interview guidance',
         content: 'Before the interview, the consultant will provide targeted interview skills to the candidates according to the position and the characteristics of the enterprise, so as to help the candidates present their best performance in the interview.'
       },
-      item6: {
-        icon: '/static/service/service-icon6.png',
-        title: 'Follow up',
-        content: 'Successful induction consultants will conduct follow-up surveys to understand the two-way situation between enterprises and candidates, and timely adjust the situation in the work of candidates, so that candidates can adapt to the working atmosphere of enterprises faster and grow better in enterprises.'
+      item3: {
+        icon: '/static/service/service-icon3.png',
+        title: 'Candidates recommendation',
+        content: 'Recommend suitable candidates to the right position and arrange for the company to meet.'
       },
     },
     dingwei: 'Enterprise value added service',
@@ -148,6 +147,7 @@ const message = {
     },
   },
   hangye: { //行业
+    notjob:'There is no recruitment information in this category.',
     more: 'more',
     all: 'all',
     detail:'Job details',

@@ -58,7 +58,7 @@ const message = {
   },
   service: { //服务项目
     fangan: '企業定制化人材解決案',
-    fangan_text: '企業ごとに市場の特徴と需要として、人材需要の状況を分析し、企業の発展に適した人材の解決策に適している。',
+    fangan_text: '企業の委託によって、取引先と需要を確認し、情報の疎通を行い、相応する人材の状況を分析して、関連する提案を提供して、企業の発展に適した人材の解決策に適します。',
     liucheng:{
       title:'協力の流れ',
       xuqiu:'企業の人材の需要を理解する',
@@ -88,21 +88,20 @@ const message = {
         title: '履歴書改善する',
         content: ' 適切な候補者を適切な職位に推薦し、企業の面見を手配する。'
       },
-      item3: {
-        icon: '/static/service/service-icon3.png',
-        title: '人選のお勧め',
-        content: '適切な候補者を適切な職位に推薦し、企業の面見を手配する。'
+      item6: {
+        icon: '/static/service/service-icon6.png',
+        title: '職に入る',
+        content: '入社後、顧問は追跡調査を行い、企業や候補者の双方向状況を理解し、候補者の仕事に現れる状況を調整し、企業の仕事の雰囲気に応え、企業の成長をよりいっそう成長させることができる。'
       },
-      
       item5: {
         icon: '/static/service/service-icon5.png',
         title: '面接の指導',
         content: '面接前には、顧問は職位や企業特性に対して、候補者に対する面接テクニックの指導を行い、面接で最良の状態を見せることができる。'
       },
-      item6: {
-        icon: '/static/service/service-icon6.png',
-        title: '職に入る',
-        content: '入社後、顧問は追跡調査を行い、企業や候補者の双方向状況を理解し、候補者の仕事に現れる状況を調整し、企業の仕事の雰囲気に応え、企業の成長をよりいっそう成長させることができる。'
+      item3: {
+        icon: '/static/service/service-icon3.png',
+        title: '人選のお勧め',
+        content: '適切な候補者を適切な職位に推薦し、企業の面見を手配する。'
       },
     },
     dingwei: '企業付加価値サービス',
@@ -148,6 +147,7 @@ const message = {
     },
   },
   hangye: { //行业
+    notjob:'求人情報はありません',
     more: 'もっと',
     all: 'すべて',
     detail:'職位の詳細',

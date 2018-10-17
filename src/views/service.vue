@@ -10,7 +10,7 @@
         </Breadcrumb>
         <!-- 方案 -->
         <div class="about-item clearfix" id="fangan">
-          <img src="../../static/service/service-2.png" alt="" class="pull-left about-img">
+          <!-- <img src="../../static/service/service-2.png" alt="" class="pull-left about-img"> -->
           <div class="about-right pull-left">
                 <div class="about-title border-top">
                     <p class="etitle">Enterprise Customized Talent Solution</p>
@@ -18,31 +18,14 @@
                 </div>
                 <p class="about-text">{{$t('service.fangan_text')}}</p>
                 <p class="about-text-2">{{$t('service.liucheng.title')}} :</p>
-                <!-- <ul class="liucheng-list">
-                  <li>
-                    <span>{{$t('service.liucheng.xuqiu')}}</span>
-                    <span>{{$t('service.liucheng.yixiang')}}</span>
-                  </li>
-                  <li>
-                    <span>{{$t('service.liucheng.fankui')}}</span>
-                    <span>{{$t('service.liucheng.diaoyan')}}</span>
-                  </li>
-                  <li>
-                    <span>{{$t('service.liucheng.goutong')}}</span>
-                    <span>{{$t('service.liucheng.xiezhu')}}</span>
-                    <span>{{$t('service.liucheng.fuzhu')}}</span>
-                    <span>{{$t('service.liucheng.genjin')}}</span>
-                    <i class="fa fa-angle-right"></i>
-                  </li>
-                </ul> -->
                 <ul class="lc-list clearfix">
-                  <li class="pull-left">
+                  <li class="">
                     <p><span>1. </span>{{$t('service.liucheng.xuqiu')}}</p>
                     <p><span>2. </span>{{$t('service.liucheng.yixiang')}}</p>
                     <p><span>3. </span>{{$t('service.liucheng.diaoyan')}}</p>
                     <p><span>4. </span>{{$t('service.liucheng.fankui')}}</p>
                   </li>
-                   <li class="pull-right">
+                   <li class="">
                     <p><span>5. </span>{{$t('service.liucheng.goutong')}}</p>
                     <p><span>6. </span>{{$t('service.liucheng.xiezhu')}}</p>
                     <p><span>7. </span>{{$t('service.liucheng.fuzhu')}}</p>
@@ -51,9 +34,23 @@
                 </ul>
           </div>
         </div>
+        <!-- 占位 -->
+        <div style="opacity:0;"></div>  
+        <!-- 企业附加值服务 -->
+        <div class="about-item clearfix" id="dingwei">
+          <img src="../../static/service/service-3.png" alt="" class="pull-left about-img">
+          <div class="about-right pull-left">
+                <div class="about-title border-top">
+                    <p class="etitle">Enterprise Value-added Service </p>
+                    <p class="ctitle">{{$t('service.dingwei')}}</p>
+                </div>
+                <p class="about-text">{{$t('service.dingwei_text')}}</p>
+          </div>
+        </div>
+    
         <!-- 咨询服务 -->
         <div class="about-item clearfix" id="zixun">
-          <div class="about-title border-bottom">
+          <div class="about-title border-top">
             <p class="etitle">Candidate Expert Advisory Service</p>
             <p class="ctitle">{{$t('service.zixun')}}</p>
           </div>
@@ -75,23 +72,13 @@
                 </li> -->
             </ul>
         </div>
-        <!-- 定位 -->
-        <div class="about-item clearfix" id="dingwei">
-          <img src="../../static/service/service-3.png" alt="" class="pull-left about-img">
-          <div class="about-right pull-left">
-                <div class="about-title border-top">
-                    <p class="etitle">Enterprise Value-added Service </p>
-                    <p class="ctitle">{{$t('service.dingwei')}}</p>
-                </div>
-                <p class="about-text">{{$t('service.dingwei_text')}}</p>
-          </div>
-        </div>
-        <!-- 人才 -->
+        
+        <!-- 精英计划 -->
         <div class="about-item clearfix" id="rencai">
           <img src="../../static/service/service-5.png" alt="" class="pull-right about-img">
           <div class="about-right pull-left">
                 <div class="about-title border-top">
-                    <p class="etitle">High-end Talent Service</p>
+                    <p class="etitle">Elites plan</p>
                     <p class="ctitle">{{$t('service.rencai')}}</p>
                 </div>
                 <p class="about-text">{{$t('service.rencai_text')}}</p>
@@ -114,13 +101,14 @@ export default {
           id: "#fangan",
           title: this.$t("service.fangan")
         },
-        {
-          id: "#zixun",
-          title: this.$t("service.zixun")
-        },
+        
         {
           id: "#dingwei",
           title: this.$t("service.dingwei")
+        },
+        {
+          id: "#zixun",
+          title: this.$t("service.zixun")
         },
         {
           id: "#rencai",
@@ -185,7 +173,7 @@ export default {
       .about-item {
         position: relative;
         width: 100%;
-        margin: 30px 0 60px;
+        margin: 30px 0 50px;
         &:nth-of-type(2n) {
           background: #f5f5f5;
         }
@@ -195,7 +183,7 @@ export default {
           padding: 50px 50px 0 50px;
         }
         .about-text {
-          margin: 30px 0 0 30px;
+          margin: 30px 0 0 00px;
           font-size: 14px;
           line-height: 2;
           color: $font-color;
@@ -206,13 +194,18 @@ export default {
         }
 
         &#fangan {
+           margin-bottom: 0px;
+          .about-right {
+            width: 100%;
+            padding: 50px 50px 0 50px;
+          }
           .about-text {
-            width: 80%;
+            // width: 80%;
             margin-top: 30px;
           }
           .about-text-2 {
             margin-top: 30px;
-            margin-left: 30px;
+            // margin-left: 30px;
             font-size: 14px;
             font-weight: bold;
             color: $font-color;
@@ -221,8 +214,7 @@ export default {
             width: 60%;
             min-width: 300px;
             margin-top: 10px;
-            margin-bottom: 20px;
-            margin-left: 30px;
+            margin-bottom: 50px;
             cursor: default;
             li {
               position: relative;
@@ -300,22 +292,23 @@ export default {
             }
           }
           .lc-list{
-            width: 70%;
+            width: 100%;
             min-width: 320px;
-            padding-left: 30px;
+            padding-bottom: 30px;
             margin: 20px 0 0;
             li{
-              &.pull-left{
-                width: 60%;
-              }
+              width: 100%;
               p{
+                float: left;
+                width: 25%;
                 font-size: 12px;
                 margin: 10px 0 15px;
                 color: $font-color;
                 white-space: nowrap;
                 span{
+                  font-size: 30px;
                   font-weight: bold;
-                  color: $border-color;
+                  color: $base-color;
                 }
               }
             }
@@ -387,7 +380,8 @@ export default {
         }
 
         &#dingwei {
-          margin-bottom: 0px;
+          margin: 20px 0 50px;
+         
         }
 
         &#rencai {

@@ -38,7 +38,7 @@
                    <Page :total="jobPage" :page-size="6" show-elevator @on-change="fanye" class="fanye"/>
                 </div>
                 
-                <p v-else class="nodata">该类别暂无招聘信息</p>
+                <p v-else class="nodata">{{$t('hangye.notjob')}}</p>
             </div>
         </div>
     </div>
@@ -86,6 +86,7 @@ export default {
 @import "../assets/scss/base.scss";
 .hangye {
   @include page;
+  min-height: 900px;
   .job-list {
     margin: 50px 0;
     li {
