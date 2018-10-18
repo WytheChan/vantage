@@ -1,7 +1,7 @@
 <template>
     <header :class="{on : $store.state.isShouye}">
         <router-link to="/">
-            <img src="../../static/logo_v1.png" alt="" class="logo">
+            <img src="../../static/logo_v2.png" alt="" class="logo">
         </router-link>
         <ul class="list">
             <li>
@@ -138,13 +138,13 @@ header {
   }
   .logo {
     display: inline-block;
-    width: 168px;
+    width: 120px;
     height: auto;
   }
   .list {
     position: absolute;
     right: calc(180px + 5%);
-    top: 20px;
+    top: 25px;
     li {
       float: left;
       padding: 0 10px;
@@ -170,7 +170,7 @@ header {
   nav {
     position: absolute;
     right: 5%;
-    bottom: 20px;
+    bottom: 25px;
     a {
       margin: 0 0 0 30px;
       font-size: 14px;
@@ -183,7 +183,7 @@ header {
   .search {
     position: absolute;
     right: 5%;
-    top: 15px;
+    top: 20px;
     width: 160px;
     height: 30px;
     border: 1px solid #999;

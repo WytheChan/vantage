@@ -99,7 +99,7 @@ export default {
   position: absolute;
   left: 0;
   // bottom: 100px;
-  top:0px;
+  top:43px;
   padding-right: 50px;
   width: 20%;
   transition: all 0.5s;

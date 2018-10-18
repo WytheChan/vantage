@@ -1,17 +1,12 @@
 <template>
     <div class="shouye">
         <section>
-            <swiper :options="swiperOption" ref="mySwiper" class="swiper">
+            <swiper v-if="bannerList.length>0" :options="swiperOption" ref="mySwiper" class="swiper">
               <!-- slides -->
-              <swiper-slide>
-                <!-- <img src="../../static/shouye/banner-1.png" alt=""> -->
+              <swiper-slide v-for="(item,i) in bannerList" :key="i" :style="{'background-image':'url('+item.imgurl+')'}">
+                
               </swiper-slide>
-              <swiper-slide>
-                 <!-- <img src="../../static/shouye/banner-2.png" alt=""> -->
-              </swiper-slide>
-              <swiper-slide>
-                 <!-- <img src="../../static/shouye/banner-3.png" alt=""> -->
-              </swiper-slide>
+             
               <!-- Optional controls -->
               <div class="swiper-pagination"  slot="pagination"></div>
             </swiper>
@@ -84,7 +79,8 @@ export default {
         // observeParents:true,
         // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
         // debugger: true,
-      }
+      },
+      bannerList:[]
     };
   },
   components: {
@@ -105,23 +101,24 @@ export default {
     _getShouye() {
       //获取首页数据
       axios.post("home").then(res => {
-        // console.log(res.index_info)
-        if (res.status == 1) {
-          var info = res.index_info;
-          var section = document.querySelectorAll("section"); //设置首页模块的背景图片
-          for (var i = 0; i < section.length; i++) {
-            var imgUrl = info[i].bg_img;
-            var s = (section[
-              i
-            ].style.background = `url(${imgUrl}) no-repeat 0 0 / cover`);
-          }
-        }
+        // console.log(res.banner)
+        this.bannerList = res.banner
+        // if (res.status == 1) {
+        //   var info = res.index_info;
+        //   var section = document.querySelectorAll("section"); //设置首页模块的背景图片
+        //   for (var i = 0; i < section.length; i++) {
+        //     var imgUrl = info[i].bg_img;
+        //     var s = (section[
+        //       i
+        //     ].style.background = `url(${imgUrl}) no-repeat 0 0 / cover`);
+        //   }
+        // }
       });
     }
   },
   created() {
     this._inShouye();
-    // this._getShouye()
+    this._getShouye()
   },
   destroyed() {
     this._outShouye();
@@ -165,21 +162,21 @@ export default {
         .swiper-slide {
           width: 100%;
           height: 100vh;
+          background: no-repeat 0 0 /cover;
           img{
             width: 100%;
           }
-          &:nth-of-type(1) {
-            background: url(../../static/shouye/banner-1.png) no-repeat 0 0 /
-              cover;
-          }
-          &:nth-of-type(2) {
-            background: url(../../static/shouye/banner-2.png) no-repeat 0 0 /
-              cover;
-          }
-          &:nth-of-type(3) {
-            background: url(../../static/shouye/banner-3.png) no-repeat 0 0 /
-              cover;
-          }
+          // &:nth-of-type(1) {
+          //   background: url(../../static/shouye/banner-1.png) no-repeat 0 0 /cover;
+          // }
+          // &:nth-of-type(2) {
+          //   background: url(../../static/shouye/banner-2.png) no-repeat 0 0 /
+          //     cover;
+          // }
+          // &:nth-of-type(3) {
+          //   background: url(../../static/shouye/banner-3.png) no-repeat 0 0 /
+          //     cover;
+          // }
         }
       }
     }
@@ -190,7 +187,7 @@ export default {
     .box {
       position: absolute;
       bottom: 15%;
-      width: 60%;
+      width: 80%;
       &.right {
         right: 3%;
         padding-right: 30px;

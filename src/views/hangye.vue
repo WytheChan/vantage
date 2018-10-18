@@ -1,6 +1,6 @@
 <template>
     <div class="hangye">
-        <img src="../../static/hangye/hangye-1.jpg" alt="" class="topimg">
+        <img src="../../static/hangye/hangye-1.png" alt="" class="topimg">
         <div class="page-main">
             <hangye-tag @getTid="getId" @getCid="getId"></hangye-tag>
             <div class="page-content">
@@ -88,7 +88,7 @@ export default {
   @include page;
   min-height: 900px;
   .job-list {
-    margin: 50px 0;
+    margin: 30px 0;
     li {
       position: relative;
       padding: 30px 0;

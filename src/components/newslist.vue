@@ -72,13 +72,13 @@ export default {
       h3 {
         padding-left: 20px;
         border-left: 5px solid $border-color;
-        font-size: 16px;
-        font-weight: bold;
+        font-size: 24px;
+        // font-weight: bold;
         color: $font-color;
       }
       p {
         margin: 20px 0 10px;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 2;
         color: #808080;
       }

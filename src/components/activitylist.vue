@@ -29,13 +29,13 @@ export default {
 .activity-list {
   width: 100%;
   margin: 50px 0;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid #e5e5e5;
   .activity-item {
     float: left;
     width: 50%;
     margin: 20px 0;
     padding: 30px 5% 0 0;
-    border-top: 1px solid #999;
+    border-top: 1px solid #e5e5e5;
     cursor: pointer;
     &:nth-of-type(2n) {
       float: right;
@@ -49,14 +49,14 @@ export default {
       padding-left: 20px;
       margin: 20px 0 20px;
       border-left: 5px solid $border-color;
-      font-size: 18px;
+      font-size: 24px;
       color: $font-color;
     }
     p {
-      font-size: 12px;
+      font-size: 14px;
       color: #999;
-      line-height: 16px;
-      height: 30px;
+      line-height: 20px;
+      height: 36px;
       overflow: hidden;
     }
     .time {

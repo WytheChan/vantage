@@ -1,6 +1,6 @@
 <template>
     <div class="job-detail">
-        <img src="../../static/jobdetail.jpg" alt="" class="topimg">
+        <img src="../../static/hangye/hangye-1.png" alt="" class="topimg">
         <div class="page-main">
             <div class="page-content">
                 <img src="../../static/arrow.png" alt="" class="arrow" @click="back">
@@ -117,7 +117,7 @@ export default {
       h3 {
         padding-left: 20px;
         border-left: 5px solid $border-color;
-        font-size: 18px;
+        font-size: 24px;
         margin-bottom: 50px;
         color: $font-color;
       }
@@ -151,7 +151,7 @@ export default {
     .arrow {
       position: absolute;
       left: -150px;
-      top: 100px;
+      top: 0px;
       width: 50px;
       height: auto;
       cursor: pointer;

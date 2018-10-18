@@ -39,7 +39,7 @@
                             <p>{{item.people_num}}</p>
                         </li> -->
                         <li>
-                            <span>{{$t('content')}}：</span>  
+                            <!-- <span>{{$t('content')}}：</span>   -->
                             <div class="content" v-html="item.content"></div>
                         </li>
                     </ul>
@@ -88,7 +88,7 @@ export default {
       h3 {
         padding-left: 20px;
         border-left: 5px solid $border-color;
-        font-size: 18px;
+        font-size: 24px;
         margin-bottom: 50px;
         color: $font-color;
       }
@@ -126,7 +126,7 @@ export default {
     .arrow {
       position: absolute;
       left: -150px;
-      top: 100px;
+      top: 0px;
       width: 50px;
       height: auto;
       cursor: pointer;

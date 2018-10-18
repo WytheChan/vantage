@@ -1,18 +1,18 @@
 <template>
     <footer class="clearfix">
         <div class="clearfix">
-            <dl>
+        <dl>
             <dt>{{$t('nav.about')}}</dt>
             <dd>
                 <router-link @click.native="_anchors" to="/about/gk" title="公司概况">{{$t('about.gk')}}</router-link>  
-                <router-link @click.native="_anchors" to="/about/promise" title="我们的承诺">{{$t('about.promise')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/case" title="成功案例">{{$t('about.case')}}</router-link>
             </dd>
              <dd>
                 <router-link @click.native="_anchors" to="/about/dw" title="企业定位">{{$t('about.dw')}}</router-link>
-                <router-link @click.native="_anchors" to="/about/dynamic" title="公司动态">{{$t('about.dynamic')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/promise" title="我们的承诺">{{$t('about.promise')}}</router-link>
             </dd>
              <dd>
-                <router-link @click.native="_anchors" to="/about/case" title="成功案例">{{$t('about.case')}}</router-link>
+                <router-link @click.native="_anchors" to="/about/youshi" title="专业优势">{{$t('about.youshi')}}</router-link>
                 <router-link @click.native="_anchors" to="/about/contact" title="联系我们">{{$t('about.contact')}}</router-link>
             </dd>
         </dl>
@@ -21,11 +21,12 @@
             <dd>
                 <router-link @click.native="_anchors" to="/service/fangan" title="方案">{{$t('service.fangan')}}</router-link>
             </dd>
-             <dd>
-                <router-link @click.native="_anchors" to="/service/zixun" title="咨询服务">{{$t('service.zixun')}}</router-link>
-            </dd>
+             
              <dd>
                 <router-link @click.native="_anchors" to="/service/dingwei" title="定位">{{$t('service.dingwei')}}</router-link>
+            </dd>
+            <dd>
+                <router-link @click.native="_anchors" to="/service/zixun" title="咨询服务">{{$t('service.zixun')}}</router-link>
             </dd>
             <dd>
                 <router-link @click.native="_anchors" to="/service/rencai" title="人才">{{$t('service.rencai')}}</router-link>
@@ -36,7 +37,7 @@
             <dd>
                 <router-link @click.native="_anchors" to="/plan/plan">{{$t('nav.plan')}}</router-link>
             </dd>
-             <dd>
+             <!-- <dd>
                 <router-link @click.native="_anchors" to="/plan/tantao" title="探讨">{{$t('plan.plan_list.tantao.title')}}</router-link>
             </dd>
             <dd>
@@ -47,7 +48,7 @@
             </dd>
             <dd>
                 <router-link @click.native="_anchors" to="/plan/genzong" title="跟踪">{{$t('plan.plan_list.genzong.title')}}</router-link>
-            </dd>
+            </dd> -->
         </dl>
         <dl>
             <dt>{{$t('nav.hangye')}}</dt>
