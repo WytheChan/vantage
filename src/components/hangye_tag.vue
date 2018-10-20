@@ -1,5 +1,5 @@
 <template>
-    <div class="collapse" :class="{on : isOn}">
+    <div class="collapse" :class="{on : isOn}" >
         <div class="collapse-item" v-for="(item,index) in classifyList" :key="index">
           <p class="collapse-title" :data-cid="item.cid" @click="_tagSlide(item.cid)" :class="{on : isSlide === item.cid}">{{item.classify}} <i class="fa fa-angle-right"></i></p>
           <div class="tag-list" :class="{on : isSlide === item.cid}">
@@ -30,13 +30,19 @@ export default {
       window.addEventListener(
         "scroll",
         function() {
-          var footer = document.getElementsByTagName("footer")[0];
-          var t = footer.getBoundingClientRect().top;
-          var h = document.documentElement.clientHeight;
-          if (t < h) {
-            self.isOn = true;
-          } else {
-            self.isOn = false;
+          var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+          var collapse = document.querySelector('.collapse');
+          var st = collapse.getBoundingClientRect().top || -1;
+          
+          // console.log(scrollTop)
+          if(st<0){
+            collapse.style.top = '50px'
+            collapse.style.left = '3%'
+            collapse.style.position = 'fixed'
+          }else if(scrollTop<450){
+            collapse.style.top = '43px'
+            collapse.style.left = '0%'
+            collapse.style.position = 'absolute'
           }
         },
         false
@@ -74,7 +80,7 @@ export default {
     
   },
   created() {
-    // this._scroll();
+    this._scroll();
     this._getClassifyList()
   
     //点击头部导航进来的默认展开显示制造业（cid = 13）,点击底部导航进来的就获取传过来的参数，展开对应的分类
@@ -98,11 +104,10 @@ export default {
 .collapse {
   position: absolute;
   left: 0;
-  // bottom: 100px;
   top:43px;
   padding-right: 50px;
   width: 20%;
-  transition: all 0.5s;
+  // transition: all 0.5s;
   &.on {
     bottom: 40vh;
   }

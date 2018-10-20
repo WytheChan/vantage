@@ -86,7 +86,9 @@ export default {
 @import "../assets/scss/base.scss";
 .hangye {
   @include page;
-  min-height: 900px;
+  .page-main{
+    min-height: 600px;
+  }
   .job-list {
     margin: 30px 0;
     li {

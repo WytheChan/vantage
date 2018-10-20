@@ -1,5 +1,5 @@
 <template>
-    <aside :class="{'on' : isOn}">
+    <aside >
         <!-- <nav>
             <a 
             v-for="(item,index) in titleList" 
@@ -39,10 +39,16 @@ export default {
     return {
       active2:this.active,
       titleList: this.list,
-      isOn: false
+      isOn: false,
+      aside:''
     };
   },
   watch: {},
+  computed:{
+    // aside(){
+    //   return this.$refs.aside
+    // }
+  },
   methods: {
     handler(e) {
       this.active2 = parseInt(e.currentTarget.dataset.index)
@@ -51,18 +57,20 @@ export default {
     },
     _scroll() {
       let self = this
-      //滚动到底部时，改变aside的定位
-      window.addEventListener(
-        "scroll",
-        function() {
-          var footer = document.getElementsByTagName("footer")[0];
-          var t = footer.getBoundingClientRect().top;
-          var h = document.documentElement.clientHeight;
-
-          if (t < h) {
-            self.isOn = true;
-          } else {
-            self.isOn = false;
+      //aside定位在左侧
+      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+          // var aside = self.$refs.aside
+          var st = this.aside.getBoundingClientRect().top || -1;
+          
+          console.log(this.aside)
+          if(st<0){
+            this.aside.style.top = '50px'
+            this.aside.style.left = '5%'
+            this.aside.style.position = 'fixed'
+          }else if(scrollTop<450){
+             this.aside.style.top = '0px'
+            this.aside.style.left = '0%'
+            this.aside.style.position = 'absolute'
           }
 
           var modules = document.querySelectorAll('.about-item');
@@ -77,14 +85,17 @@ export default {
             }
           })
 
-        },
-        false
-      );
     },
-    
   },
   mounted(){
     // this._scroll();
+    this.aside = document.querySelector('aside')
+    // console.log(this.aside)
+    
+    window.addEventListener('scroll',this._scroll,false)
+  },
+  destroyed(){
+    window.removeEventListener('scroll',this._scroll)
   },
   created() {
     
@@ -100,7 +111,7 @@ aside {
   padding-left: 50px;
   padding-right: 50px;
   width: 20%;
-  transition: all 0.5s;
+  // transition: all 0.2s;
   &.on {
     bottom: 40vh;
   }
@@ -113,6 +124,7 @@ aside {
       position: relative;
       line-height: 1.5;
       cursor: pointer;
+      white-space: nowrap;
       &:hover {
         color: $base-color;
       }

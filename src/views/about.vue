@@ -2,7 +2,7 @@
   <div class="about ">
     <img src="../../static/about/about-1.jpg" alt="" class="topimg">
     <div class="about-main">
-      <my-aside :list="titleList" :active="active"></my-aside>
+      <my-aside :list="titleList" :active="active"  class="aside"></my-aside>
       <div class="about-content">
         <Breadcrumb>
           <BreadcrumbItem to="/shouye">{{$t("nav.home")}}</BreadcrumbItem>
