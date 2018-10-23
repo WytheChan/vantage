@@ -18,7 +18,7 @@
         <section>
             <div class="box left">
                 <strong v-html="$t('shouye.service_text')"></strong>
-                <router-link tag="p" to="/hangye">{{$t('shouye.service')}} <i class="fa fa-angle-right"></i></router-link>
+                <router-link tag="p" to="/service/fangan">{{$t('shouye.service')}} <i class="fa fa-angle-right"></i></router-link>
             </div>
         </section>
         <section>
@@ -36,7 +36,7 @@
         <section>
             <div class="box right">
               <strong v-html="$t('shouye.hunter_text')"></strong>
-              <router-link tag="p" to="/plan/plan">{{$t('shouye.hunter')}} <i class="fa fa-angle-right"></i></router-link>
+              <router-link tag="p" to="/hunter">{{$t('shouye.hunter')}} <i class="fa fa-angle-right"></i></router-link>
             </div>
         </section>
     </div>
@@ -187,11 +187,11 @@ export default {
     .box {
       position: absolute;
       bottom: 15%;
-      width: 80%;
+      width: 95%;
       &.right {
         right: 3%;
         padding-right: 30px;
-        border-right: 5px solid $border-color;
+        border-right: 6px solid $border-color;
         text-align: right;
         p {
           float: right;
@@ -200,7 +200,7 @@ export default {
       &.left {
         left: 3%;
         padding-left: 30px;
-        border-left: 5px solid $border-color;
+        border-left: 6px solid $border-color;
         text-align: left;
         p {
           float: left;
@@ -208,16 +208,18 @@ export default {
       }
       strong {
         display: block;
-        font-size: 50px;
-        line-height: 70px;
+        margin: -18px 0 0;
+        font-size: 54px;
+        line-height: 82px;
         color: #fff;
         z-index: 10;
         text-shadow: 1px 1px 25px #333;
+        // white-space: nowrap;
         cursor: default;
       }
       p {
         margin-top: 30px;
-        padding: 8px 40px;
+        padding: 10px 45px;
         border: 2px solid #fff;
         font-size: 14px;
         color: #fff;

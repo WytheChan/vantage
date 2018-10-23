@@ -13,11 +13,11 @@
                     <img src="../../static/hunter/hunter-2.png" alt="">
                     <div class="page-right pull-left">
                         <div class="about-title border-top">
-                            <p class="etitle">Part-time Headhunting</p>
+                            <p class="etitle">Welcome To Join Us</p>
                             <p class="ctitle">{{$t('hunter.part_time')}}</p>
                         </div>
-                        <p class="page-text">
-                            {{$t('hunter.content')}}
+                        <p class="page-text" v-html="$t('hunter.content')">
+                            
                         </p>
                         <router-link to="/#" id="join">{{$t('hunter.join')}}</router-link>
                     </div>            

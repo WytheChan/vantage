@@ -14,7 +14,7 @@
             <p class="etitle"> Company Overview</p>
             <p class="ctitle">{{$t('about.gk')}}</p>
           </div>
-          <textarea id="" disabled v-html="$t('about.gk_text')"></textarea>
+          <p class="about-item-content" v-html="$t('about.gk_text')"></p>
         </div>
         <!-- 企业定位 -->
         <div class="about-item clearfix" id="dw">
@@ -27,16 +27,16 @@
            
         </div>
          <!-- 占位 -->
-        <div style="opacity:0;"></div>  
+        <!-- <div style="opacity:0;"></div>   -->
          <!-- 专业优势 -->
-        <div class="about-item clearfix" id="youshi">
+        <!-- <div class="about-item clearfix" id="youshi">
           <img src="../../static/about/about-5.jpg" alt="" class="youshiimg">
           <div class="about-title border-top">
             <p class="etitle">Professional Advantage</p>
             <p class="ctitle">{{$t('about.youshi')}}</p>
           </div>
           <p class="about-item-content" v-html="$t('plan.plan.youshi')"></p>
-        </div>
+        </div> -->
        
         <!-- 成功案例 -->
         <div class="about-item" id="case">
@@ -107,10 +107,10 @@ export default {
           id: "#dw",
           title: this.$t("about.dw")
         },
-        {
-          id: "#youshi",
-          title: this.$t("plan.plan.youshi_title")
-        },
+        // {
+        //   id: "#youshi",
+        //   title: this.$t("plan.plan.youshi_title")
+        // },
         {
           id: "#case",
           title: this.$t("about.case")
@@ -214,21 +214,31 @@ export default {
           padding: 50px;
           background: #f5f5f5;
         }
+        &#gk{
+          .about-item-content{
+            width: 90%;
+            margin: 50px 0 0;
+            font-size: 14px;
+            color: $font-color;
+            line-height: 1.5;
+            white-space: pre-wrap;
+          }
+        }
 
         &#dw {
           .about-title {
             position: absolute;
-            left: 50px;
+            left: 55%;
             top: 0;
           }
           .about-item-content{
-            left:50px!important;
+            left:55%!important;
           }
 
           .dwimg {
             width: auto;
             // height: 330px;
-            margin-left: 50%;
+            // margin-left: 50%;
             width: 50%;
             height: auto;
           }
@@ -335,15 +345,15 @@ export default {
           }
         }
 
-        textarea {
-          width: 100%;
-          height: 200px;
-          margin: 30px 0 0;
-          line-height: 24px;
-          font-size: 14px;
-          color: $font-color;
-          cursor: default;
-        }
+        // textarea {
+        //   width: 100%;
+        //   height: 200px;
+        //   margin: 30px 0 0;
+        //   line-height: 24px;
+        //   font-size: 14px;
+        //   color: $font-color;
+        //   cursor: default;
+        // }
         .contact-info {
           margin-top: 50px;
           line-height: 2;

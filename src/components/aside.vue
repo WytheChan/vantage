@@ -45,9 +45,7 @@ export default {
   },
   watch: {},
   computed:{
-    // aside(){
-    //   return this.$refs.aside
-    // }
+   
   },
   methods: {
     handler(e) {
@@ -59,10 +57,8 @@ export default {
       let self = this
       //aside定位在左侧
       var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-          // var aside = self.$refs.aside
           var st = this.aside.getBoundingClientRect().top || -1;
           
-          console.log(this.aside)
           if(st<0){
             this.aside.style.top = '50px'
             this.aside.style.left = '5%'
@@ -87,15 +83,11 @@ export default {
 
     },
   },
-  mounted(){
-    // this._scroll();
-    this.aside = document.querySelector('aside')
-    // console.log(this.aside)
-    
-    window.addEventListener('scroll',this._scroll,false)
+  mounted(){    
+    // window.addEventListener('scroll',this._scroll,false)
   },
   destroyed(){
-    window.removeEventListener('scroll',this._scroll)
+    // window.removeEventListener('scroll',this._scroll)
   },
   created() {
     

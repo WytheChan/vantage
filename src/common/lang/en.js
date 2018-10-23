@@ -8,30 +8,32 @@ const message = {
     plan: 'Training campus',
     hangye: 'Job demand',
     information: 'Information',
-    hunter: 'Part-time Headhunting',
+    hunter: 'Welcome To Join Us',
     contact: 'Contact us',
     hotjob: 'Hot Job'
   },
   searchPlaceholder: 'Job search',
   shouye: { //首页
     about: 'About Vantage-HR',
-    about_text: 'An organization that provides a comprehensive talent service for businesses and candidates is a HR professional partner and career planner for candidates.',
+    about_text: `We are an enterprise's talent strategy partner and candidate's career planner`,
     service: 'Services',
-    service_text: 'By providing one-stop service, it will grow with enterprises and candidates. Customized talent solutions for enterprises, expert consultation services for candidates, value-added and high-end talent services.',
+    service_text:`Providing high value-added services<br/>Grow with enterprises and candidates`,    
     plan: 'Training campus',
-    plan_text: 'Based on the understanding and discussion of the development of enterprises and the needs of new talents, and according to the professional entrustment process, the talents are selected and interviewed, and the talents are tracked until they are in place to provide elites for enterprises.',
+    plan_text:`Talent demand in the new era<br/>Skills training and career guidance for potential talents`,
     hangye: 'Job demand',
-    hangye_text: 'Headquartered in Guangzhou, our business covers the Mainland of China, Hong Kong, Macao and Taiwan as well as overseas opportunities. Our services include high-tech, IT/Internet, market media, manufacturing, retail, financial and accounting, etc.',
-    hunter: 'Part-time Headhunting',
-    hunter_text: 'For those who are interested in headhunting, here is a platform to give full play to their strengths, to work together on a shared platform to win-win situation. Based on the precise recommendation of the circle of friends, there are surprises and thanks for success.'
+    hangye_text:`Business in mainland China, Hong Kong, Macao, Taiwan and overseas.<br/>Including high-tech, IT/ Internet, market media and other fields.`,
+    hunter: 'Welcome To Join Us',
+    hunter_text:`Welcome friends who love headhunting industry to join.<br/>Give full play to the strengths and share the win-win situation`
   },
   about: { //关于
     gk: 'Company Overview',
-    gk_text: `     Founded in 2012, the company has maintained good cooperative relations with a number of benchmark customers in the industry, including: high-tech, IT / Internet, market media, manufacturing, and marketing. Retail, finance, accounting and so on.
-    The positioning of HR is a career planner for HR professional partners and candidates. By providing one-stop service, it will grow with enterprises and candidates. It is not only to understand the needs of enterprises thoroughly and clearly, but also to find the right candidates for enterprises to look for, analyze the advantages and characteristics of candidates, and explore their potential to provide the best talent solutions for both sides.
-    Headquartered in Guangzhou, the business involves Hong Kong, Macao and Taiwan in mainland China and overseas opportunities. Many benchmark customers in the industry are partners with rich customer resources and successful cases. With the guidance of happy work and patient communication, we will enable senior consultants from all walks of life to exert their advantages and gain more in an active atmosphere.`,
+    gk_text:`  
+    Guangzhou Fuyi Enterprise Management Consulting Co., Ltd. is committed to providing comprehensive talent services to domestic and foreign enterprises and candidates, maintaining good cooperation with many benchmark customers in the industry, including high-tech, IT / Internet, market media, manufacturing, retail, financial and accounting services.<br/><br/>
+    Our company is a career Strategic planner of the company's talent strategy partner and candidate. By providing high value-added services, it grows with businesses and candidates. It is not only to understand the needs of the enterprise thoroughly and clearly, but also to analyze the advantages and characteristics of the candidates and explore their potential to provide the best talent solution for both sides.<br/><br/>
+    We are based in Guangzhou. Our business covers the mainland of China, Hong Kong, Macao, Taiwan and overseas. We have rich customer resources and successful cases. Guided by happy work and patient communication, we have enabled senior consultants who are familiar with relevant industries to play their part and gain more in an active atmosphere.
+    `,
     dw: 'Corporate Positioning',
-    dw_text: 'Vantage-HR is a career planner for HR\'s professional partner and candidate.',
+    dw_text: 'It is a career strategy planner for the company\'s talent strategy partner and candidate.',
     case: 'Success Case',
     case_list: { //案例的类目
       position: 'Entry position',
@@ -114,8 +116,8 @@ const message = {
       title: ' Training campus',
       stitle: ' Student training',
       stitle2: ' Social training',
-      content: ' Enter the campus, for high school students to choose a major, college students to choose a career direction and related skills training, in life at a critical point to help students better understand themselves, understand society, become a clear goal, a clear path.',
-      content2: ' Help the confused and confused future of the community to improve their self-awareness and learn from each other, so that they can play light, appropriate.',
+      content: ' Enter the campus, for the majority of students to choose a major, career direction and related skills for training, at a critical point in life to help students better understand themselves and society, become a clear goal, a clear path of development of people, early preparation to become a real social person.',
+      content2: ' It is appropriate to help people in confused and overwhelmed societies improve their self-awareness and skills so that they can play lightly.',
       youshi_title:'Professional advantage',
       youshi: `（1）Professionalism, focus, quality<br/>（2）The network is extensive, fast and precise.<br/>（3）Pleasant cooperation and best exploration<br/>（4）Professional training and keeping pace with the times<br/>（5）Latest information sharing`
     },
@@ -183,8 +185,9 @@ const message = {
     detail:'Details of the article'
   },
   hunter: { //兼职猎头
-    part_time: 'Part-time Headhunting',
-    content: 'Friends interested in headhunting, here is a platform to play their strengths in the sharing platform to work together for a win-win situation, based on the precise recommendation of the circle of friends, introducing the success of surprise thank you gifts: Successful introduction thank you! Friends who want to work part-time for a long time please contact us and discuss the form of cooperation.',
+    part_time: 'Welcome To Join Us',
+    content:`Love headhunting, resolve to overcome all difficulties to achieve their own friends through the achievement of others, welcome to join this can play your expertise and enthusiasm of the team, in the sharing platform to work together for a win-win situation.<br/><br/><br/>    
+    Friends who are interested in the headhunting industry and hope to have an opportunity to try it are also welcome to work part-time.`,
     join: 'to join >',
   },
   footer: { //页面底部

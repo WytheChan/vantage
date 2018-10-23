@@ -12,7 +12,7 @@
                 <router-link @click.native="_anchors" to="/about/promise" title="我们的承诺">{{$t('about.promise')}}</router-link>
             </dd>
              <dd>
-                <router-link @click.native="_anchors" to="/about/youshi" title="专业优势">{{$t('about.youshi')}}</router-link>
+                <!-- <router-link @click.native="_anchors" to="/about/youshi" title="专业优势">{{$t('about.youshi')}}</router-link> -->
                 <router-link @click.native="_anchors" to="/about/contact" title="联系我们">{{$t('about.contact')}}</router-link>
             </dd>
         </dl>
