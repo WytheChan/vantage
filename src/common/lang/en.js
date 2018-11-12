@@ -1,4 +1,6 @@
 const message = {
+  positionFilter:'positionFilter',
+  qrcode:'Scan code to follow Wechat public account',
   title:'Vantage-HR',
   content:'content',
   nav: { //导航
@@ -6,7 +8,7 @@ const message = {
     about: 'About',
     service: 'Services',
     plan: 'Training campus',
-    hangye: 'Job demand',
+    hangye: 'Job Information',
     information: 'Information',
     hunter: 'Welcome To Join Us',
     contact: 'Contact us',
@@ -15,13 +17,13 @@ const message = {
   searchPlaceholder: 'Job search',
   shouye: { //首页
     about: 'About Vantage-HR',
-    about_text: `We are an enterprise's talent strategy partner and candidate's career planner`,
+    about_text: `Enterprise's talent strategy partner and candidate's career planner.`,
     service: 'Services',
-    service_text:`Providing high value-added services<br/>Grow with enterprises and candidates`,    
+    service_text:`Providing high value-added services for businesses and candidates.`,    
     plan: 'Training campus',
-    plan_text:`Talent demand in the new era<br/>Skills training and career guidance for potential talents`,
-    hangye: 'Job demand',
-    hangye_text:`Business in mainland China, Hong Kong, Macao, Taiwan and overseas.<br/>Including high-tech, IT/ Internet, market media and other fields.`,
+    plan_text:`Guidance and training of potential talents in the new era`,
+    hangye: 'Job Information',
+    hangye_text:`Business has been done in all fields at home and abroad.`,
     hunter: 'Welcome To Join Us',
     hunter_text:`Welcome friends who love headhunting industry to join.<br/>Give full play to the strengths and share the win-win situation`
   },
@@ -186,8 +188,9 @@ const message = {
   },
   hunter: { //兼职猎头
     part_time: 'Welcome To Join Us',
-    content:`Love headhunting, resolve to overcome all difficulties to achieve their own friends through the achievement of others, welcome to join this can play your expertise and enthusiasm of the team, in the sharing platform to work together for a win-win situation.<br/><br/><br/>    
-    Friends who are interested in the headhunting industry and hope to have an opportunity to try it are also welcome to work part-time.`,
+    content:`
+    If you love headhunting and hope to achieve yourself by making efforts to achieve others, you are welcome to join our team. Here will provide you with a platform to play your strengths and work with you to win-win situation.<br/><br/><br/>    
+    Friends who are interested in headhunting industry, we also welcome you to try.`,
     join: 'to join >',
   },
   footer: { //页面底部

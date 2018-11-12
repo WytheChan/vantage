@@ -1,4 +1,6 @@
 const message = {
+  positionFilter: '职位筛选',
+  qrcode: '扫描二维码关注寰逸官方公众号',
   title:'寰逸官网',
   content:'内容',
   nav: { //导航
@@ -6,7 +8,7 @@ const message = {
     about: '关于',
     service: '服务项目',
     plan: '培训校园',
-    hangye: '职位需求',
+    hangye: '职位信息',
     information: '最新资讯',
     hunter: '欢迎加入',
     hotjob: '热门职位'
@@ -14,13 +16,13 @@ const message = {
   searchPlaceholder: '职位搜索',
   shouye:{ //首页
     about:`关 于 寰 逸`,
-    about_text:`企业的人才战略合作伙伴和候选人的职业规划师`,
+    about_text:`企业的人才战略伙伴和候选人的职业规划师`,
     service:`服 务 项 目`,
-    service_text:`提供高附加值的服务<br/>与企业和候选人共成长`,
+    service_text:`为企业与候选人提供高附加值的服务`,
     plan:`培 训 校 园`,
-    plan_text:`应新时代人才需求<br/>对潜在人才进行技能培训和职业指导`,
-    hangye:`职 位 需 求`,
-    hangye_text:`业务遍及中国大陆、港澳台和海外<br/>包括高科技、IT/互联网、市场传媒等领域`,
+    plan_text:`应新时代需求对潜在人才指导与培训`,
+    hangye:`职 位 信 息`,
+    hangye_text:`业务遍及海内外的各个领域`,
     hunter:`欢 迎 加 入`,
     hunter_text:`欢迎热爱猎头行业的朋友加入<br/>发挥所长，共享共赢`
   },
@@ -189,8 +191,9 @@ const message = {
   },
   hunter:{  //兼职猎头
     part_time:'欢迎加入',
-    content:`热爱猎头事业、决心排除万难通过成就别人来成就自己的朋友们，欢迎加入这个能发挥您专长与热情的团队，在共享平台携手合作共赢。<br/><br/><br/>    
-    对猎头行业感兴趣、希望有机会尝试的朋友们，这里也欢迎您来兼职。`,
+    content:`
+    如果您热爱猎头事业，希望通过努力成就别人来成就自己，欢迎加入我们团队，这里将为你提供发挥所长的平台，并与你一起携手共赢。<br/><br/><br/>    
+    对猎头行业感兴趣的朋友们，我们也欢迎您来尝试。`,
     join:`我 要 加 入 >`,
   },
   footer:{  //页面底部

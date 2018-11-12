@@ -166,6 +166,16 @@ background-color: $base-color;
 	}
 }
 
+//翻页样式
+.ivu-page-item-active{
+	border-color:$base-color;
+}
+.ivu-page-item-active a,
+.ivu-page-item-active:hover a{
+	color:$base-color;
+}
+
+
 
 
 
