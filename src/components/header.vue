@@ -1,5 +1,5 @@
 <template>
-    <header :class="{on : $store.state.isShouye}">
+    <header >
         <router-link to="/">
             <img src="../../static/logo_v2.png" alt="" class="logo">
         </router-link>
@@ -117,6 +117,7 @@ header {
   width: 100%;
   padding: 15px 0 15px 5%;
   z-index: 100;
+  background: #fff;
   &.on {
     nav {
       a {

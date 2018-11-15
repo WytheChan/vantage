@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       isOn: false,  //定位状态
-      isSlide: 13,   //折叠状态
+      isSlide: 7,   //折叠状态
       isActive:'',  //标签选中状态,
       isAll:'all',     //选中全部
       collapse: 0,
@@ -87,7 +87,7 @@ export default {
     if(this.$route.params.search == 1){
       this.isSlide = ''
     }else{
-      let cid = this.$route.params.cid || 13 ;
+      let cid = this.$route.params.cid || 7 ;
       this.isSlide = cid
       this._getAll(cid)
     }

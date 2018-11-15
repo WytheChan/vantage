@@ -50,7 +50,7 @@ import axios from "../api/index.js";
 export default {
   data(){
     return {
-      cid:this.$route.params.cid || 13,
+      cid:this.$route.params.cid || 7,
       tid:this.$route.params.tid || 0
     }
   },

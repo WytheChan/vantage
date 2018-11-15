@@ -85,7 +85,7 @@
             </dd>
         </dl>
         <div class="qrcode-main">
-            <img src="../../static/qrcode.png" alt="二维码" class="qrcode">
+            <img src="../../static/qrcode.jpg" alt="二维码" class="qrcode">
             <p>扫描二维码关注寰逸公众号</p>
         </div>
         </div>

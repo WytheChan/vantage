@@ -22,7 +22,7 @@ const message = {
     plan:`培 训 校 园`,
     plan_text:`应新时代需求对潜在人才指导与培训`,
     hangye:`职 位 信 息`,
-    hangye_text:`业务遍及海内外的各个领域`,
+    hangye_text:`业务覆盖海内外各个领域与高新行业`,
     hunter:`欢 迎 加 入`,
     hunter_text:`欢迎热爱猎头行业的朋友加入<br/>发挥所长，共享共赢`
   },

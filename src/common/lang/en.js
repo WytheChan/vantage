@@ -23,7 +23,7 @@ const message = {
     plan: 'Training campus',
     plan_text:`Guidance and training of potential talents in the new era`,
     hangye: 'Job Information',
-    hangye_text:`Business has been done in all fields at home and abroad.`,
+    hangye_text:`Business covers all fields at home and abroad and high-tech industries.`,
     hunter: 'Welcome To Join Us',
     hunter_text:`Welcome friends who love headhunting industry to join.<br/>Give full play to the strengths and share the win-win situation`
   },

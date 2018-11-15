@@ -19,7 +19,7 @@
                         <p class="page-text" v-html="$t('hunter.content')">
                             
                         </p>
-                        <router-link to="/#" id="join">{{$t('hunter.join')}}</router-link>
+                        <router-link to="/about/contact"  id="join">{{$t('hunter.join')}}</router-link>
                     </div>            
                 </div>
                  
